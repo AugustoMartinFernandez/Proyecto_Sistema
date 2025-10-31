@@ -13,9 +13,6 @@ Vehiculo::Vehiculo() {
 	strcpy(_estado,"Default");
 }
 
-
-
-
 void Vehiculo::setPatente(const char* patente) {
 	if (esPatenteValida(patente)) {
 		strncpy(_patente, patente, 7);
@@ -116,28 +113,6 @@ bool Vehiculo::esPatenteValida(const char* patenteVal) {
 }
 bool Vehiculo::estadoValido(const char* estado) {
 	return strcmp(estado, "Estacionado") == 0 || strcmp(estado, "Retirado") == 0 || strcmp(estado, "Reservado") == 0 || strcmp(estado, "En Espera") == 0;
-}
-bool Vehiculo::escribirDisco() {
-	FILE* p = fopen("Archivos.dat/vehiculos.dat", "ab"); // Abrir archivo
-	if (p == NULL) {
-		cout << "Error al intentar abrir el archivo.dat " << endl;
-		return false; // Si no se puede devolvemos false 
-	}
-	bool ok = fwrite(this, sizeof(Vehiculo), 1, p); // Devuelve la cantidad de registros escritos  1 -> True 0 -> False
-	fclose(p); // Cerramos el archivo
-	return ok; 
-} 
-bool Vehiculo::leerDisco() {
-	Vehiculo reg;
-	FILE* pFile = fopen("Archivos.dat/vehiculos.dat", "rb");
-	if (pFile==NULL) {
-		return false;
-	}
-	while (fread(&reg, sizeof(Vehiculo), 1, pFile) == 1) {
-		reg.mostrar();
-	}
-	fclose(pFile);
-	return true;
 }
 
 const char* Vehiculo::getPatente()const {

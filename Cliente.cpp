@@ -15,14 +15,22 @@ Cliente::Cliente() {
 }
 void Cliente::cargar() {
     char dni[20], nombre[40], apellido[40], telefono[20], email[40];
-    bool estado;
 
+    system("cls");
     cout << "==============================" << endl;
     cout << "        CARGA DE CLIENTE      " << endl;
     cout << "==============================" << endl;
-    cout << "DNI (8 digitos)       : ";
-    cin >> dni;
-    setDni(dni);
+    do {
+        cout << "DNI (8 digitos)       : ";
+        cin >> dni;
+        setDni(dni);
+        if (strcmp(getDni(), "00000000") == 0) {
+            cout << "DNI invalido. Debe contener exactamente 8 digitos numericos." << endl;
+            system("pause");
+            system("cls");
+        }
+        else break;
+    } while (true);
     cin.ignore();
     cout << "Apellido              : ";
     cin.getline(apellido, 40);
@@ -30,16 +38,50 @@ void Cliente::cargar() {
     cout << "Nombre                : ";
     cin.getline(nombre, 40);
     setNombre(nombre);
-    cout << "Telefono              : ";
-    cin >> telefono;
-    setTelefono(telefono);
-    cout << "Email                 : ";
-    cin >> email;
-    setEmail(email);
-    cout << "Esta activo (1 = Si | 0 = no): ";
-    cin >> estado;
-    setEstado(estado);
+    do {
+        cout << "Telefono              : ";
+        cin >> telefono;
+        setTelefono(telefono);
+        if (strcmp(_telefono, "sin telefono") == 0) {
+            cout << "Telefono invalido. Ejemplo: 1123456789" << endl;
+            system("pause");
+            system("cls");
+        }
+        else break;
+    } while (true);
+    do {
+        cout << "Email (usuario@dominio.com): ";
+        cin >> email;
+        setEmail(email);
+        if (strcmp(_email, "sin_email@default") == 0) {
+            cout << "Error: Email invalido. Debe contener '@' y '.'" << endl;
+            system("pause");
+            system("cls");
+        }
+        else break;
+    } while (true);
+    do {
+        string entrada;
+        cout << "Esta activo (1 = Si | 0 = No): ";
+        cin >> entrada;
+
+        if (entrada == "1") {
+            setEstado(true);
+            break;
+        }
+        else if (entrada == "0") {
+            setEstado(false);
+            break;
+        }
+        else {
+            cout << "Error: Debe ingresar 1 (Si) o 0 (No)." << endl;
+            system("pause");
+            system("cls");
+        }
+    } while (true);
+
     cout << "==============================" << endl;
+    system("pause");
 }
 void Cliente::mostrar(){
     cout << "==============================" << endl;
@@ -173,32 +215,4 @@ const char* Cliente::getEmail() {
 }
 bool Cliente::getEstado() {
 	return _estado;
-}
-bool Cliente::escribirDisco(int pos) {
-    bool ok;
-    FILE* p;
-    if (pos == -1) {
-        // Agregar al final
-        p = fopen("clientes.dat", "ab");
-        if (p == NULL) return false;
-    }
-    else {
-        // Sobreescribir en posicion
-        p = fopen("clientes.dat", "rb+");
-            if (p == NULL)return false;
-        fseek(p, pos * sizeof(Cliente), SEEK_SET);
-    }
-    ok = fwrite(this, sizeof(Cliente), 1, p) == 1;
-    fclose(p);
-    return ok;
-}
-bool Cliente::leerDisco(int pos) {
-    bool ok;
-    FILE* p = fopen("clientes.dat", "rb");
-    if (p == NULL) return false;
-
-    fseek(p, pos * sizeof(Cliente),SEEK_SET);
-    ok = fread(this, sizeof(Cliente), 1, p) == 1;
-    fclose(p);
-    return ok;
 }

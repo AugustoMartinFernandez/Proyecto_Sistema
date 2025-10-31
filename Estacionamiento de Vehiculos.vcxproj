@@ -124,14 +124,23 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ArchivoCliente.cpp" />
+    <ClCompile Include="ArchivoVehiculo.cpp" />
     <ClCompile Include="Cliente.cpp" />
     <ClCompile Include="Estacionamiento de Vehiculos.cpp" />
+    <ClCompile Include="Fecha.cpp" />
     <ClCompile Include="MenuClientecpp.cpp" />
+    <ClCompile Include="MenuVehiculo.cpp" />
+    <ClCompile Include="Reserva.cpp" />
+    <ClCompile Include="Ticket.cpp" />
     <ClCompile Include="Vehiculo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArchivoCliente.h" />
+    <ClInclude Include="ArchivoVehiculo.h" />
     <ClInclude Include="Cliente.h" />
+    <ClInclude Include="Fecha.h" />
+    <ClInclude Include="Reserva.h" />
+    <ClInclude Include="Ticket.h" />
     <ClInclude Include="Vehiculo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -3,6 +3,7 @@ using namespace std;
 
 // Declaraciones de submenús
 void menuCliente();
+void menuVehiculo();
 
 int main() {
     int opcion;
@@ -22,7 +23,7 @@ int main() {
 
         switch (opcion) {
         case 1: menuCliente(); break;
-        case 2: cout << "Submenu Vehiculos (pendiente)\n"; break;
+        case 2: menuVehiculo(); break;
         case 3: cout << "Submenu Plazas (pendiente)\n"; break;
         case 4: cout << "Submenu Reservas (pendiente)\n"; break;
         case 5: cout << "Submenu Tickets (pendiente)\n"; break;

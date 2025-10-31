@@ -31,7 +31,4 @@ public:
 
 	void cargar();
 	void mostrar();
-
-	bool escribirDisco(  int pos);
-	bool leerDisco( int pos);
 };

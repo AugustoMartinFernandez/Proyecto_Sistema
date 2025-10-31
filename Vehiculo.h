@@ -20,9 +20,6 @@ public:
 	void setEstado(const char* estado);
 	void cargar();
 	void mostrar();
-
-	bool escribirDisco();
-	bool leerDisco();
 	bool esPatenteValida(const char* patenteVal);
 	bool estadoValido(const char* estado);
 };
