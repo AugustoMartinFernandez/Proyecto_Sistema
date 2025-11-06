@@ -1,0 +1,117 @@
+# depslib dependency file v1.0
+1762225170 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_cb\estacionamiento\estacionamiento de vehiculos.cpp
+	<iostream>
+
+1762225170 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_cb\estacionamiento\archivocliente.cpp
+	<iostream>
+	<cstdio>
+	<cstring>
+	"ArchivoCliente.h"
+
+1762225170 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_cb\estacionamiento\archivocliente.h
+	<string>
+	"Cliente.h"
+
+1762225170 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_cb\estacionamiento\cliente.h
+
+1762225170 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_cb\estacionamiento\cliente.cpp
+	<iostream>
+	<cstring>
+	<cctype>
+	"Cliente.h"
+
+1762290166 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_cb\estacionamiento\menuclientecpp.cpp
+	<iostream>
+	<cstring>
+	<stdlib.h>
+	"ArchivoCliente.h"
+	"ArchivoVehiculo.h"
+
+1762225170 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_cb\estacionamiento\vehiculo.cpp
+	<iostream>
+	<cstring>
+	<cctype>
+	<cstdio>
+	"Vehiculo.h"
+
+1762225170 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_cb\estacionamiento\vehiculo.h
+
+1762225170 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_cb\estacionamiento\fecha.cpp
+	"Fecha.h"
+
+1762225170 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_cb\estacionamiento\fecha.h
+	<string>
+
+1762225170 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_cb\estacionamiento\menuvehiculo.cpp
+	<iostream>
+	<cstdlib>
+	"Vehiculo.h"
+	"ArchivoCliente.h"
+	"ArchivoVehiculo.h"
+
+1762225170 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_cb\estacionamiento\archivovehiculo.h
+	<string>
+	"Vehiculo.h"
+
+1762225170 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_cb\estacionamiento\reserva.cpp
+	<iostream>
+	<cstring>
+	<cctype>
+	"Reserva.h"
+
+1762225170 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_cb\estacionamiento\reserva.h
+
+1762225170 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_cb\estacionamiento\ticket.cpp
+	"Ticket.h"
+
+1762225170 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_cb\estacionamiento\ticket.h
+
+1762287334 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_cb\estacionamiento\archivovehiculo.cpp
+	<iostream>
+	<cstdio>
+	<string>
+	<cstring>
+	"ArchivoVehiculo.h"
+
+1762290682 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_cb\estacionamiento\tarifa.cpp
+	<cstring>
+	<string>
+	"Tarifa.h"
+
+1762290736 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_cb\estacionamiento\tarifa.h
+	"Fecha.h"
+
+1762297160 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_cb\estacionamiento\tarifaarchivo.cpp
+	<cstdio>
+	<cstring>
+	"TarifaArchivo.h"
+
+1762297161 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_cb\estacionamiento\tarifaarchivo.h
+	<string>
+	"Tarifa.h"
+
+1762298126 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_cb\estacionamiento\utils.cpp
+	<iostream>
+	"utils.h"
+
+1762298142 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_cb\estacionamiento\utils.h
+	<string>
+
+1762298966 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_cb\estacionamiento\tarifamanager.cpp
+	<iostream>
+	<string>
+	"utils.h"
+	"Tarifa.h"
+	"TarifaArchivo.h"
+	"TarifaManager.h"
+
+1762299732 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_cb\estacionamiento\tarifamanager.h
+	"TarifaArchivo.h"
+
+1762299308 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_cb\estacionamiento\tarifamenu.cpp
+	<iostream>
+	"TarifaMenu.h"
+
+1762299321 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_cb\estacionamiento\tarifamenu.h
+	"TarifaManager.h"
+

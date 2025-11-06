@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Estacionamiento" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Option virtualFolders="Tarifa/;Vehiculo/;Cliente/" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Estacionamiento" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="../Estacionamiento" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Estacionamiento" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="../Estacionamiento" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="ArchivoCliente.cpp">
+			<Option virtualFolder="Cliente/" />
+		</Unit>
+		<Unit filename="ArchivoCliente.h">
+			<Option virtualFolder="Cliente/" />
+		</Unit>
+		<Unit filename="ArchivoVehiculo.cpp">
+			<Option virtualFolder="Vehiculo/" />
+		</Unit>
+		<Unit filename="ArchivoVehiculo.h">
+			<Option virtualFolder="Vehiculo/" />
+		</Unit>
+		<Unit filename="Cliente.cpp">
+			<Option virtualFolder="Cliente/" />
+		</Unit>
+		<Unit filename="Cliente.h">
+			<Option virtualFolder="Cliente/" />
+		</Unit>
+		<Unit filename="Estacionamiento de Vehiculos.cpp" />
+		<Unit filename="Fecha.cpp" />
+		<Unit filename="Fecha.h" />
+		<Unit filename="MenuClientecpp.cpp">
+			<Option virtualFolder="Cliente/" />
+		</Unit>
+		<Unit filename="MenuVehiculo.cpp">
+			<Option virtualFolder="Vehiculo/" />
+		</Unit>
+		<Unit filename="Reserva.cpp" />
+		<Unit filename="Reserva.h" />
+		<Unit filename="Tarifa.cpp">
+			<Option virtualFolder="Tarifa/" />
+		</Unit>
+		<Unit filename="Tarifa.h">
+			<Option virtualFolder="Tarifa/" />
+		</Unit>
+		<Unit filename="TarifaArchivo.cpp">
+			<Option virtualFolder="Tarifa/" />
+		</Unit>
+		<Unit filename="TarifaArchivo.h">
+			<Option virtualFolder="Tarifa/" />
+		</Unit>
+		<Unit filename="TarifaManager.cpp">
+			<Option virtualFolder="Tarifa/" />
+		</Unit>
+		<Unit filename="TarifaManager.h">
+			<Option virtualFolder="Tarifa/" />
+		</Unit>
+		<Unit filename="TarifaMenu.cpp">
+			<Option virtualFolder="Tarifa/" />
+		</Unit>
+		<Unit filename="TarifaMenu.h">
+			<Option virtualFolder="Tarifa/" />
+		</Unit>
+		<Unit filename="Ticket.cpp" />
+		<Unit filename="Ticket.h" />
+		<Unit filename="Vehiculo.cpp">
+			<Option virtualFolder="Vehiculo/" />
+		</Unit>
+		<Unit filename="Vehiculo.h">
+			<Option virtualFolder="Vehiculo/" />
+		</Unit>
+		<Unit filename="utils.cpp" />
+		<Unit filename="utils.h" />
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
