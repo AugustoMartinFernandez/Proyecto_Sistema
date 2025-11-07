@@ -1,5 +1,5 @@
 #pragma once
-#include "Fecha.h"
+#include "Hora.h"
 
 class Tarifa
 {
@@ -8,7 +8,7 @@ public:
     Tarifa(
         int idTarifa, std::string tipoVehiculo, int fraccionMin,
         float precioFraccion, float topeDiario, float precioNocturno,
-        int toleranciaMin, Fecha vigenciaDesdeHora, Fecha vigenciaHastaHora,
+        int toleranciaMin, Hora vigenciaDesdeHora, Hora vigenciaHastaHora,
         char tipoAbono[20], char estado[20]
     );
 
@@ -20,8 +20,8 @@ public:
     float getTopeDiario() const;
     float getPrecioNocturno() const;
     int getToleranciaMin() const;
-    Fecha getVigenciaDesdeHora() const;
-    Fecha getVigenciaHastaHora() const;
+    Hora getVigenciaDesdeHora() const;
+    Hora getVigenciaHastaHora() const;
     const char* getTipoAbono() const;
     const char* getEstado() const;
 
@@ -33,13 +33,13 @@ public:
     void setTopeDiario(float valor);
     void setPrecioNocturno(float valor);
     void setToleranciaMin(int valor);
-    void setVigenciaDesdeHora(Fecha valor);
-    void setVigenciaHastaHora(Fecha valor);
+    void setVigenciaDesdeHora(Hora valor);
+    void setVigenciaHastaHora(Hora valor);
     void setTipoAbono(const char* valor);
     void setEstado(const char* valor);
 
     // Métodos
-    float calcularImporte(Fecha ingreso, Fecha salida);
+    float calcularImporte(Hora ingreso, Hora salida);
     void cargar();
     void mostrar();
     std::string toString();
@@ -54,8 +54,8 @@ private:
     float _topeDiario;
     float _precioNocturno;
     int _toleranciaMin;
-    Fecha _vigenciaDesdeHora;
-    Fecha _vigenciaHastaHora;
+    Hora _vigenciaDesdeHora;
+    Hora _vigenciaHastaHora;
     char _tipoAbono[20];
     char _estado[20];
 };

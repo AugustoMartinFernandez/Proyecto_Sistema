@@ -115,3 +115,167 @@
 1762299321 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_cb\estacionamiento\tarifamenu.h
 	"TarifaManager.h"
 
+1762225170 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\archivocliente.cpp
+	<iostream>
+	<cstdio>
+	<cstring>
+	"ArchivoCliente.h"
+
+1762225170 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\archivocliente.h
+	<string>
+	"Cliente.h"
+
+1762225170 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\cliente.h
+
+1762287334 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\archivovehiculo.cpp
+	<iostream>
+	<cstdio>
+	<string>
+	<cstring>
+	"ArchivoVehiculo.h"
+
+1762225170 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\archivovehiculo.h
+	<string>
+	"Vehiculo.h"
+
+1762225170 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\vehiculo.h
+
+1762225170 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\cliente.cpp
+	<iostream>
+	<cstring>
+	<cctype>
+	"Cliente.h"
+
+1762549317 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\estacionamiento de vehiculos.cpp
+	<iostream>
+	"TarifaMenu.h"
+	"PagoMenu.h"
+
+1762299321 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\tarifamenu.h
+	"TarifaManager.h"
+
+1762549779 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\tarifamanager.h
+	<string>
+	"Hora.h"
+	"TarifaArchivo.h"
+
+1762297161 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\tarifaarchivo.h
+	<string>
+	"Tarifa.h"
+
+1762529874 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\tarifa.h
+	"Hora.h"
+
+1762531093 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\hora.h
+	<string>
+
+1762225170 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\fecha.cpp
+	"Fecha.h"
+
+1762225170 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\fecha.h
+	<string>
+
+1762290166 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\menuclientecpp.cpp
+	<iostream>
+	<cstring>
+	<stdlib.h>
+	"ArchivoCliente.h"
+	"ArchivoVehiculo.h"
+
+1762225170 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\menuvehiculo.cpp
+	<iostream>
+	<cstdlib>
+	"Vehiculo.h"
+	"ArchivoCliente.h"
+	"ArchivoVehiculo.h"
+
+1762225170 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\reserva.cpp
+	<iostream>
+	<cstring>
+	<cctype>
+	"Reserva.h"
+
+1762225170 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\reserva.h
+
+1762530811 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\tarifa.cpp
+	<cstring>
+	<string>
+	"Tarifa.h"
+
+1762297160 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\tarifaarchivo.cpp
+	<cstdio>
+	<cstring>
+	"TarifaArchivo.h"
+
+1762540433 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\tarifamanager.cpp
+	<iostream>
+	<string>
+	"utils.h"
+	"Tarifa.h"
+	"TarifaArchivo.h"
+	"TarifaManager.h"
+
+1762549639 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\utils.h
+	<string>
+	"Hora.h"
+
+1762299308 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\tarifamenu.cpp
+	<iostream>
+	"TarifaMenu.h"
+
+1762225170 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\ticket.cpp
+	"Ticket.h"
+
+1762225170 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\ticket.h
+
+1762549511 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\utils.cpp
+	<iostream>
+	"utils.h"
+
+1762225170 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\vehiculo.cpp
+	<iostream>
+	<cstring>
+	<cctype>
+	<cstdio>
+	"Vehiculo.h"
+
+1762531077 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\hora.cpp
+	"Hora.h"
+	<iostream>
+	<string>
+
+1762543998 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\pago.cpp
+	<cstring>
+	<string>
+	"Pago.h"
+
+1762543975 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\pago.h
+	<string>
+	"Fecha.h"
+	"Hora.h"
+
+1762542549 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\pagoarchivo.cpp
+	"PagoArchivo.h"
+	<cstdio>
+
+1762542551 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\pagoarchivo.h
+	<string>
+	"Pago.h"
+
+1762548529 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\pagomanager.cpp
+	<iostream>
+	<string>
+	"utils.h"
+	"PagoManager.h"
+	"Pago.h"
+
+1762543506 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\pagomanager.h
+	"PagoArchivo.h"
+
+1762549086 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\src\pagomenu.cpp
+	<iostream>
+	"PagoMenu.h"
+
+1762549050 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\include\pagomenu.h
+	"PagoManager.h"
+

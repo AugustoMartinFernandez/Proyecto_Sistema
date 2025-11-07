@@ -1,5 +1,6 @@
 #include <iostream>
 #include "TarifaMenu.h"
+#include "PagoMenu.h"
 using namespace std;
 
 // Declaraciones de submenús
@@ -8,6 +9,7 @@ void menuVehiculo();
 
 int main() {
     TarifaMenu tm;
+    PagoMenu pa;
     int opcion;
     do {
         cout << "==============================" << endl;
@@ -30,7 +32,7 @@ int main() {
         case 3: cout << "Submenu Reservas (pendiente)\n"; break;
         case 4: cout << "Submenu Reservas (pendiente)\n"; break;
         case 5: cout << "Submenu Tickets (pendiente)\n"; break;
-        case 6: cout << "Submenu Pagos (pendiente)\n"; break;
+        case 6: pa.mostrar(); break;
         case 7: tm.mostrar(); break;
         case 0: cout << "Saliendo del sistema...\n"; break;
         default: cout << "Opcion invalida.\n"; break;

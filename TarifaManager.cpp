@@ -8,22 +8,22 @@
 using namespace std;
 
 static void mostrarTarifaEnConsola(const Tarifa& t){
-    cout << "ID: " << t.getIdTarifa() << "\n";
-    cout << "Tipo Vehiculo: " << t.getTipoVehiculo() << "\n";
-    cout << "Fraccion Min: " << t.getFraccionMin() << " min\n";
-    cout << "Precio por Fraccion: $" << t.getPrecioFraccion() << "\n";
-    cout << "Tope Diario: $" << t.getTopeDiario() << "\n";
-    cout << "Precio Nocturno: $" << t.getPrecioNocturno() << "\n";
-    cout << "Tolerancia: " << t.getToleranciaMin() << " min\n";
+    cout << "ID: " << t.getIdTarifa() << endl;
+    cout << "Tipo Vehiculo: " << t.getTipoVehiculo() << endl;
+    cout << "Fraccion Min: " << t.getFraccionMin() << " min" << endl;
+    cout << "Precio por Fraccion: $" << t.getPrecioFraccion() << endl;
+    cout << "Tope Diario: $" << t.getTopeDiario() << endl;
+    cout << "Precio Nocturno: $" << t.getPrecioNocturno() << endl;
+    cout << "Tolerancia: " << t.getToleranciaMin() << " min" << endl;
     cout << "Vigencia: " << t.getVigenciaDesdeHora().toString()
-         << " -> " << t.getVigenciaHastaHora().toString() << "\n";
-    cout << "Tipo Abono: " << t.getTipoAbono() << "\n";
-    cout << "Estado: " << t.getEstado() << "\n";
+         << " -> " << t.getVigenciaHastaHora().toString() << endl;
+    cout << "Tipo Abono: " << t.getTipoAbono() << endl;
+    cout << "Estado: " << t.getEstado() << endl;
 }
 
 void TarifaManager::altaTarifa()
 {
-    cout << "---- ALTA DE TARIFA ----\n";
+    cout << "---- ALTA DE TARIFA ----" << endl;
     int id = _archivo.getNuevoID();
 
     cout << "Tipo de vehiculo (auto/moto/etc): ";
@@ -41,15 +41,10 @@ void TarifaManager::altaTarifa()
     cout << "Tolerancia (minutos): ";
     cin >> tolerancia;
 
-    int d, m, a;
-
-    cout << "Vigencia DESDE (dd mm aaaa): ";
-    cin >> d >> m >> a;
-    Fecha desde(d, m, a);
-
-    cout << "Vigencia HASTA (dd mm aaaa): ";
-    cin >> d >> m >> a;
-    Fecha hasta(d, m, a);
+    cout << "Vigencia DESDE" << endl;
+    Hora desde = cargarHora();
+    cout << "Vigencia HASTA" << endl;
+    Hora hasta = cargarHora();
 
     cin.ignore();
     cout << "Tipo de abono (texto corto): ";
@@ -66,27 +61,27 @@ void TarifaManager::altaTarifa()
     );
 
     if(_archivo.guardar(t)){
-        cout << "Tarifa #" << id << " guardada correctamente.\n";
+        cout << "Tarifa #" << id << " guardada correctamente." << endl;
     }else{
-        cout << "Error al guardar la tarifa.\n";
+        cout << "Error al guardar la tarifa." << endl;
     }
 }
 
 void TarifaManager::bajaTarifa()
 {
-    cout << "---- BAJA LOGICA DE TARIFA ----\n";
+    cout << "---- BAJA LOGICA DE TARIFA ----" << endl;
     int id;
     cout << "Ingrese ID de tarifa: ";
     cin >> id;
 
     int pos = _archivo.buscarPorId(id);
     if(pos == -1){
-        cout << "No existe una tarifa con ese ID.\n";
+        cout << "No existe una tarifa con ese ID." << endl;
         return;
     }
 
     Tarifa reg = _archivo.leer(pos);
-    cout << "Tarifa encontrada:\n";
+    cout << "Tarifa encontrada:" << endl;
     mostrarTarifaEnConsola(reg);
 
     char conf;
@@ -95,46 +90,46 @@ void TarifaManager::bajaTarifa()
 
     if(conf=='s' || conf=='S'){
         if(_archivo.bajaLogicaPorPos(id -1, "INACTIVO")){
-            cout << "Tarifa dada de baja correctamente.\n";
+            cout << "Tarifa dada de baja correctamente." << endl;
         }else{
-            cout << "No se pudo realizar la baja.\n";
+            cout << "No se pudo realizar la baja." << endl;
         }
     }else{
-        cout << "Operacion cancelada.\n";
+        cout << "Operacion cancelada." << endl;
     }
 }
 
 void TarifaManager::modificarTarifa()
 {
-    cout << "---- MODIFICAR TARIFA ----\n";
+    cout << "---- MODIFICAR TARIFA ----" << endl;
     int id;
     cout << "Ingrese ID de tarifa: ";
     cin >> id;
 
     int pos = _archivo.buscarPorId(id);
     if(pos == -1){
-        cout << "No existe una tarifa con ese ID.\n";
+        cout << "No existe una tarifa con ese ID." << endl;
         return;
     }
 
     Tarifa t = _archivo.leer(pos);
-    cout << "Valores actuales:\n";
+    cout << "Valores actuales:" << endl;
     mostrarTarifaEnConsola(t);
 
     int opcion = -1;
     while(opcion != 0){
-        cout << "\nQue desea modificar?\n";
-        cout << "1) Tipo de vehiculo\n";
-        cout << "2) Fraccion minima\n";
-        cout << "3) Precio por fraccion\n";
-        cout << "4) Tope diario\n";
-        cout << "5) Precio nocturno\n";
-        cout << "6) Tolerancia\n";
-        cout << "7) Vigencia DESDE\n";
-        cout << "8) Vigencia HASTA\n";
-        cout << "9) Tipo de abono\n";
-        cout << "10) Estado\n";
-        cout << "0) Guardar y salir\n";
+        cout << endl << "Que desea modificar?" << endl;
+        cout << "1) Tipo de vehiculo" << endl;
+        cout << "2) Fraccion minima" << endl;
+        cout << "3) Precio por fraccion" << endl;
+        cout << "4) Tope diario" << endl;
+        cout << "5) Precio nocturno" << endl;
+        cout << "6) Tolerancia" << endl;
+        cout << "7) Vigencia DESDE" << endl;
+        cout << "8) Vigencia HASTA" << endl;
+        cout << "9) Tipo de abono" << endl;
+        cout << "10) Estado" << endl;
+        cout << "0) Guardar y salir" << endl;
         cout << "Opcion: ";
         cin >> opcion;
 
@@ -168,12 +163,12 @@ void TarifaManager::modificarTarifa()
                 t.setToleranciaMin(v);
             }break;
             case 7:{
-                int d,m,a; cout << "Nueva vigencia DESDE (dd mm aaaa): ";
-                cin >> d >> m >> a; t.setVigenciaDesdeHora(Fecha(d,m,a));
+                cout << "Nueva vigencia DESDE" << endl;
+                t.setVigenciaDesdeHora(cargarHora());
             }break;
             case 8:{
-                int d,m,a; cout << "Nueva vigencia HASTA (dd mm aaaa): ";
-                cin >> d >> m >> a; t.setVigenciaHastaHora(Fecha(d,m,a));
+                cout << "Nueva vigencia HASTA" << endl;
+                t.setVigenciaHastaHora(cargarHora());
             }break;
             case 9:{
                 cin.ignore();
@@ -187,25 +182,25 @@ void TarifaManager::modificarTarifa()
                 string s = cargarCadena();
                 t.setEstado(s.c_str());
             }break;
-            default: cout << "Opcion no valida.\n"; break;
+            default: cout << "Opcion no valida." << endl; break;
         }
     }
 
     if(_archivo.guardar(pos, t)){
-        cout << "Tarifa actualizada correctamente.\n";
+        cout << "Tarifa actualizada correctamente." << endl;
     }else{
-        cout << "Error al guardar los cambios.\n";
+        cout << "Error al guardar los cambios." << endl;
     }
 }
 
 void TarifaManager::listarTarifas()
 {
-    cout << "---- LISTADO DE TARIFAS ----\n";
+    cout << "---- LISTADO DE TARIFAS ----" << endl;
     int cant = _archivo.getCantidadRegistros();
     for(int i=0; i<cant; ++i){
         Tarifa t = _archivo.leer(i);
         if(t.getIdTarifa() == -1) continue; // registro invalido
         mostrarTarifaEnConsola(t);
-        cout << "-----------------------------\n";
+        cout << "-----------------------------" << endl;
     }
 }

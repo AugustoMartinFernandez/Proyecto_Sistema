@@ -1,4 +1,6 @@
 #pragma once
+#include <string>
+#include "Hora.h"
 #include "TarifaArchivo.h"
 
 class TarifaManager

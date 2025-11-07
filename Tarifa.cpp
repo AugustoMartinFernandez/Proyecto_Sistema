@@ -22,7 +22,7 @@ Tarifa::Tarifa()
 Tarifa::Tarifa(
     int idTarifa, std::string tipoVehiculo, int fraccionMin,
     float precioFraccion, float topeDiario, float precioNocturno,
-    int toleranciaMin, Fecha vigenciaDesdeHora, Fecha vigenciaHastaHora,
+    int toleranciaMin, Hora vigenciaDesdeHora, Hora vigenciaHastaHora,
     char tipoAbono[20], char estado[20]
 )
 {
@@ -72,11 +72,11 @@ void Tarifa::setToleranciaMin(int toleranciaMin)
     _toleranciaMin = toleranciaMin;
 }
 
-void Tarifa::setVigenciaDesdeHora(Fecha vigenciaDesdeHora)
+void Tarifa::setVigenciaDesdeHora(Hora vigenciaDesdeHora)
 {
     _vigenciaDesdeHora = vigenciaDesdeHora;
 }
-void Tarifa::setVigenciaHastaHora(Fecha vigenciaHastaHora)
+void Tarifa::setVigenciaHastaHora(Hora vigenciaHastaHora)
 {
     _vigenciaHastaHora = vigenciaHastaHora;
 }
@@ -122,11 +122,11 @@ int Tarifa::getToleranciaMin() const
 {
     return _toleranciaMin;
 }
-Fecha Tarifa::getVigenciaDesdeHora() const
+Hora Tarifa::getVigenciaDesdeHora() const
 {
     return _vigenciaDesdeHora;
 }
-Fecha Tarifa::getVigenciaHastaHora() const
+Hora Tarifa::getVigenciaHastaHora() const
 {
     return _vigenciaHastaHora;
 }
