@@ -72,19 +72,17 @@ void ArchivoVehiculo::listar() {
 int ArchivoVehiculo::buscarPorPatente(const char* patente) {
 	Vehiculo reg;
 	int pos = 0;
-	FILE* p;
-	p = fopen(_nombreArchivo.c_str(),"rb");
-	if (p == nullptr) {
-		return -1;
-	}
-	while (fread(&reg, sizeof(Vehiculo),1,p)==1) {
-		const char* regPatente = reg.getPatente();
-		if (regPatente != nullptr && strcmp(regPatente,patente) == 0) {
+	FILE* p = fopen(_nombreArchivo.c_str(), "rb");
+	if (p == nullptr) return -1;
+
+	while (fread(&reg, sizeof(Vehiculo), 1, p) == 1) {
+		if (strcmp(reg.getPatente(), patente) == 0) {
 			fclose(p);
 			return pos;
 		}
 		pos++;
 	}
+
 	fclose(p);
 	return -1;
 }

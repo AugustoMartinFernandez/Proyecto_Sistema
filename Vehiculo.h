@@ -19,7 +19,7 @@ public:
 	void setTipoVehiculo(const char* tipoVehiculo);
 	void setEstado(const char* estado);
 	void cargar();
-	void mostrar();
+	void mostrar()const;
 	bool esPatenteValida(const char* patenteVal);
 	bool estadoValido(const char* estado);
 };

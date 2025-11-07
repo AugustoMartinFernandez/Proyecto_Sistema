@@ -14,7 +14,7 @@ Cliente::Cliente() {
     _estado = false;
 }
 void Cliente::cargar() {
-    char dni[20], nombre[40], apellido[40], telefono[20], email[40];
+    char dni[9], nombre[30], apellido[30], telefono[12], email[30];
 
     system("cls");
     cout << "==============================" << endl;
@@ -33,10 +33,10 @@ void Cliente::cargar() {
     } while (true);
     cin.ignore();
     cout << "Apellido              : ";
-    cin.getline(apellido, 40);
+    cin.getline(apellido, 30);
     setApellido(apellido);
     cout << "Nombre                : ";
-    cin.getline(nombre, 40);
+    cin.getline(nombre, 30);
     setNombre(nombre);
     do {
         cout << "Telefono              : ";
@@ -60,16 +60,16 @@ void Cliente::cargar() {
         }
         else break;
     } while (true);
+    int estado;
     do {
-        string entrada;
         cout << "Esta activo (1 = Si | 0 = No): ";
-        cin >> entrada;
+        cin >> estado;
 
-        if (entrada == "1") {
+        if (estado == 1) {
             setEstado(true);
             break;
         }
-        else if (entrada == "0") {
+        else if (estado == 0) {
             setEstado(false);
             break;
         }
@@ -83,7 +83,7 @@ void Cliente::cargar() {
     cout << "==============================" << endl;
     system("pause");
 }
-void Cliente::mostrar(){
+void Cliente::mostrar()const{
     cout << "==============================" << endl;
     cout << "        DATOS DEL CLIENTE     " << endl;
     cout << "==============================" << endl;

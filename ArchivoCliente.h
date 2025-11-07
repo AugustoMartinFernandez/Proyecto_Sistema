@@ -15,6 +15,5 @@ public:
 	int buscarPorDni(const char* dni); // busqueda secuencial
 	bool sobreescribir(const Cliente& reg, int pos);// modificar un registro
 	bool guardarEnPos(const Cliente& reg, int pos); // Este metodo reemplaza a Cliente::escribirDisco para permitir guardar en una posicion especifica
-
 };
 

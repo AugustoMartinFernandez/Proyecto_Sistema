@@ -30,5 +30,5 @@ public:
 	void setEstado(bool estado);
 
 	void cargar();
-	void mostrar();
+	void mostrar()const;
 };

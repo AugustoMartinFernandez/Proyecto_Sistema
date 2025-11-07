@@ -91,7 +91,7 @@ void Vehiculo::cargar() {
 	setEstado(estado);
 	cout << "==============================" << endl;
 }
-void Vehiculo::mostrar() {
+void Vehiculo::mostrar()const {
 	cout << "==============================" << endl;
 	cout << "       DATOS DEL VEHICULO     " << endl;
 	cout << "==============================" << endl;

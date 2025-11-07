@@ -128,7 +128,9 @@
     <ClCompile Include="Cliente.cpp" />
     <ClCompile Include="Estacionamiento de Vehiculos.cpp" />
     <ClCompile Include="Fecha.cpp" />
-    <ClCompile Include="MenuClientecpp.cpp" />
+    <ClCompile Include="ManagerCliente.cpp" />
+    <ClCompile Include="ManagerVehiculo.cpp" />
+    <ClCompile Include="MenuCliente.cpp" />
     <ClCompile Include="MenuVehiculo.cpp" />
     <ClCompile Include="Reserva.cpp" />
     <ClCompile Include="Ticket.cpp" />
@@ -139,6 +141,8 @@
     <ClInclude Include="ArchivoVehiculo.h" />
     <ClInclude Include="Cliente.h" />
     <ClInclude Include="Fecha.h" />
+    <ClInclude Include="ManagerCliente.h" />
+    <ClInclude Include="ManagerVehiculo.h" />
     <ClInclude Include="Reserva.h" />
     <ClInclude Include="Ticket.h" />
     <ClInclude Include="Vehiculo.h" />
