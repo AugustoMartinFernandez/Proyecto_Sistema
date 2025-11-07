@@ -5,7 +5,7 @@
 		<Option title="Estacionamiento" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="Tarifa/;Vehiculo/;Cliente/" />
+		<Option virtualFolders="Tarifa/;Vehiculo/;Cliente/;Ticket/;Pago/;Abono/;Plaza/;Reserva/" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/Estacionamiento" prefix_auto="1" extension_auto="1" />
@@ -15,6 +15,8 @@
 				<Compiler>
 					<Add option="-g" />
 					<Add directory="../Estacionamiento" />
+					<Add directory="../Proyecto_Sistema" />
+					<Add directory="include" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -25,6 +27,8 @@
 				<Compiler>
 					<Add option="-O2" />
 					<Add directory="../Estacionamiento" />
+					<Add directory="../Proyecto_Sistema" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -35,11 +39,35 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Abono.cpp">
+			<Option virtualFolder="Abono/" />
+		</Unit>
+		<Unit filename="Abono.h">
+			<Option virtualFolder="Abono/" />
+		</Unit>
+		<Unit filename="AbonoManager.cpp">
+			<Option virtualFolder="Abono/" />
+		</Unit>
+		<Unit filename="AbonoManager.h">
+			<Option virtualFolder="Abono/" />
+		</Unit>
+		<Unit filename="ArchivoAbono.cpp">
+			<Option virtualFolder="Abono/" />
+		</Unit>
+		<Unit filename="ArchivoAbono.h">
+			<Option virtualFolder="Abono/" />
+		</Unit>
 		<Unit filename="ArchivoCliente.cpp">
 			<Option virtualFolder="Cliente/" />
 		</Unit>
 		<Unit filename="ArchivoCliente.h">
 			<Option virtualFolder="Cliente/" />
+		</Unit>
+		<Unit filename="ArchivoPlaza.cpp">
+			<Option virtualFolder="Plaza/" />
+		</Unit>
+		<Unit filename="ArchivoPlaza.h">
+			<Option virtualFolder="Plaza/" />
 		</Unit>
 		<Unit filename="ArchivoVehiculo.cpp">
 			<Option virtualFolder="Vehiculo/" />
@@ -56,14 +84,58 @@
 		<Unit filename="Estacionamiento de Vehiculos.cpp" />
 		<Unit filename="Fecha.cpp" />
 		<Unit filename="Fecha.h" />
+		<Unit filename="Hora.cpp" />
+		<Unit filename="Hora.h" />
 		<Unit filename="MenuClientecpp.cpp">
 			<Option virtualFolder="Cliente/" />
 		</Unit>
+		<Unit filename="MenuPrincipal.cpp" />
+		<Unit filename="MenuPrincipal.h" />
 		<Unit filename="MenuVehiculo.cpp">
 			<Option virtualFolder="Vehiculo/" />
 		</Unit>
-		<Unit filename="Reserva.cpp" />
-		<Unit filename="Reserva.h" />
+		<Unit filename="Pago.cpp">
+			<Option virtualFolder="Pago/" />
+		</Unit>
+		<Unit filename="Pago.h">
+			<Option virtualFolder="Pago/" />
+		</Unit>
+		<Unit filename="PagoArchivo.cpp">
+			<Option virtualFolder="Pago/" />
+		</Unit>
+		<Unit filename="PagoArchivo.h">
+			<Option virtualFolder="Pago/" />
+		</Unit>
+		<Unit filename="PagoManager.cpp">
+			<Option virtualFolder="Pago/" />
+		</Unit>
+		<Unit filename="PagoManager.h">
+			<Option virtualFolder="Pago/" />
+		</Unit>
+		<Unit filename="Plaza.cpp">
+			<Option virtualFolder="Plaza/" />
+		</Unit>
+		<Unit filename="Plaza.h">
+			<Option virtualFolder="Plaza/" />
+		</Unit>
+		<Unit filename="PlazaManager.cpp">
+			<Option virtualFolder="Plaza/" />
+		</Unit>
+		<Unit filename="PlazaManager.h">
+			<Option virtualFolder="Plaza/" />
+		</Unit>
+		<Unit filename="PlazaMenu.cpp">
+			<Option virtualFolder="Plaza/" />
+		</Unit>
+		<Unit filename="PlazaMenu.h">
+			<Option virtualFolder="Plaza/" />
+		</Unit>
+		<Unit filename="Reserva.cpp">
+			<Option virtualFolder="Reserva/" />
+		</Unit>
+		<Unit filename="Reserva.h">
+			<Option virtualFolder="Reserva/" />
+		</Unit>
 		<Unit filename="Tarifa.cpp">
 			<Option virtualFolder="Tarifa/" />
 		</Unit>
@@ -88,14 +160,20 @@
 		<Unit filename="TarifaMenu.h">
 			<Option virtualFolder="Tarifa/" />
 		</Unit>
-		<Unit filename="Ticket.cpp" />
-		<Unit filename="Ticket.h" />
+		<Unit filename="Ticket.cpp">
+			<Option virtualFolder="Ticket/" />
+		</Unit>
+		<Unit filename="Ticket.h">
+			<Option virtualFolder="Ticket/" />
+		</Unit>
 		<Unit filename="Vehiculo.cpp">
 			<Option virtualFolder="Vehiculo/" />
 		</Unit>
 		<Unit filename="Vehiculo.h">
 			<Option virtualFolder="Vehiculo/" />
 		</Unit>
+		<Unit filename="include/PagoMenu.h" />
+		<Unit filename="src/PagoMenu.cpp" />
 		<Unit filename="utils.cpp" />
 		<Unit filename="utils.h" />
 		<Extensions>
