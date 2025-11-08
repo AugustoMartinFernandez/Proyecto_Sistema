@@ -1,21 +1,22 @@
 #include "AbonoManager.h"
 #include <iostream>
 #include <cstring>
+#include "Hora.h"   
+#include "utils.h"  
 
 using namespace std;
 
 AbonoManager::AbonoManager(const char* rutaAbonos) : _archivoAbonos(rutaAbonos) {}
 
 void AbonoManager::altaAbono() {
-    Abono reg; // Objeto local para cargar datos
+    Abono reg; 
     
     cout << "--- ALTA NUEVO ABONO ---" << endl;
 
-    // 1. Pedir datos (Lógica del Manager)
+    // 1. Pedir datos 
     char idCliente[9], plan[21];
     float precio;
     int idTarifa;
-    Hora hDesde, hHasta;
 
     cout << "ID de Cliente (DNI/ID): ";
     cin >> idCliente;
@@ -29,23 +30,25 @@ void AbonoManager::altaAbono() {
     cin >> idTarifa;
     // AQUÍ DEBERÍA IR UNA VALIDACIÓN: Buscar si la Tarifa existe.
 
-    cout << "Hora de inicio (HH MM): ";
-    cin >> hDesde.hora >> hDesde.minutos;
-    cout << "Hora de fin (HH MM): ";
-    cin >> hHasta.hora >> hHasta.minutos;
+
+    cout << "Hora de inicio --" << endl;
+    Hora hDesde = cargarHora();
+    
+    cout << "Hora de fin --" << endl;
+    Hora hHasta = cargarHora();
 
     // 2. Setear datos en el objeto
     reg.setIdCliente(idCliente);
     reg.setPlan(plan);
     reg.setPrecioMensual(precio);
     reg.setIdTarifa(idTarifa);
-    reg.setDesdeHora(hDesde);
-    reg.setHastaHora(hHasta);
+    reg.setDesdeHora(hDesde); 
+    reg.setHastaHora(hHasta); 
     
     // 3. Lógica de Manager (Asignación de ID y Estado inicial)
     int proximoID = _archivoAbonos.contarRegistros() + 1;
     reg.setIdAbono(proximoID);
-    reg.setEstado('A'); // Estado inicial: Activo
+    reg.setEstado('A'); 
 
     // 4. Grabar en Archivo
     if (_archivoAbonos.grabarRegistro(reg)) {
@@ -67,7 +70,8 @@ void AbonoManager::listarAbonos() {
     for (int i = 0; i < cantidad; i++) {
         Abono reg = _archivoAbonos.leerRegistro(i);
         
-        // Verificamos que no sea un registro de error y que no esté dado de baja
+        // Verificamos que no sea un registro de error (ID != -1) 
+        // y que no esté dado de baja (Estado != 'B')
         if (reg.getIdAbono() != -1 && reg.getEstado() != 'B') { 
             reg.mostrar();
             cout << "------------------------" << endl;
@@ -75,7 +79,7 @@ void AbonoManager::listarAbonos() {
     }
 }
 
-// (Stubs: Métodos vacíos para que el Menú compile)
+// Métodos vacíos para que el Menú compile)
 void AbonoManager::modificarAbono() {
     cout << "Funcion MODIFICAR ABONO no implementada." << endl;
 }

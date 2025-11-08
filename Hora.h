@@ -13,16 +13,16 @@ public:
     Hora();
     Hora(int hora, int minuto);
 
-    // --- Getters ---
-    int getHora();
-    int getMinuto();
+    // --- Getters (AHORA SON CONST) ---
+    int getHora() const;
+    int getMinuto() const;
 
     // --- Setters ---
     void setHora(int hora);
     void setMinuto(int minuto);
 
-    // --- Métodos utilitarios ---
-    string toString();                      // Devuelve "HH:MM"
-    int aMinutos();                         // Convierte hora a minutos totales
-    int diferenciaMinutos(const Hora& h);   // Diferencia entre dos horas
+    // --- Métodos utilitarios (AHORA SON CONST) ---
+    string toString() const;
+    int aMinutos() const;
+    int diferenciaMinutos(const Hora& h) const;
 };

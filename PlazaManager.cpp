@@ -54,7 +54,7 @@ void PlazaManager::listarPlazas() {
     }
 
     for (int i = 0; i < cantidad; i++) {
-        Plaza reg = _archivoPlazas.leerRegistro(i);
+        Plaza reg = _archivoPlazas.leer(i);
         
         // Verificamos que no sea un registro de error y que no esté dado de baja
         if (reg.getIdPlaza() != -1 && reg.getEstado() != 'F') { 

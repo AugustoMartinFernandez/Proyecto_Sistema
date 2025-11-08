@@ -1,4 +1,5 @@
 #include "Fecha.h"
+#include <string>
 using namespace std;
 
 Fecha::Fecha() :_dia(0), _mes(0), _anio(0){
@@ -21,13 +22,13 @@ int Fecha::getAnio() {
 void Fecha::setDia(int dia){
 	_dia = dia;
 }
-void Fecha::setMes(int mes){
+void Fecha::setMes(int mes){ 
 	_mes = mes;
 }
 void Fecha::setAnio(int anio){
 	_anio = anio;
 }
 
-string Fecha::toString() {
+string Fecha::toString() const { 
 	return to_string(_dia) + "/" + to_string(_mes) + "/" + to_string(_anio);
 }

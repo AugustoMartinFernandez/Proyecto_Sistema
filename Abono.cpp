@@ -51,42 +51,30 @@ void Abono::setEstado(char e) { estado = e; }
 void Abono::cargar() {
     cout << "--- Carga de nuevo Abono ---" << endl;
     
-    // El ID debería ser autoincremental, gestionado por el Manager
-    cout << "ID Abono: ";
-    cin >> idAbono;
-    
-    char temp[30];
-    cout << "ID de Cliente (DNI/ID): ";
-    cin >> temp;
-    setIdCliente(temp);
+    // ... (pedir idAbono, idCliente, plan, precio, idTarifa) ...
 
-    cout << "Plan (ej: Parcial, Completo): ";
-    cin >> temp;
-    setPlan(temp);
-
-    cout << "Precio Mensual: $";
-    cin >> precioMensual;
-    
-    cout << "ID Tarifa asociada: ";
-    cin >> idTarifa;
-
+    // MODIFICADO: Usamos setters
+    int h, m;
     cout << "Hora de inicio (HH MM): ";
-    cin >> desdeHora.hora >> desdeHora.minutos;
+    cin >> h >> m;
+    desdeHora.setHora(h);
+    desdeHora.setMinuto(m);
+
     cout << "Hora de fin (HH MM): ";
-    cin >> hastaHora.hora >> hastaHora.minutos;
+    cin >> h >> m;
+    hastaHora.setHora(h);
+    hastaHora.setMinuto(m);
     
-    estado = 'A'; // Inicialmente Activo
+    estado = 'A'; 
 }
 
 void Abono::mostrar() const {
     cout << "ID ABONO: " << idAbono << " | ID CLIENTE: " << idCliente << endl;
     cout << "PLAN: " << plan << " | PRECIO: $" << precioMensual << " | TARIFA: " << idTarifa << endl;
     
-    // Formateo de Hora (ej: 08:05)
-    cout << "VIGENCIA HORARIA: " << desdeHora.hora << ":" 
-         << (desdeHora.minutos < 10 ? "0" : "") << desdeHora.minutos;
-    cout << " a " << hastaHora.hora << ":" 
-         << (hastaHora.minutos < 10 ? "0" : "") << hastaHora.minutos;
+    // MODIFICADO: Usamos el método toString() de la clase Hora
+    cout << "VIGENCIA HORARIA: " << desdeHora.toString() 
+         << " a " << hastaHora.toString();
          
     cout << " | ESTADO: " << estado << endl;
 }

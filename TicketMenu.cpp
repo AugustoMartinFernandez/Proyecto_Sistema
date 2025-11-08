@@ -1,14 +1,14 @@
-#include "MenuVehiculo.h"
+#include "TicketMenu.h"
 #include <iostream>
-#include <cstdlib> // Para system("cls") y system("pause")
+#include <cstdlib>
 
 using namespace std;
 
-VehiculoMenu::VehiculoMenu() {
-    _cantidadOpciones = 5; // 1.Alta, 2.Listar, 3.Buscar, 4.Modificar, 5.Baja
+TicketMenu::TicketMenu() {
+    _cantidadOpciones = 4;
 }
 
-void VehiculoMenu::mostrar() {
+void TicketMenu::mostrar() {
     int opcion;
     do {
         system("cls || clear");
@@ -22,19 +22,18 @@ void VehiculoMenu::mostrar() {
     } while (opcion != 0);
 }
 
-void VehiculoMenu::mostrarOpciones() {
-    cout << "--- GESTION DE VEHICULOS ---" << endl;
-    cout << "1 - Alta de vehiculo" << endl;
-    cout << "2 - Listar vehiculos activos" << endl;
-    cout << "3 - Buscar vehiculo por Patente" << endl;
-    cout << "4 - Modificar vehiculo" << endl;
-    cout << "5 - Baja logica (Marcar como Retirado)" << endl;
+void TicketMenu::mostrarOpciones() {
+    cout << "--- GESTION DE TICKETS ---" << endl;
+    cout << "1. Registrar Ingreso (Abrir Ticket)" << endl;
+    cout << "2. Registrar Salida (Cerrar Ticket)" << endl;
+    cout << "3. Listar Tickets Abiertos" << endl;
+    cout << "4. Listar Historial de Tickets (Cerrados)" << endl;
     cout << "---------------------------------" << endl;
     cout << "0 - Volver al Menu Principal" << endl;
     cout << "---------------------------------" << endl;
 }
 
-int VehiculoMenu::seleccionOpcion() { 
+int TicketMenu::seleccionOpcion() {
     int opcion;
     mostrarOpciones();
     cout << "Opcion: ";
@@ -48,22 +47,19 @@ int VehiculoMenu::seleccionOpcion() {
     return opcion;
 }
 
-void VehiculoMenu::ejecutarOpcion(int opcion) {
+void TicketMenu::ejecutarOpcion(int opcion) {
     switch (opcion) {
         case 1:
-            _vehiculoManager.altaVehiculo();
+            _ticketManager.registrarIngreso();
             break;
         case 2:
-            _vehiculoManager.listarVehiculos();
+            _ticketManager.registrarSalida();
             break;
         case 3:
-            _vehiculoManager.buscarVehiculoPorPatente();
+            _ticketManager.listarTicketsAbiertos();
             break;
         case 4:
-            _vehiculoManager.modificarVehiculo();
-            break;
-        case 5:
-            _vehiculoManager.bajaVehiculo();
+            _ticketManager.listarHistorialTickets();
             break;
         case 0:
             cout << "Volviendo al menu principal..." << endl;

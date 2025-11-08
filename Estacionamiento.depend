@@ -279,3 +279,318 @@
 1762549050 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\include\pagomenu.h
 	"PagoManager.h"
 
+1762552409 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\archivoabono.cpp
+	"ArchivoAbono.h"
+	<cstdio>
+
+1762552409 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\archivoabono.h
+	"Abono.h"
+
+1762552409 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\abono.h
+	"Hora.h"
+
+1762616344 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\hora.h
+	<string>
+
+1762552314 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\archivocliente.cpp
+	<iostream>
+	<cstdio>
+	<cstring>
+	"ArchivoCliente.h"
+
+1762552314 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\archivocliente.h
+	<string>
+	"Cliente.h"
+
+1762552314 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\cliente.h
+
+1762621260 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\archivoplaza.cpp
+	"ArchivoPlaza.h"
+	<cstdio>
+	<iostream>
+
+1762621260 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\archivoplaza.h
+	"Plaza.h"
+
+1762552409 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\plaza.h
+
+1762552409 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\archivovehiculo.cpp
+	<iostream>
+	<cstdio>
+	<string>
+	<cstring>
+	"ArchivoVehiculo.h"
+
+1762552314 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\archivovehiculo.h
+	<string>
+	"Vehiculo.h"
+
+1762552314 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\vehiculo.h
+
+1762552314 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\cliente.cpp
+	<iostream>
+	<cstring>
+	<cctype>
+	"Cliente.h"
+
+1762552409 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\estacionamiento de vehiculos.cpp
+	"MenuPrincipal.h"
+
+1762620858 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\menuprincipal.h
+	"PlazaMenu.h"
+	"AbonoMenu.h"
+	"ClienteMenu.h"
+	"MenuVehiculo.h"
+	"TarifaMenu.h"
+	"TicketMenu.h"
+	"PagoMenu.h"
+
+1762552409 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\plazamenu.h
+	"PlazaManager.h"
+
+1762552409 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\plazamanager.h
+	"Plaza.h"
+	"ArchivoPlaza.h"
+
+1762621105 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\fecha.cpp
+	"Fecha.h"
+	<string>
+
+1762621105 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\fecha.h
+	<string>
+
+1762616344 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\hora.cpp
+	"Hora.h"
+	<iostream>
+	<string>
+
+1762552409 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\menuclientecpp.cpp
+	<iostream>
+	<cstring>
+	<stdlib.h>
+	"ArchivoCliente.h"
+	"ArchivoVehiculo.h"
+
+1762620838 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\menuprincipal.cpp
+	"MenuPrincipal.h"
+	<iostream>
+	<cstdlib>
+
+1762620149 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\menuvehiculo.cpp
+	"MenuVehiculo.h"
+	<iostream>
+	<cstdlib>
+
+1762552409 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\pago.cpp
+	<cstring>
+	<string>
+	"Pago.h"
+
+1762552409 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\pago.h
+	<string>
+	"Fecha.h"
+	"Hora.h"
+
+1762552409 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\pagoarchivo.cpp
+	"PagoArchivo.h"
+	<cstdio>
+
+1762552409 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\pagoarchivo.h
+	<string>
+	"Pago.h"
+
+1762552409 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\pagomanager.cpp
+	<iostream>
+	<string>
+	"utils.h"
+	"PagoManager.h"
+	"Pago.h"
+
+1762552409 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\utils.h
+	<string>
+	"Hora.h"
+
+1762552409 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\pagomanager.h
+	"PagoArchivo.h"
+
+1762552409 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\plaza.cpp
+	"Plaza.h"
+	<iostream>
+	<cstring>
+
+1762621267 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\plazamanager.cpp
+	"PlazaManager.h"
+	<iostream>
+	<cstring>
+
+1762552409 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\plazamenu.cpp
+	"PlazaMenu.h"
+	<iostream>
+	<cstdlib>
+
+1762552314 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\reserva.cpp
+	<iostream>
+	<cstring>
+	<cctype>
+	"Reserva.h"
+
+1762552314 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\reserva.h
+
+1762552409 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\src\pagomenu.cpp
+	<iostream>
+	"PagoMenu.h"
+
+1762552409 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\include\pagomenu.h
+	"PagoManager.h"
+
+1762621105 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\tarifa.cpp
+	<iostream>
+	<cstring>
+	<string>
+	"Tarifa.h"
+
+1762552409 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\tarifa.h
+	"Hora.h"
+
+1762552409 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\tarifaarchivo.cpp
+	<cstdio>
+	<cstring>
+	"TarifaArchivo.h"
+
+1762552409 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\tarifaarchivo.h
+	<string>
+	"Tarifa.h"
+
+1762552409 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\tarifamanager.cpp
+	<iostream>
+	<string>
+	"utils.h"
+	"Tarifa.h"
+	"TarifaArchivo.h"
+	"TarifaManager.h"
+
+1762552409 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\tarifamanager.h
+	<string>
+	"Hora.h"
+	"TarifaArchivo.h"
+
+1762617045 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\tarifamenu.cpp
+	<iostream>
+	"TarifaMenu.h"
+
+1762552409 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\tarifamenu.h
+	"TarifaManager.h"
+
+1762620838 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\ticket.cpp
+	"Ticket.h"
+	<iostream>
+	<cstring>
+	"utils.h"
+
+1762620838 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\ticket.h
+	"Hora.h"
+	"Fecha.h"
+
+1762552409 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\utils.cpp
+	<iostream>
+	"utils.h"
+
+1762552314 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\vehiculo.cpp
+	<iostream>
+	<cstring>
+	<cctype>
+	<cstdio>
+	"Vehiculo.h"
+
+1762616344 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\abono.cpp
+	"Abono.h"
+	<iostream>
+	<cstring>
+
+1762616344 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\abonomanager.cpp
+	"AbonoManager.h"
+	<iostream>
+	<cstring>
+	"Hora.h"
+	"utils.h"
+
+1762552409 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\abonomanager.h
+	"Abono.h"
+	"ArchivoAbono.h"
+	"Hora.h"
+
+1762616887 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\abonomenu.h
+	"AbonoManager.h"
+
+1762616887 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\abonomenu.cpp
+	"AbonoMenu.h"
+	<iostream>
+	<cstdlib>
+
+1762620081 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\clientemenu.h
+	"ClienteManager.h"
+
+1762620081 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\clientemanager.h
+	"ArchivoCliente.h"
+	"ArchivoVehiculo.h"
+	<string>
+
+1762620081 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\clientemanager.cpp
+	"ClienteManager.h"
+	"Cliente.h"
+	"Vehiculo.h"
+	<iostream>
+	<cstring>
+
+1762620081 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\clientemenu.cpp
+	"ClienteMenu.h"
+	<iostream>
+	<cstdlib>
+
+1762620081 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\menuvehiculo.h
+	"VehiculoManager.h"
+
+1762620081 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\vehiculomanager.h
+	"ArchivoVehiculo.h"
+	"ArchivoCliente.h"
+	<string>
+
+1762620081 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\vehiculomanager.cpp
+	"VehiculoManager.h"
+	"Vehiculo.h"
+	"Cliente.h"
+	<iostream>
+	<cstring>
+
+1762620838 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\archivoticket.cpp
+	"ArchivoTicket.h"
+	<cstdio>
+
+1762620838 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\archivoticket.h
+	"Ticket.h"
+	<string>
+
+1762620838 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\ticketmenu.h
+	"TicketManager.h"
+
+1762620875 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\ticketmanager.h
+	"ArchivoTicket.h"
+	"ArchivoPlaza.h"
+	"ArchivoVehiculo.h"
+	"TarifaArchivo.h"
+
+1762620838 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\ticketmenu.cpp
+	"TicketMenu.h"
+	<iostream>
+	<cstdlib>
+
+1762621323 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\ticketmanager.cpp
+	"TicketManager.h"
+	"Ticket.h"
+	"Plaza.h"
+	"Vehiculo.h"
+	"Tarifa.h"
+	"utils.h"
+	<iostream>
+	<cstring>
+

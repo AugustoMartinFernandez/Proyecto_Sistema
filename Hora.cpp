@@ -11,12 +11,12 @@ Hora::Hora(int hora, int minuto) {
     setMinuto(minuto);
 }
 
-// --- Getters ---
-int Hora::getHora() {
+// --- Getters (con const) ---
+int Hora::getHora() const {
     return _hora;
 }
 
-int Hora::getMinuto() {
+int Hora::getMinuto() const {
     return _minuto;
 }
 
@@ -31,19 +31,21 @@ void Hora::setMinuto(int minuto) {
     else _minuto = 0;
 }
 
-// --- Devuelve la hora como texto "HH:MM" ---
-string Hora::toString() {
+// --- toString (con const) ---
+string Hora::toString() const {
     string h = (_hora < 10 ? "0" : "") + to_string(_hora);
     string m = (_minuto < 10 ? "0" : "") + to_string(_minuto);
     return h + ":" + m;
 }
 
-// --- Convierte a minutos totales desde 00:00 ---
-int Hora::aMinutos() {
+// --- aMinutos (con const) ---
+int Hora::aMinutos() const {
     return _hora * 60 + _minuto;
 }
 
-// --- Diferencia en minutos entre dos horas ---
-int Hora::diferenciaMinutos(const Hora& h) {
-    return this->aMinutos() - h._hora * 60 - h._minuto;
+// --- diferenciaMinutos (con const) ---
+int Hora::diferenciaMinutos(const Hora& h) const {
+    // El 'this' es const, pero 'h' no necesita serlo para leer sus miembros privados
+    // (Aunque el parámetro 'h' ya es 'const Hora&')
+    return this->aMinutos() - h.aMinutos(); // Usamos aMinutos() para ser consistentes
 }

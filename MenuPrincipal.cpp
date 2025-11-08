@@ -12,7 +12,7 @@ void MenuPrincipal::mostrar() {
     int opcion;
     do {
         system("cls || clear");
-        opcion = seleccionOpciones();
+        opcion = seleccionOpcion();
         system("cls || clear");
         ejecutarOpcion(opcion);
         
@@ -38,7 +38,7 @@ void MenuPrincipal::mostrarOpciones() {
     cout << "---------------------------------" << endl;
 }
 
-int MenuPrincipal::seleccionOpciones() {
+int MenuPrincipal::seleccionOpcion() {
     int opcion;
     mostrarOpciones();
     cout << "Seleccione un modulo: ";
@@ -55,24 +55,58 @@ void MenuPrincipal::ejecutarOpcion(int opcion) {
     switch (opcion) {
         case 1:
         {
-            // Creamos el sub-menú y lo mostramos
             PlazaMenu menuPlazas;
-            menuPlazas.mostrar(); // Entra al bucle de PlazaMenu
-            break; // Cuando sale (opcion 0), vuelve aquí
+            menuPlazas.mostrar(); 
+            break; 
         }
         case 2:
         {
-            // AbonoMenu menuAbonos;
-            // menuAbonos.mostrar();
-            cout << "Modulo ABONOS no implementado." << endl;
+            AbonoMenu menuAbonos;
+            menuAbonos.mostrar();
             break;
         }
-        case 3:
-            cout << "Modulo CLIENTES no implementado." << endl;
+        case 3: 
+        {
+            ClienteMenu menuClientes;
+            menuClientes.mostrar();
             break;
-        // ... (Resto de los casos)
+        }
+        case 4: 
+        {
+            VehiculoMenu menuVehiculos;
+            menuVehiculos.mostrar();
+            break;
+        }
+        case 5: 
+        {
+            TarifaMenu menuTarifas;
+            menuTarifas.mostrar();
+            break;
+        }
+        case 6: 
+        {
+            // ReservaMenu menuReservas;
+            // menuReservas.mostrar();
+            cout << "Modulo RESERVAS no implementado." << endl;
+            break;
+        }
+        case 7:
+        {
+            TicketMenu menuTickets;
+            menuTickets.mostrar();
+            break;
+        }
+        case 8:
+        {
+            PagoMenu menuPagos;
+            menuPagos.mostrar();
+            break;
+        }
         case 0:
             cout << "Gracias por utilizar el sistema. Adios." << endl;
+            break;
+        default:
+            cout << "Opcion invalida." << endl;
             break;
     }
 }

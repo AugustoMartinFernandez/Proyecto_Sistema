@@ -1,3 +1,4 @@
+#include <iostream>
 #include <cstring>
 #include <string>
 #include "Tarifa.h"
@@ -153,4 +154,46 @@ std::string Tarifa::toString()
             _vigenciaDesdeHora.toString() + " -> " + _vigenciaHastaHora.toString() + ", " +
             std::string(_tipoAbono) + ", " +
             std::string(_estado);
+}
+
+float Tarifa::calcularImporte(Hora ingreso, Hora salida)
+{
+    // Lógica de cálculo simple (MEJORAR ESTO)
+    // No usa la fecha, asume que es el mismo día.
+    
+    int minutosIngreso = ingreso.aMinutos();
+    int minutosSalida = salida.aMinutos();
+    
+    int minutosTotales = minutosSalida - minutosIngreso;
+    
+    if (minutosTotales <= _toleranciaMin) {
+        return 0.0f; // Dentro de la tolerancia
+    }
+
+    if (_fraccionMin == 0) {
+        return 9999.9f; // Evitar división por cero
+    }
+
+    // Calculamos cuántas fracciones de tiempo pasaron
+    int cantidadFracciones = minutosTotales / _fraccionMin;
+    if (minutosTotales % _fraccionMin > 0) {
+        cantidadFracciones++; // Se cobra fracción extra
+    }
+    
+    float importeCalculado = cantidadFracciones * _precioFraccion;
+
+    // Aplicar tope diario
+    if (importeCalculado > _topeDiario) {
+        return _topeDiario;
+    }
+    
+    return importeCalculado;
+}
+
+// (implementar 'cargar' y 'mostrar' si faltan)
+void Tarifa::cargar() {
+    cout << "Metodo Tarifa::cargar() no implementado." << endl;
+}
+void Tarifa::mostrar() {
+    cout << "Metodo Tarifa::mostrar() no implementado." << endl;
 }

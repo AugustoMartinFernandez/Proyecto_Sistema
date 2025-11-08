@@ -1,0 +1,12 @@
+# Archivos compilados de C/C++
+*.o
+*.exe
+*.dll
+
+# Carpetas de Code::Blocks
+obj/
+bin/
+
+# Archivos de Layout de Code::Blocks
+*.layout
+*.depend

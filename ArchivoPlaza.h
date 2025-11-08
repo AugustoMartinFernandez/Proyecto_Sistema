@@ -13,7 +13,7 @@ public:
 
     bool grabarRegistro(const Plaza& reg);        
     bool modificarRegistro(const Plaza& reg, int pos); 
-    Plaza leerRegistro(int pos);       
+    Plaza leer(int pos);       
     int contarRegistros() const;                 
 };
 
