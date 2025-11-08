@@ -51,6 +51,13 @@
 		<Unit filename="AbonoManager.h">
 			<Option virtualFolder="Abono/" />
 		</Unit>
+		<Unit filename="AbonoMenu.cpp">
+			<Option virtualFolder="Abono/" />
+		</Unit>
+		<Unit filename="AbonoMenu.h">
+			<Option virtualFolder="Abono/" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="ArchivoAbono.cpp">
 			<Option virtualFolder="Abono/" />
 		</Unit>
@@ -69,6 +76,13 @@
 		<Unit filename="ArchivoPlaza.h">
 			<Option virtualFolder="Plaza/" />
 		</Unit>
+		<Unit filename="ArchivoTicket.cpp">
+			<Option virtualFolder="Ticket/" />
+		</Unit>
+		<Unit filename="ArchivoTicket.h">
+			<Option virtualFolder="Ticket/" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="ArchivoVehiculo.cpp">
 			<Option virtualFolder="Vehiculo/" />
 		</Unit>
@@ -81,18 +95,33 @@
 		<Unit filename="Cliente.h">
 			<Option virtualFolder="Cliente/" />
 		</Unit>
+		<Unit filename="ClienteManager.cpp">
+			<Option virtualFolder="Cliente/" />
+		</Unit>
+		<Unit filename="ClienteManager.h">
+			<Option virtualFolder="Cliente/" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="ClienteMenu.cpp">
+			<Option virtualFolder="Cliente/" />
+		</Unit>
+		<Unit filename="ClienteMenu.h">
+			<Option virtualFolder="Cliente/" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="Estacionamiento de Vehiculos.cpp" />
 		<Unit filename="Fecha.cpp" />
 		<Unit filename="Fecha.h" />
 		<Unit filename="Hora.cpp" />
 		<Unit filename="Hora.h" />
-		<Unit filename="MenuClientecpp.cpp">
-			<Option virtualFolder="Cliente/" />
-		</Unit>
 		<Unit filename="MenuPrincipal.cpp" />
 		<Unit filename="MenuPrincipal.h" />
 		<Unit filename="MenuVehiculo.cpp">
 			<Option virtualFolder="Vehiculo/" />
+		</Unit>
+		<Unit filename="MenuVehiculo.h">
+			<Option virtualFolder="Vehiculo/" />
+			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="Pago.cpp">
 			<Option virtualFolder="Pago/" />
@@ -166,14 +195,37 @@
 		<Unit filename="Ticket.h">
 			<Option virtualFolder="Ticket/" />
 		</Unit>
+		<Unit filename="TicketManager.cpp">
+			<Option virtualFolder="Ticket/" />
+		</Unit>
+		<Unit filename="TicketManager.h">
+			<Option virtualFolder="Ticket/" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="TicketMenu.cpp">
+			<Option virtualFolder="Ticket/" />
+		</Unit>
+		<Unit filename="TicketMenu.h">
+			<Option virtualFolder="Ticket/" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="Vehiculo.cpp">
 			<Option virtualFolder="Vehiculo/" />
 		</Unit>
 		<Unit filename="Vehiculo.h">
 			<Option virtualFolder="Vehiculo/" />
 		</Unit>
+		<Unit filename="VehiculoManager.cpp">
+			<Option virtualFolder="Vehiculo/" />
+		</Unit>
+		<Unit filename="VehiculoManager.h">
+			<Option virtualFolder="Vehiculo/" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="include/PagoMenu.h" />
-		<Unit filename="src/PagoMenu.cpp" />
+		<Unit filename="src/PagoMenu.cpp">
+			<Option virtualFolder="Pago/" />
+		</Unit>
 		<Unit filename="utils.cpp" />
 		<Unit filename="utils.h" />
 		<Extensions>

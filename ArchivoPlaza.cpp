@@ -36,7 +36,7 @@ bool ArchivoPlaza::modificarRegistro(const Plaza& reg, int pos) {
 }
 
 // Leer: Devuelve el objeto Plaza leído o un objeto con ID = -1 en caso de error.
-Plaza ArchivoPlaza::leerRegistro(int pos) {
+Plaza ArchivoPlaza::leer(int pos) {
     Plaza registro; // Objeto local. Por defecto, su ID es -1 (indicador de error).
     FILE *pFile;
 

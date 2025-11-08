@@ -1,14 +1,14 @@
-#include "MenuVehiculo.h"
+#include "ClienteMenu.h"
 #include <iostream>
 #include <cstdlib> // Para system("cls") y system("pause")
 
 using namespace std;
 
-VehiculoMenu::VehiculoMenu() {
+ClienteMenu::ClienteMenu() {
     _cantidadOpciones = 5; // 1.Alta, 2.Listar, 3.Buscar, 4.Modificar, 5.Baja
 }
 
-void VehiculoMenu::mostrar() {
+void ClienteMenu::mostrar() {
     int opcion;
     do {
         system("cls || clear");
@@ -22,19 +22,19 @@ void VehiculoMenu::mostrar() {
     } while (opcion != 0);
 }
 
-void VehiculoMenu::mostrarOpciones() {
-    cout << "--- GESTION DE VEHICULOS ---" << endl;
-    cout << "1 - Alta de vehiculo" << endl;
-    cout << "2 - Listar vehiculos activos" << endl;
-    cout << "3 - Buscar vehiculo por Patente" << endl;
-    cout << "4 - Modificar vehiculo" << endl;
-    cout << "5 - Baja logica (Marcar como Retirado)" << endl;
+void ClienteMenu::mostrarOpciones() {
+    cout << "--- GESTION DE CLIENTES ---" << endl;
+    cout << "1 - Alta de cliente" << endl;
+    cout << "2 - Listar clientes activos" << endl;
+    cout << "3 - Buscar cliente por DNI" << endl;
+    cout << "4 - Modificar cliente" << endl;
+    cout << "5 - Baja logica de cliente" << endl;
     cout << "---------------------------------" << endl;
     cout << "0 - Volver al Menu Principal" << endl;
     cout << "---------------------------------" << endl;
 }
 
-int VehiculoMenu::seleccionOpcion() { 
+int ClienteMenu::seleccionOpcion() { 
     int opcion;
     mostrarOpciones();
     cout << "Opcion: ";
@@ -48,22 +48,22 @@ int VehiculoMenu::seleccionOpcion() {
     return opcion;
 }
 
-void VehiculoMenu::ejecutarOpcion(int opcion) {
+void ClienteMenu::ejecutarOpcion(int opcion) {
     switch (opcion) {
         case 1:
-            _vehiculoManager.altaVehiculo();
+            _clienteManager.altaCliente();
             break;
         case 2:
-            _vehiculoManager.listarVehiculos();
+            _clienteManager.listarClientesActivos();
             break;
         case 3:
-            _vehiculoManager.buscarVehiculoPorPatente();
+            _clienteManager.buscarClientePorDni();
             break;
         case 4:
-            _vehiculoManager.modificarVehiculo();
+            _clienteManager.modificarCliente();
             break;
         case 5:
-            _vehiculoManager.bajaVehiculo();
+            _clienteManager.bajaCliente();
             break;
         case 0:
             cout << "Volviendo al menu principal..." << endl;

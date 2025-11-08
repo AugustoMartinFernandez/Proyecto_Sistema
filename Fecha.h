@@ -15,11 +15,10 @@ public:
 	void setDia(int dia);
 
 	int getMes();
-	void setMes(int dia);
+	void setMes(int dia); 
 
 	int getAnio();
 	void setAnio(int anio);
 
-	std::string toString();
+	std::string toString() const; 
 };
-
