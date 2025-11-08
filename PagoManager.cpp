@@ -30,10 +30,8 @@ void PagoManager::altaPago(){
     cout << "Importe: $";
     cin >> importe;
 
-    int d,m,a;
-    cout << "Fecha (dd mm aaaa): ";
-    cin >> d >> m >> a;
-    Fecha fecha(d,m,a);
+    cout << "Fecha (dd mm aaaa): " << endl;
+    Fecha fecha = cargarFecha();
 
     cout << "Hora: " << endl;
     Hora hora = cargarHora();
@@ -111,9 +109,8 @@ void PagoManager::modificarPago(){
             }break;
             case 3:{
                 int d,m,a;
-                cout << "Nueva fecha (dd mm aaaa): ";
-                cin >> d >> m >> a;
-                p.setFecha(Fecha(d,m,a));
+                cout << "Nueva fecha (dd mm aaaa): " << endl;
+                p.setFecha(cargarFecha());
             }break;
             case 4:{
                 cout << "Nueva hora (hh mm): " << endl;

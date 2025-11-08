@@ -165,6 +165,24 @@
 		<Unit filename="Reserva.h">
 			<Option virtualFolder="Reserva/" />
 		</Unit>
+		<Unit filename="ReservaArchivo.cpp">
+			<Option virtualFolder="Reserva/" />
+		</Unit>
+		<Unit filename="ReservaArchivo.h">
+			<Option virtualFolder="Reserva/" />
+		</Unit>
+		<Unit filename="ReservaManager.cpp">
+			<Option virtualFolder="Reserva/" />
+		</Unit>
+		<Unit filename="ReservaManager.h">
+			<Option virtualFolder="Reserva/" />
+		</Unit>
+		<Unit filename="ReservaMenu.cpp">
+			<Option virtualFolder="Reserva/" />
+		</Unit>
+		<Unit filename="ReservaMenu.h">
+			<Option virtualFolder="Reserva/" />
+		</Unit>
 		<Unit filename="Tarifa.cpp">
 			<Option virtualFolder="Tarifa/" />
 		</Unit>

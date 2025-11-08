@@ -10,15 +10,15 @@
 using namespace std;
 
 TicketManager::TicketManager(const char* rutaTickets, const char* rutaPlazas, const std::string& rutaVehiculos, const std::string& rutaTarifas)
-    : _archivoTickets(rutaTickets), 
-      _archivoPlazas(rutaPlazas), 
-      _archivoVehiculos(rutaVehiculos), 
+    : _archivoTickets(rutaTickets),
+      _archivoPlazas(rutaPlazas),
+      _archivoVehiculos(rutaVehiculos),
       _archivoTarifas(rutaTarifas) {}
 
 
 void TicketManager::registrarIngreso() {
     cout << "--- REGISTRAR INGRESO ---" << endl;
-    
+
     char patente[10];
     int idPlaza;
 
@@ -42,7 +42,7 @@ void TicketManager::registrarIngreso() {
 
     // 2. Validar Plaza
     // (Asumimos que idPlaza = 1 es la pos 0, idPlaza = 2 es la pos 1...)
-    int posPlaza = idPlaza - 1; 
+    int posPlaza = idPlaza - 1;
     Plaza plaza = _archivoPlazas.leer(posPlaza);
 
     if (plaza.getIdPlaza() == -1) {
@@ -99,7 +99,7 @@ void TicketManager::registrarIngreso() {
 
 void TicketManager::registrarSalida() {
     cout << "--- REGISTRAR SALIDA (CERRAR TICKET) ---" << endl;
-    
+
     int idTicket;
     cout << "Ingrese ID del Ticket a cerrar: ";
     cin >> idTicket;
@@ -135,9 +135,9 @@ void TicketManager::registrarSalida() {
 
     // 4. Calcular Importe
     // (Esta función la implementamos en Tarifa.cpp)
-    float importe = tarifa.calcularImporte(ticket.getIngresoHora(), hSalida); 
+    float importe = tarifa.calcularImporte(ticket.getIngresoHora(), hSalida);
     // (NOTA: Este cálculo es simple, no usa la Fecha. La implementación de calcularImporte debemos modificarla)
-    
+
     cout << "-------------------------" << endl;
     cout << "IMPORTE A COBRAR: $" << importe << endl;
     cout << "-------------------------" << endl;
@@ -169,7 +169,7 @@ void TicketManager::listarTicketsAbiertos() {
     cout << "--- TICKETS ABIERTOS (ESTACIONADOS) ---" << endl;
     int cant = _archivoTickets.getCantidadRegistros();
     bool encontrados = false;
-    
+
     for (int i = 0; i < cant; i++) {
         Ticket t = _archivoTickets.leer(i);
         if (strcmp(t.getEstado(), "Abierto") == 0) {
@@ -187,7 +187,7 @@ void TicketManager::listarHistorialTickets() {
     cout << "--- HISTORIAL DE TICKETS (CERRADOS) ---" << endl;
     int cant = _archivoTickets.getCantidadRegistros();
     bool encontrados = false;
-    
+
     for (int i = 0; i < cant; i++) {
         Ticket t = _archivoTickets.leer(i);
         if (strcmp(t.getEstado(), "Cerrado") == 0) {

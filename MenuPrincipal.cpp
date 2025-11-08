@@ -5,7 +5,7 @@
 using namespace std;
 
 MenuPrincipal::MenuPrincipal() {
-    _cantidadOpciones = 8; 
+    _cantidadOpciones = 8;
 }
 
 void MenuPrincipal::mostrar() {
@@ -15,7 +15,7 @@ void MenuPrincipal::mostrar() {
         opcion = seleccionOpcion();
         system("cls || clear");
         ejecutarOpcion(opcion);
-        
+
         if (opcion != 0) {
             system("pause");
         }
@@ -56,8 +56,8 @@ void MenuPrincipal::ejecutarOpcion(int opcion) {
         case 1:
         {
             PlazaMenu menuPlazas;
-            menuPlazas.mostrar(); 
-            break; 
+            menuPlazas.mostrar();
+            break;
         }
         case 2:
         {
@@ -65,28 +65,28 @@ void MenuPrincipal::ejecutarOpcion(int opcion) {
             menuAbonos.mostrar();
             break;
         }
-        case 3: 
+        case 3:
         {
             ClienteMenu menuClientes;
             menuClientes.mostrar();
             break;
         }
-        case 4: 
+        case 4:
         {
             VehiculoMenu menuVehiculos;
             menuVehiculos.mostrar();
             break;
         }
-        case 5: 
+        case 5:
         {
             TarifaMenu menuTarifas;
             menuTarifas.mostrar();
             break;
         }
-        case 6: 
+        case 6:
         {
-            // ReservaMenu menuReservas;
-            // menuReservas.mostrar();
+            ReservaMenu menuReservas;
+            menuReservas.mostrar();
             cout << "Modulo RESERVAS no implementado." << endl;
             break;
         }
