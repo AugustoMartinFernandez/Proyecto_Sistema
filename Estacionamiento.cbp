@@ -172,8 +172,12 @@
 		<Unit filename="Vehiculo.h">
 			<Option virtualFolder="Vehiculo/" />
 		</Unit>
-		<Unit filename="include/PagoMenu.h" />
-		<Unit filename="src/PagoMenu.cpp" />
+		<Unit filename="include/PagoMenu.h">
+			<Option virtualFolder="Pago/" />
+		</Unit>
+		<Unit filename="src/PagoMenu.cpp">
+			<Option virtualFolder="Pago/" />
+		</Unit>
 		<Unit filename="utils.cpp" />
 		<Unit filename="utils.h" />
 		<Extensions>
