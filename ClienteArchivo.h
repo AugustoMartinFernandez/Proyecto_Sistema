@@ -2,23 +2,20 @@
 #include <string>
 #include "Cliente.h"
 
-class ClienteArchivo {
+class ClienteArchivo
+{
 public:
-    explicit ClienteArchivo(std::string nombreArchivo = "clientes.dat");
+    ClienteArchivo(std::string nombreArchivo = "clientes.dat");
 
-    // Altas / Modificación
-    bool guardar(Cliente registro);                 // append
-    bool guardar(int pos, Cliente registro);        // overwrite por posición
+    bool guardar(Cliente registro);
+    bool guardar(int pos, Cliente registro);
 
-    // Lectura
     Cliente leer(int pos);
-    int     leerTodos(Cliente* vec, int cantidad);
-    int     getCantidadRegistros();
+    int leerTodos(Cliente *vec, int cantidad);
+    int getCantidadRegistros();
 
-    // Búsquedas
     int buscarDNI(const std::string& dni);          // devuelve pos o -1
 
-    // Baja lógica
     bool eliminar(int pos);                         // estado = false
 
 private:

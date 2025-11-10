@@ -1,5 +1,4 @@
-#ifndef PLAZAMANAGER_H
-#define PLAZAMANAGER_H
+#pragma once
 
 #include "Plaza.h"
 #include "ArchivoPlaza.h"
@@ -10,13 +9,10 @@ private:
 
 public:
     // Constructor (podría inicializar el nombre de archivo si fuera necesario)
-    PlazaManager(const char* rutaPlazas = "plazas.dat");
+    PlazaManager(const char *rutaPlazas = "plazas.dat");
 
-    // LÓGICA DE NEGOCIO (ABM)
-    void altaPlaza();      // (A)ltas
-    void listarPlazas();   // (L)istados
-    void modificarPlaza(); // (M)odificaciones
-    void bajaPlaza();      // (B)ajas (lógica)
+    void altaPlaza();
+    void listarPlazas();
+    void modificarPlaza();
+    void bajaPlaza();
 };
-
-#endif // PLAZAMANAGER_H

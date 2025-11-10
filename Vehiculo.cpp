@@ -24,8 +24,8 @@ void Vehiculo::setPatente(const string &patente) {
     _patente[7] = '\0';
 }
 void Vehiculo::setDniCliente(const string &dniCliente) {
-    strncpy(_dniCliente, dniCliente.c_str(), 7);
-    _dniCliente[7] = '\0';
+    strncpy(_dniCliente, dniCliente.c_str(), 8);
+    _dniCliente[8] = '\0';
 }
 void Vehiculo::setTipoVehiculo(char tipoVehiculo) {
     _tipoVehiculo[0] = tipoVehiculo; // 'A', 'M' o 'C'

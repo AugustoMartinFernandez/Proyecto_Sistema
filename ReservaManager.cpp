@@ -11,8 +11,8 @@ void ReservaManager::mostrarReserva(const Reserva& r){
     cout << "ID Reserva: " << r.getIdReserva() << endl;
     cout << "ID Plaza: "   << r.getIdPlaza()   << endl;
     cout << "Patente: "    << r.getPatente()   << endl;
-    cout << "Desde: "      << r.getDesdeHora().toString() << endl;
-    cout << "Hasta: "      << r.getHastaHora().toString() << endl;
+    cout << "Desde: "      << r.getDesde().toString() << endl;
+    cout << "Hasta: "      << r.getHasta().toString() << endl;
     cout << "Estado: "     << r.getEstado()    << endl;
 }
 
@@ -32,10 +32,10 @@ void ReservaManager::altaReserva(){
     cout << "Patente (ej. ABC123): ";
     string patente = cargarCadena();
 
-    cout << "Hora DESDE" << endl;
-    Hora desde = cargarHora();
-    cout << "Hora HASTA" << endl;
-    Hora hasta = cargarHora();
+    cout << "Fecha y Hora DESDE" << endl;
+    FechaHora desde = cargarFechaHora();
+    cout << "Fecha y Hora HASTA" << endl;
+    FechaHora hasta = cargarFechaHora();
 
     // Estado por defecto
     const string estado = "ACTIVA";
@@ -82,8 +82,8 @@ void ReservaManager::modificarReserva(){
         cout << "Que desea modificar?" << endl;
         cout << "1) ID Plaza" << endl;
         cout << "2) Patente" << endl;
-        cout << "3) Hora DESDE" << endl;
-        cout << "4) Hora HASTA" << endl;
+        cout << "3) Fecha y Hora DESDE" << endl;
+        cout << "4) Fecha y Hora HASTA" << endl;
         cout << "5) Estado" << endl;
         cout << "0) Guardar y salir" << endl;
         cout << "Opcion: ";
@@ -107,13 +107,13 @@ void ReservaManager::modificarReserva(){
             }break;
 
             case 3:{
-                cout << "Nueva hora DESDE (hh mm): " << endl;
-                r.setDesdeHora(cargarHora());
+                cout << "Nueva Fecha y Hora DESDE: " << endl;
+                r.setDesde(cargarFechaHora());
             }break;
 
             case 4:{
-                cout << "Nueva hora HASTA (hh mm): " << endl;
-                r.setHastaHora(cargarHora());
+                cout << "Nueva Fecha y Hora HASTA: " << endl;
+                r.setHasta(cargarFechaHora());
             }break;
 
             case 5:{

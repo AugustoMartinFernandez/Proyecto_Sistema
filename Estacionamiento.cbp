@@ -112,6 +112,8 @@
 		<Unit filename="Estacionamiento de Vehiculos.cpp" />
 		<Unit filename="Fecha.cpp" />
 		<Unit filename="Fecha.h" />
+		<Unit filename="FechaHora.cpp" />
+		<Unit filename="FechaHora.h" />
 		<Unit filename="Hora.cpp" />
 		<Unit filename="Hora.h" />
 		<Unit filename="MenuPrincipal.cpp" />

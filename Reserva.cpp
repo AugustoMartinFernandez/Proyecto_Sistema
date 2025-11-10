@@ -7,21 +7,21 @@ using namespace std;
 Reserva::Reserva()
 : _idReserva(0),
   _idPlaza(0),
-  _desdeHora(),
-  _hastaHora()
+  _desde(),
+  _hasta()
 {
     _patente[0] = '\0';
     _estado[0]  = '\0';
 }
 
 Reserva::Reserva(int idReserva, int idPlaza, const std::string& patente,
-                 Hora desdeHora, Hora hastaHora, const std::string& estado)
+                 FechaHora desde, FechaHora hasta, const std::string& estado)
 {
     setIdReserva(idReserva);
     setIdPlaza(idPlaza);
     setPatente(patente);
-    setDesdeHora(desdeHora);
-    setHastaHora(hastaHora);
+    setDesde(desde);
+    setHasta(hasta);
     setEstado(estado);
 }
 
@@ -35,8 +35,8 @@ void Reserva::setPatente(const std::string& patente){
     _patente[7] = '\0';
 }
 
-void Reserva::setDesdeHora(Hora desdeHora){ _desdeHora = desdeHora; }
-void Reserva::setHastaHora(Hora hastaHora){ _hastaHora = hastaHora; }
+void Reserva::setDesde(FechaHora desde){ _desde = desde; }
+void Reserva::setHasta(FechaHora hasta){ _hasta = hasta; }
 
 void Reserva::setEstado(const std::string& estado){
     // campo de 20 chars -> 19 + '\0'
@@ -48,8 +48,8 @@ void Reserva::setEstado(const std::string& estado){
 int Reserva::getIdReserva() const { return _idReserva; }
 int Reserva::getIdPlaza() const { return _idPlaza; }
 std::string Reserva::getPatente() const { return _patente; }
-Hora Reserva::getDesdeHora() const { return _desdeHora; }
-Hora Reserva::getHastaHora() const { return _hastaHora; }
+FechaHora Reserva::getDesde() const { return _desde; }
+FechaHora Reserva::getHasta() const { return _hasta; }
 std::string Reserva::getEstado() const { return _estado; }
 
 /*================ UTIL ================*/
@@ -57,7 +57,7 @@ std::string Reserva::toString() const {
     return  std::to_string(_idReserva) + ", " +
             std::to_string(_idPlaza) + ", " +
             std::string(_patente) + ", " +
-            _desdeHora.toString() + " -> " +
-            _hastaHora.toString() + ", " +
+            _desde.toString() + " -> " +
+            _hasta.toString() + ", " +
             std::string(_estado);
 }

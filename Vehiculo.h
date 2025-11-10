@@ -24,7 +24,7 @@ public:
 
 private:
     char _patente[8];       // ej: "ABC123"
-    char _dniCliente[8];    // DNI del cliente
+    char _dniCliente[9];    // DNI del cliente
     char _tipoVehiculo[1];  // 'A' = auto, 'M' = moto, 'C' = camioneta
     char _estado[20];       // ACTIVO / INACTIVO / ELIMINADO
 };

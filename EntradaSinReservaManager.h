@@ -1,5 +1,5 @@
 #pragma once
-#include "ArchivoVehiculo.h"
+#include "VehiculoArchivo.h"
 #include "VehiculoManager.h"
 #include "ClienteManager.h"
 #include "PlazaManager.h"
@@ -12,6 +12,7 @@ public:
 private:
     VehiculoArchivo _vehiculoArchivo;
     VehiculoManager _vehiculoManager;
+    ClienteArchivo  _clienteArchivo;
     ClienteManager  _clienteManager;
     PlazaManager    _plazaManager;
     TicketManager   _ticketManager;

@@ -137,7 +137,7 @@
 	<string>
 	"Vehiculo.h"
 
-1762744138 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\vehiculo.h
+1762796923 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\vehiculo.h
 	<string>
 
 1762748244 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\cliente.cpp
@@ -184,14 +184,14 @@
 	<iostream>
 	"MenuVehiculo.h"
 
-1762624342 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\reserva.cpp
+1762802522 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\reserva.cpp
 	<cstring>
 	<string>
 	"Reserva.h"
 
-1762624301 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\reserva.h
+1762802539 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\reserva.h
 	<string>
-	"Hora.h"
+	"FechaHora.h"
 
 1762623331 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\tarifa.cpp
 	<iostream>
@@ -212,10 +212,11 @@
 	"TarifaArchivo.h"
 	"TarifaManager.h"
 
-1762643233 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\utils.h
+1762804245 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\utils.h
 	<string>
 	"Hora.h"
 	"Fecha.h"
+	"FechaHora.h"
 
 1762299308 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\tarifamenu.cpp
 	<iostream>
@@ -231,11 +232,11 @@
 	"Hora.h"
 	"Fecha.h"
 
-1762642538 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\utils.cpp
+1762804194 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\utils.cpp
 	<iostream>
 	"utils.h"
 
-1762743879 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\vehiculo.cpp
+1762797056 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\vehiculo.cpp
 	<cstring>
 	<string>
 	"Vehiculo.h"
@@ -635,7 +636,7 @@
 	<cstdio>
 	<iostream>
 
-1762623331 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\archivoplaza.h
+1762797734 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\archivoplaza.h
 	"Plaza.h"
 
 1762298485 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\plaza.h
@@ -678,17 +679,19 @@
 1761919892 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\plazamenu.h
 	"PlazaManager.h"
 
-1761919892 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\plazamanager.h
+1762797741 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\plazamanager.h
 	"Plaza.h"
 	"ArchivoPlaza.h"
 
 1762747254 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\menuvehiculo.h
 	"VehiculoManager.h"
 
-1762750591 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\vehiculomanager.h
+1762796514 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\vehiculomanager.h
 	<string>
 	"Vehiculo.h"
 	"VehiculoArchivo.h"
+	"ClienteArchivo.h"
+	"ClienteManager.h"
 
 1762623331 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\ticketmenu.h
 	"TicketManager.h"
@@ -734,7 +737,7 @@
 	<iostream>
 	<cstdlib>
 
-1762747188 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\vehiculomanager.cpp
+1762801600 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\vehiculomanager.cpp
 	<iostream>
 	<algorithm>
 	"VehiculoManager.h"
@@ -766,9 +769,13 @@
 	"ReservaManager.h"
 	"Reserva.h"
 
-1762747496 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\entradasinreservamanager.cpp
+1762801574 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\entradasinreservamanager.cpp
+	<iostream>
+	<string>
+	"EntradaSinReservaManager.h"
+	"utils.h"
 
-1762748626 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\clientearchivo.h
+1762790686 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\clientearchivo.h
 	<string>
 	"Cliente.h"
 
@@ -785,7 +792,29 @@
 	<cstdio>
 	<utility>
 
-1762746297 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\vehiculoarchivo.h
+1762791560 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\vehiculoarchivo.h
 	<string>
 	"Vehiculo.h"
+
+1762549050 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\pagomenu.h
+	"PagoManager.h"
+
+1762750606 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\vehiculomenu.cpp
+	<iostream>
+	"VehiculoMenu.h"
+
+1762790727 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\entradasinreservamanager.h
+	"VehiculoArchivo.h"
+	"VehiculoManager.h"
+	"ClienteManager.h"
+	"PlazaManager.h"
+	"TicketManager.h"
+
+1762801540 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\fechahora.cpp
+	"FechaHora.h"
+	<ctime>
+	<string>
+
+1762801384 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\fechahora.h
+	<string>
 

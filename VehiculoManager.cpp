@@ -40,6 +40,52 @@ std::string VehiculoManager::tipoToString(char c){
     }
 }
 
+std::string VehiculoManager::validarDniCliente(){
+    std::string dni;
+    Cliente cliente;
+    bool clienteOK = false;
+
+    while(!clienteOK){
+        cout << "DNI del cliente: ";
+        dni = cargarCadena();
+
+        int pos = _repoCliente.buscarDNI(dni);
+
+        if(pos != -1){ // encontrado
+            clienteOK = true;
+        } else {
+            cout << "No se encuentra un cliente asociado con ese DNI." << endl;
+            cout << "1) Intentar con otro DNI" << endl;
+            cout << "2) Cargar nuevo cliente con este DNI" << endl;
+            cout << "0) Cancelar" << endl;
+            cout << "Opcion: ";
+            int op;
+            cin >> op;
+            cin.ignore();
+
+            if(op == 1){
+                continue; // vuelve al while
+            }
+            else if(op == 2){
+                cliente = _clienteManager.altaCliente(dni);
+                if(!cliente.getDni().empty()){
+                    clienteOK = true;
+                    cout << "--- CONTINUAMOS ALTA DE VEHICULO ---" << endl;
+                } else {
+                    cout << "No se pudo dar de alta el cliente." << endl;
+                    return ""; // error
+                }
+            }
+            else {
+                cout << "Operacion cancelada." << endl;
+                return "";
+            }
+        }
+    }
+    return dni;
+}
+
+
 /* -------------------- búsquedas/soporte -------------------- */
 
 Vehiculo VehiculoManager::buscarPorPatente(const std::string& patente){
@@ -67,8 +113,11 @@ void VehiculoManager::altaVehiculo(){
         return;
     }
 
-    cout << "DNI del cliente: ";
-    string dni = cargarCadena();
+    string dni = validarDniCliente();
+    if(dni.empty()){
+        cout << "Alta de vehiculo cancelada." << endl;
+        return;
+    }
 
     cout << "Tipo de vehiculo (auto/moto/camioneta o A/M/C): ";
     string tipoStr = cargarCadena();
@@ -94,8 +143,12 @@ Vehiculo VehiculoManager::altaVehiculo(const std::string& patente){
     cout << "---- ALTA DE VEHICULO ----" << endl;
     cout << "Patente: " << patente << endl;
 
-    cout << "DNI del cliente: ";
-    string dni = cargarCadena();
+    //validacion si existe el DNI cargado
+    string dni = validarDniCliente();
+    if(dni.empty()){
+        cout << "Alta de vehiculo cancelada." << endl;
+        return Vehiculo();
+    }
 
     cout << "Tipo de vehiculo (auto/moto/camioneta o A/M/C): ";
     string tipoStr = cargarCadena();
