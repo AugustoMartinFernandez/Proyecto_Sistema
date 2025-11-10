@@ -1,34 +1,38 @@
 #pragma once
-class Cliente {
-private:
-	char _dni[9];
-	char _nombre[30];
-	char _apellido[30];
-	char _telefono[12];
-	char _email[30];
-	bool _estado;
+#include <string>
 
+class Cliente
+{
 public:
-	Cliente(); 
+    Cliente();
+    Cliente(const std::string& dni, const std::string& nombre,
+            const std::string& apellido, const std::string& telefono,
+            const std::string& email, bool estado);
 
-	const char* getDni();
-	void setDni(const char* dni);
+    // Setters
+    void setDni(const std::string& dni);
+    void setNombre(const std::string& nombre);
+    void setApellido(const std::string& apellido);
+    void setTelefono(const std::string& telefono);
+    void setEmail(const std::string& email);
+    void setEstado(bool estado);
 
-	const char* getNombre();
-	void setNombre(const char* nombre);
+    // Getters (const)
+    std::string getDni() const;
+    std::string getNombre() const;
+    std::string getApellido() const;
+    std::string getTelefono() const;
+    std::string getEmail() const;
+    bool getEstado() const;
 
-	const char* getApellido();
-	void setApellido(const char* apellido);
+    // Utilidades
+    std::string toString() const;
 
-	const char* getTelefono();
-	void setTelefono(const char* telefono);
-
-	const char* getEmail();
-	void setEmail(const char* email);
-
-	bool getEstado();
-	void setEstado(bool estado);
-
-	void cargar();
-	void mostrar();
+private:
+    char _dni[8];
+    char _nombre[30];
+    char _apellido[30];
+    char _telefono[12];
+    char _email[30];
+    bool _estado;
 };

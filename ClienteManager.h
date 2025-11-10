@@ -1,26 +1,25 @@
 #pragma once
-
-#include "ArchivoCliente.h"
-#include "ArchivoVehiculo.h" // Necesario para la baja
 #include <string>
+#include "Cliente.h"
+#include "ClienteArchivo.h"
 
 class ClienteManager {
-private:
-    ArchivoCliente _archivoClientes;
-    ArchivoVehiculo _archivoVehiculos; // Para la baja lógica de vehículos
-
 public:
-    // Constructor
-    ClienteManager(
-        const std::string& rutaClientes = "clientes.dat",
-        const std::string& rutaVehiculos = "vehiculos.dat"
-    );
+    ClienteManager() = default;
 
-
+    // ABM interactivo
     void altaCliente();
-    void listarClientesActivos();
-    void buscarClientePorDni();
+    void listarClientes();
     void modificarCliente();
     void bajaCliente();
-};
 
+    // Soporte para flujos
+    Cliente buscarPorDNI(const std::string& dni);
+    Cliente altaCliente(const std::string& dni);  // alta rápida con DNI conocido
+    bool actualizar(const Cliente& c);            // guarda por DNI
+
+private:
+    void mostrarCliente(const Cliente& c);
+
+    ClienteArchivo _repo;
+};

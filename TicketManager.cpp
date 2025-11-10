@@ -32,7 +32,7 @@ void TicketManager::registrarIngreso() {
         return;
     }
     Vehiculo veh = _archivoVehiculos.leer(posVehiculo);
-    if (strcmp(veh.getEstado(), "Retirado") == 0) {
+    if (veh.getEstado(), "Retirado") {
         cout << "[!] Error: El vehiculo '" << patente << "' esta marcado como Retirado." << endl;
         return;
     }

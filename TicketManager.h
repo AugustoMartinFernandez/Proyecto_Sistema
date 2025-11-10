@@ -2,7 +2,7 @@
 
 #include "ArchivoTicket.h"
 #include "ArchivoPlaza.h"
-#include "ArchivoVehiculo.h"
+#include "VehiculoArchivo.h"
 #include "TarifaArchivo.h"
 // #include "ArchivoReserva.h" // (Cuando exista)
 
@@ -10,8 +10,8 @@ class TicketManager {
 private:
     ArchivoTicket _archivoTickets;
     ArchivoPlaza _archivoPlazas;
-    ArchivoVehiculo _archivoVehiculos;
-    TarifaArchivo _archivoTarifas; 
+    VehiculoArchivo _archivoVehiculos;
+    TarifaArchivo _archivoTarifas;
 
 public:
     TicketManager(

@@ -1,26 +1,30 @@
 #pragma once
-class Vehiculo{
-private:
-	char _patente[8];
-	char _dniCliente[9];
-	char _tipoVehiculo[20];
-	char _estado[20];
+#include <string>
 
+class Vehiculo
+{
 public:
-	Vehiculo();
-	
-	const char* getPatente()const;
-	const char* getDniCliente()const;
-	const char* getTipoVehiculo()const;
-	const char* getEstado()const;
+    Vehiculo();
+    Vehiculo(const std::string& patente, const std::string& dniCliente,
+             char tipoVehiculo, const std::string& estado);
 
-	void setPatente(const char* patente);
-	void setDniCliente(const char* dniCliente);
-	void setTipoVehiculo(const char* tipoVehiculo);
-	void setEstado(const char* estado);
-	void cargar();
-	void mostrar();
-	bool esPatenteValida(const char* patenteVal);
-	bool estadoValido(const char* estado);
+    void setPatente(const std::string& patente);
+    void setDniCliente(const std::string& dniCliente);
+    void setTipoVehiculo(char tipoVehiculo);
+    void setEstado(const std::string& estado);
+
+    std::string getPatente() const;
+    std::string getDniCliente() const;
+    char getTipoVehiculo() const;
+    std::string getEstado() const;
+
+
+    std::string getTipoVehiculoString() const;
+    std::string toString() const;
+
+private:
+    char _patente[8];       // ej: "ABC123"
+    char _dniCliente[8];    // DNI del cliente
+    char _tipoVehiculo[1];  // 'A' = auto, 'M' = moto, 'C' = camioneta
+    char _estado[20];       // ACTIVO / INACTIVO / ELIMINADO
 };
-

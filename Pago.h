@@ -16,7 +16,7 @@ public:
     void setImporte(float importe);
     void setFecha(Fecha fecha);
     void setHora(Hora hora);
-    void setMedioPago(const std::string& medioPago);
+    void setMedioPago(const std::string &medioPago);
     void setEstadoPago(bool estadoPago);
 
     // Getters

@@ -9,7 +9,7 @@ public:
 
 protected:
     void mostrarOpciones();
-    int seleccionOpcion(); 
+    int seleccionOpcion();
     void ejecutarOpcion(int opcion);
 
 private:

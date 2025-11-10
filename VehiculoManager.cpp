@@ -1,122 +1,219 @@
-#include "VehiculoManager.h"
-#include "Vehiculo.h" // Para crear un objeto Vehiculo
-#include "Cliente.h"  // Para validar
 #include <iostream>
-#include <cstring>
+#include <algorithm>
+#include "VehiculoManager.h"
+#include "utils.h"
 
 using namespace std;
 
-VehiculoManager::VehiculoManager(const std::string& rutaVehiculos, const std::string& rutaClientes)
-    : _archivoVehiculos(rutaVehiculos), _archivoClientes(rutaClientes) {}
+/* -------------------- helpers -------------------- */
 
-void VehiculoManager::altaVehiculo() {
-    Vehiculo v;
-    v.cargar(); 
+void VehiculoManager::mostrarVehiculo(const Vehiculo& v){
+    cout << "Patente: "      << v.getPatente() << endl;
+    cout << "DNI Cliente: "  << v.getDniCliente() << endl;
+    cout << "Tipo: "         << tipoToString(v.getTipoVehiculo()) << endl;
+    cout << "Estado: "       << v.getEstado() << endl;
+}
 
-    // 1. Validar que el DNI del cliente exista
-    int posCliente = _archivoClientes.buscarPorDni(v.getDniCliente());
-    if (posCliente == -1) {
-        cout << "[!] Error: El DNI " << v.getDniCliente() << " no corresponde a un cliente activo." << endl;
-        return; 
+char VehiculoManager::normalizarTipo(const std::string& tipo){
+    string t = tipo;
+    // normalizamos a minúsculas sin tildes (simple)
+    transform(t.begin(), t.end(), t.begin(), [](unsigned char c){ return (char)tolower(c); });
+
+    if(t.size() == 1){
+        char c = (char)toupper(t[0]);
+        if(c=='A' || c=='M' || c=='C') return c;
     }
-    
-    // 2. Validar que la patente no esté repetida
-    int posVeh = _archivoVehiculos.buscarPorPatente(v.getPatente());
-    if (posVeh >= 0) {
-        cout << "[!] Error: La patente " << v.getPatente() << " ya existe en el sistema." << endl;
-    } else {
-        // Si ambas validaciones son correctas, guardamos
-        if (_archivoVehiculos.guardar(v)) {
-            cout << "[+] Vehiculo guardado correctamente." << endl;
-        } else {
-            cout << "[!] Error al guardar el vehiculo." << endl;
-        }
+
+    if(t.find("auto") != string::npos)      return 'A';
+    if(t.find("moto") != string::npos)      return 'M';
+    if(t.find("camio") != string::npos)     return 'C'; // camioneta/camión -> C
+    // por defecto
+    return 'A';
+}
+
+std::string VehiculoManager::tipoToString(char c){
+    switch(c){
+        case 'A': return "AUTO";
+        case 'M': return "MOTO";
+        case 'C': return "CAMIONETA";
+        default:  return "DESCONOCIDO";
     }
 }
 
+/* -------------------- búsquedas/soporte -------------------- */
 
-void VehiculoManager::listarVehiculos() {
-    int cant = _archivoVehiculos.getCantidadRegistros();
-    if (cant == 0) {
-        cout << "No hay vehiculos cargados." << endl;
+Vehiculo VehiculoManager::buscarPorPatente(const std::string& patente){
+    int pos = _repo.buscarPorPatente(patente);
+    if(pos == -1) return Vehiculo(); // patente vacía -> no encontrado
+    return _repo.leer(pos);
+}
+
+bool VehiculoManager::actualizar(const Vehiculo& v){
+    int pos = _repo.buscarPorPatente(v.getPatente());
+    if(pos == -1) return false;
+    return _repo.guardar(pos, v);
+}
+
+/* -------------------- altas -------------------- */
+
+void VehiculoManager::altaVehiculo(){
+    cout << "---- ALTA DE VEHICULO ----" << endl;
+
+    cout << "Patente: ";
+    string patente = cargarCadena();
+
+    if(_repo.buscarPorPatente(patente) != -1){
+        cout << "Ya existe un vehiculo con esa patente." << endl;
         return;
     }
-    
-    // Usamos el método listar() de ArchivoVehiculo, que ya filtra por estado "Retirado"
-    _archivoVehiculos.listar();
-}
 
+    cout << "DNI del cliente: ";
+    string dni = cargarCadena();
 
-void VehiculoManager::buscarVehiculoPorPatente() {
-    char patente[10];
-    cout << "Ingrese patente a buscar: ";
-    cin >> patente;
+    cout << "Tipo de vehiculo (auto/moto/camioneta o A/M/C): ";
+    string tipoStr = cargarCadena();
+    char tipo = normalizarTipo(tipoStr);
 
-    int pos = _archivoVehiculos.buscarPorPatente(patente);
-    
-    if (pos >= 0) {
-        Vehiculo reg = _archivoVehiculos.leer(pos);
-        reg.mostrar();
-    } else {
-        cout << "[!] Patente no encontrada." << endl;
+    string estado = "ACTIVO";
+
+    Vehiculo v(patente, dni, tipo, estado);
+
+    if(_repo.guardar(v)){
+        cout << "Vehiculo guardado correctamente." << endl;
+    }else{
+        cout << "Error al guardar el vehiculo." << endl;
     }
 }
 
+Vehiculo VehiculoManager::altaVehiculo(const std::string& patente){
+    // para flujos: asume patente ya ingresada
+    if(_repo.buscarPorPatente(patente) != -1){
+        return _repo.leer(_repo.buscarPorPatente(patente));
+    }
 
-void VehiculoManager::modificarVehiculo() {
-    char patente[10];
-    cout << "Ingrese patente a modificar: ";
-    cin >> patente;
+    cout << "---- ALTA DE VEHICULO ----" << endl;
+    cout << "Patente: " << patente << endl;
 
-    int pos = _archivoVehiculos.buscarPorPatente(patente);
-    
-    if (pos >= 0) {
-        Vehiculo reg = _archivoVehiculos.leer(pos);
-        cout << "Datos actuales:" << endl;
-        reg.mostrar();
-        cout << "------------------------" << endl;
-        
-        cout << "Ingrese los nuevos datos:" << endl;
-        reg.cargar(); 
+    cout << "DNI del cliente: ";
+    string dni = cargarCadena();
 
-        if (_archivoVehiculos.sobreescribir(reg, pos)) {
-            cout << "[+] Vehiculo modificado correctamente." << endl;
-        } else {
-            cout << "[!] Error al modificar el vehiculo." << endl;
-        }
-    } else {
-        cout << "[!] Patente no encontrada." << endl;
+    cout << "Tipo de vehiculo (auto/moto/camioneta o A/M/C): ";
+    string tipoStr = cargarCadena();
+    char tipo = normalizarTipo(tipoStr);
+
+    string estado = "ACTIVO";
+
+    Vehiculo v(patente, dni, tipo, estado);
+
+    if(_repo.guardar(v)){
+        cout << "Vehiculo guardado correctamente." << endl;
+        return v;
+    }else{
+        cout << "Error al guardar el vehiculo." << endl;
+        return Vehiculo(); // patente vacía = no válido
     }
 }
 
+/* -------------------- listado -------------------- */
 
-void VehiculoManager::bajaVehiculo() {
-    char patente[10];
-    cout << "Ingrese patente a marcar como 'Retirado': ";
-    cin >> patente;
-
-    int pos = _archivoVehiculos.buscarPorPatente(patente);
-    
-    if (pos >= 0) {
-        Vehiculo reg = _archivoVehiculos.leer(pos);
-        
-        char conf;
-        cout << "Vehiculo encontrado: " << reg.getPatente() << endl;
-        cout << "Confirmar la baja (Marcar como 'Retirado')? (S/N): ";
-        cin >> conf;
-        
-        if (conf != 'S' && conf != 's') {
-            cout << "Operacion cancelada." << endl;
-            return;
-        }
-
-        reg.setEstado("Retirado"); // Baja lógica
-        if (_archivoVehiculos.sobreescribir(reg, pos)) {
-            cout << "[+] Vehiculo marcado como 'Retirado' correctamente." << endl;
-        } else {
-            cout << "[!] Error al actualizar el estado del vehiculo." << endl;
-        }
-    } else {
-        cout << "[!] Patente no encontrada." << endl;
+void VehiculoManager::listarVehiculos(){
+    cout << "---- LISTADO DE VEHICULOS ----" << endl;
+    int cant = _repo.getCantidadRegistros();
+    for(int i=0; i<cant; ++i){
+        Vehiculo v = _repo.leer(i);
+        if(v.getPatente().empty()) continue; // registro invalido
+        mostrarVehiculo(v);
+        cout << "-----------------------------" << endl;
     }
 }
+
+/* -------------------- modificación -------------------- */
+
+void VehiculoManager::modificarVehiculo(){
+    cout << "---- MODIFICAR VEHICULO ----" << endl;
+    cout << "Patente: ";
+    string patente = cargarCadena();
+
+    int pos = _repo.buscarPorPatente(patente);
+    if(pos == -1){
+        cout << "No existe un vehiculo con esa patente." << endl;
+        return;
+    }
+
+    Vehiculo v = _repo.leer(pos);
+    cout << "Valores actuales:" << endl;
+    mostrarVehiculo(v);
+
+    int op = -1;
+    while(op != 0){
+        cout << endl;
+        cout << "Que desea modificar?" << endl;
+        cout << "1) DNI del cliente" << endl;
+        cout << "2) Tipo de vehiculo" << endl;
+        cout << "3) Estado" << endl;
+        cout << "0) Guardar y salir" << endl;
+        cout << "Opcion: ";
+        cin >> op;
+        cin.ignore(); // limpiar salto para cargarCadena
+
+        if(op == 0) break;
+
+        switch(op){
+            case 1:{
+                cout << "Nuevo DNI del cliente: ";
+                string dni = cargarCadena();
+                v.setDniCliente(dni);
+            }break;
+            case 2:{
+                cout << "Nuevo tipo (auto/moto/camioneta o A/M/C): ";
+                string tipoStr = cargarCadena();
+                v.setTipoVehiculo(normalizarTipo(tipoStr));
+            }break;
+            case 3:{
+                cout << "Nuevo estado (ACTIVO/INACTIVO): ";
+                string est = cargarCadena();
+                v.setEstado(est);
+            }break;
+            default:
+                cout << "Opcion invalida." << endl;
+        }
+    }
+
+    if(_repo.guardar(pos, v)){
+        cout << "Vehiculo actualizado correctamente." << endl;
+    }else{
+        cout << "No se pudieron guardar los cambios." << endl;
+    }
+}
+
+/* -------------------- baja lógica -------------------- */
+
+void VehiculoManager::bajaVehiculo(){
+    cout << "---- BAJA LOGICA DE VEHICULO ----" << endl;
+    cout << "Patente: ";
+    string patente = cargarCadena();
+
+    int pos = _repo.buscarPorPatente(patente);
+    if(pos == -1){
+        cout << "No existe un vehiculo con esa patente." << endl;
+        return;
+    }
+
+    Vehiculo v = _repo.leer(pos);
+    cout << "Registro encontrado:" << endl;
+    mostrarVehiculo(v);
+
+    char c;
+    cout << "Confirmar baja (S/N): ";
+    cin >> c;
+    if(c=='s' || c=='S'){
+        if(_repo.eliminar(pos, "INACTIVO")){
+            cout << "Vehiculo dado de baja correctamente." << endl;
+        }else{
+            cout << "No se pudo dar de baja el vehiculo." << endl;
+        }
+    }else{
+        cout << "Operacion cancelada." << endl;
+    }
+}
+

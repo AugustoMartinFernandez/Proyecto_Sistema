@@ -1,25 +1,23 @@
 #pragma once
-
-#include "ArchivoVehiculo.h"
-#include "ArchivoCliente.h" // Necesario para validar el DNI
 #include <string>
+#include "Vehiculo.h"
+#include "VehiculoArchivo.h"
 
 class VehiculoManager {
-private:
-    ArchivoVehiculo _archivoVehiculos;
-    ArchivoCliente _archivoClientes; // Para validación
-
 public:
-    // Constructor
-    VehiculoManager(
-        const std::string& rutaVehiculos = "vehiculos.dat",
-        const std::string& rutaClientes = "clientes.dat"
-    );
-
     void altaVehiculo();
     void listarVehiculos();
-    void buscarVehiculoPorPatente();
     void modificarVehiculo();
-    void bajaVehiculo(); // Marcar como retirado
-};
+    void bajaVehiculo();
 
+    Vehiculo buscarPorPatente(const std::string& patente);
+    Vehiculo altaVehiculo(const std::string& patente);
+    bool actualizar(const Vehiculo& v);
+
+private:
+    void mostrarVehiculo(const Vehiculo& v);
+    char normalizarTipo(const std::string& tipo);       // "auto"->'A', "moto"->'M', "camioneta"->'C'
+    std::string tipoToString(char c);                   // 'A'->"AUTO", etc.
+
+    VehiculoArchivo _repo;
+};
