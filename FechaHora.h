@@ -20,8 +20,12 @@ public:
 
     std::string toString() const;
 
-    // Devuelve la fecha y hora actual del sistema
     static FechaHora ahora();
+
+    // --- AÑADIDO ---
+    // Calcula la diferencia en minutos entre esta FechaHora y 'otra'
+    // (Ej: this->diferenciaMinutos(ingreso) nos da los minutos transcurridos)
+    double diferenciaMinutos(const FechaHora& otra) const;
 
 private:
     int _anio;

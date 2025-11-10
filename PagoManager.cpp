@@ -7,9 +7,9 @@
 using namespace std;
 
 void PagoManager::mostrarPago(const Pago &p){
-    cout << "ID Pago: "     << p.getIdPago()    << endl;
-    cout << "ID Ticket: "   << p.getIdTicket()  << endl;
-    cout << "Importe: $"    << p.getImporte()   << endl;
+    cout << "ID Pago: "     << p.getIdPago()     << endl;
+    cout << "ID Ticket: "   << p.getIdTicket()   << endl;
+    cout << "Importe: $"    << p.getImporte()    << endl;
     cout << "Fecha: "       << p.getFecha().toString() << endl;
     cout << "Hora: "        << p.getHora().toString()  << endl;
     cout << "Medio: "       << p.getMedioPago() << endl;
@@ -30,7 +30,7 @@ void PagoManager::altaPago(){
     cout << "Importe: $";
     cin >> importe;
 
-    cout << "Fecha (dd mm aaaa): " << endl;
+    cout << "Fecha: " << endl;
     Fecha fecha = cargarFecha();
 
     cout << "Hora: " << endl;
@@ -107,9 +107,9 @@ void PagoManager::modificarPago(){
                 cin >> v;
                 p.setImporte(v);
             }break;
-            case 3:{
-                int d,m,a;
-                cout << "Nueva fecha (dd mm aaaa): " << endl;
+            case 3:
+            {
+                cout << "Nueva fecha" << endl;
                 p.setFecha(cargarFecha());
             }break;
             case 4:{

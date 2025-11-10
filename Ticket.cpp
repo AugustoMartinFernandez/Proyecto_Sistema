@@ -1,7 +1,7 @@
 #include "Ticket.h"
 #include <iostream>
 #include <cstring>
-#include "utils.h" // Para cargarHora() y cargarCadena() (aunque 'cargar' aquí no es interactivo)
+#include "utils.h" // (Aunque ya no lo usamos aquí)
 
 using namespace std;
 
@@ -11,7 +11,7 @@ Ticket::Ticket(int id) {
     _idPlaza = 0;
     setPatente("");
     _idTarifa = 0;
-    // _ingresoFecha y _ingresoHora se setean en el Manager
+    // _ingreso y _salida se inicializan con el constructor por defecto de FechaHora
     _importe = 0.0f;
     setEstado("Abierto");
 }
@@ -22,10 +22,8 @@ int Ticket::getIdReserva() const { return _idReserva; }
 int Ticket::getIdPlaza() const { return _idPlaza; }
 const char* Ticket::getPatente() const { return _patente; }
 int Ticket::getIdTarifa() const { return _idTarifa; }
-Fecha Ticket::getIngresoFecha() const { return _ingresoFecha; }
-Hora Ticket::getIngresoHora() const { return _ingresoHora; }
-Fecha Ticket::getSalidaFecha() const { return _salidaFecha; }
-Hora Ticket::getSalidaHora() const { return _salidaHora; }
+FechaHora Ticket::getIngreso() const { return _ingreso; }
+FechaHora Ticket::getSalida() const { return _salida; }  
 float Ticket::getImporte() const { return _importe; }
 const char* Ticket::getEstado() const { return _estado; }
 
@@ -38,10 +36,8 @@ void Ticket::setPatente(const char* patente) {
     _patente[7] = '\0';
 }
 void Ticket::setIdTarifa(int id) { _idTarifa = id; }
-void Ticket::setIngresoFecha(Fecha f) { _ingresoFecha = f; }
-void Ticket::setIngresoHora(Hora h) { _ingresoHora = h; }
-void Ticket::setSalidaFecha(Fecha f) { _salidaFecha = f; }
-void Ticket::setSalidaHora(Hora h) { _salidaHora = h; }
+void Ticket::setIngreso(FechaHora fh) { _ingreso = fh; } 
+void Ticket::setSalida(FechaHora fh) { _salida = fh; }  
 void Ticket::setImporte(float importe) { _importe = importe; }
 void Ticket::setEstado(const char* estado) {
     strncpy(_estado, estado, 19);
@@ -50,44 +46,18 @@ void Ticket::setEstado(const char* estado) {
 
 // --- Métodos ---
 
-// 'cargar' lo usamos para que el Manager pida los datos
-void Ticket::cargar(int id) {
-    _idTicket = id;
-    
-    cout << "ID Plaza: ";
-    cin >> _idPlaza;
-    cout << "Patente: ";
-    char p[10];
-    cin >> p;
-    setPatente(p);
-    cout << "ID Tarifa: ";
-    cin >> _idTarifa;
-
-    // Asumimos que la fecha y hora de ingreso son las actuales
-    // (debemos tener una función para esto, si no, se pide)
-    cout << "Fecha Ingreso (dd mm aaaa): ";
-    int d, m, a;
-    cin >> d >> m >> a;
-    _ingresoFecha.setDia(d);
-    _ingresoFecha.setMes(m);
-    _ingresoFecha.setAnio(a);
-    
-    cout << "Hora Ingreso:" << endl;
-    _ingresoHora = cargarHora();
-    
-    setEstado("Abierto");
-    _importe = 0;
-}
+// 'cargar()' se elimina. El Manager se encarga de setear los datos.
 
 void Ticket::mostrar() const {
     cout << "--- TICKET #" << _idTicket << " ---" << endl;
     cout << "Estado: " << _estado << endl;
     cout << "Plaza: " << _idPlaza << " | Patente: " << _patente << endl;
     cout << "Tarifa ID: " << _idTarifa << " | Reserva ID: " << _idReserva << endl;
-    cout << "Ingreso: " << _ingresoFecha.toString() << " " << _ingresoHora.toString() << endl;
+    
+    cout << "Ingreso: " << _ingreso.toString() << endl;
     
     if (strcmp(_estado, "Cerrado") == 0) {
-        cout << "Salida: " << _salidaFecha.toString() << " " << _salidaHora.toString() << endl;
+        cout << "Salida: " << _salida.toString() << endl;
         cout << "IMPORTE: $" << _importe << endl;
     }
 }

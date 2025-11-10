@@ -42,15 +42,14 @@ void TarifaManager::altaTarifa()
     cin >> tolerancia;
 
     cout << "Vigencia DESDE" << endl;
-    Hora desde = cargarHora();
+    FechaHora desde = cargarFechaHora();
     cout << "Vigencia HASTA" << endl;
-    Hora hasta = cargarHora();
+    FechaHora hasta = cargarFechaHora();
 
     cin.ignore();
     cout << "Tipo de abono (texto corto): ";
     string tipoAbono = cargarCadena();
 
-    // Estado por defecto ACTIVO
     const char* estado = "ACTIVO";
 
     Tarifa t(
@@ -89,7 +88,7 @@ void TarifaManager::bajaTarifa()
     cin >> conf;
 
     if(conf=='s' || conf=='S'){
-        if(_archivo.bajaLogicaPorPos(id -1, "INACTIVO")){
+        if(_archivo.bajaLogicaPorPos(pos, "INACTIVO")){ 
             cout << "Tarifa dada de baja correctamente." << endl;
         }else{
             cout << "No se pudo realizar la baja." << endl;
@@ -162,13 +161,15 @@ void TarifaManager::modificarTarifa()
                 int v; cout << "Nueva tolerancia (min): "; cin >> v;
                 t.setToleranciaMin(v);
             }break;
-            case 7:{
+            case 7:
+            {
                 cout << "Nueva vigencia DESDE" << endl;
-                t.setVigenciaDesdeHora(cargarHora());
+                t.setVigenciaDesdeHora(cargarFechaHora());
             }break;
-            case 8:{
+            case 8:
+            {
                 cout << "Nueva vigencia HASTA" << endl;
-                t.setVigenciaHastaHora(cargarHora());
+                t.setVigenciaHastaHora(cargarFechaHora());
             }break;
             case 9:{
                 cin.ignore();
