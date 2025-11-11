@@ -5,7 +5,7 @@ using namespace std;
 
 ClienteMenu::ClienteMenu()
 {
-    _cantidadOpciones = 4; // 1..4 y 0 para salir
+    _cantidadOpciones = 4;
 }
 
 void ClienteMenu::mostrar()

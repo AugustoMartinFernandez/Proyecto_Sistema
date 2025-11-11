@@ -4,7 +4,6 @@
 
 using namespace std;
 
-/*=========== CONSTRUCTORES ===========*/
 Cliente::Cliente()
 : _estado(true)
 {
@@ -27,7 +26,6 @@ Cliente::Cliente(const string& dni, const string& nombre,
     setEmail(email);
 }
 
-/*=========== SETTERS ===========*/
 void Cliente::setDni(const string& dni){
     strncpy(_dni, dni.c_str(), 8);
     _dni[8] = '\0';
@@ -57,7 +55,6 @@ void Cliente::setEstado(bool estado){
     _estado = estado;
 }
 
-/*=========== GETTERS ===========*/
 string Cliente::getDni() const { return _dni; }
 string Cliente::getNombre() const { return _nombre; }
 string Cliente::getApellido() const { return _apellido; }
@@ -65,7 +62,6 @@ string Cliente::getTelefono() const { return _telefono; }
 string Cliente::getEmail() const { return _email; }
 bool Cliente::getEstado() const { return _estado; }
 
-/*=========== UTIL ===========*/
 string Cliente::toString() const {
     return string(_dni) + ", " +
            string(_apellido) + " " + string(_nombre) + ", " +

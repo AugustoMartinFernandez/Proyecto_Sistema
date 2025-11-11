@@ -6,7 +6,6 @@
 
 using namespace std;
 
-/* -------------------- helpers -------------------- */
 
 void VehiculoManager::mostrarVehiculo(const Vehiculo& v){
     cout << "Patente: "      << v.getPatente() << endl;
@@ -78,7 +77,7 @@ std::string VehiculoManager::validarDniCliente(){
 }
 
 
-/* -------------------- búsquedas/soporte -------------------- */
+/*búsquedas*/
 
 Vehiculo VehiculoManager::buscarPorPatente(const std::string& patente){
     int pos = _repo.buscarPorPatente(patente);
@@ -92,7 +91,7 @@ bool VehiculoManager::actualizar(const Vehiculo& v){
     return _repo.guardar(pos, v);
 }
 
-/* -------------------- altas -------------------- */
+/*altas*/
 
 void VehiculoManager::altaVehiculo(){
     cout << "---- ALTA DE VEHICULO ----" << endl;
@@ -159,7 +158,7 @@ Vehiculo VehiculoManager::altaVehiculo(const std::string& patente){
     }
 }
 
-/* -------------------- listado -------------------- */
+/*listado */
 
 void VehiculoManager::listarVehiculos(){
     cout << "---- LISTADO DE VEHICULOS ----" << endl;
@@ -172,7 +171,7 @@ void VehiculoManager::listarVehiculos(){
     }
 }
 
-/* -------------------- modificación -------------------- */
+/*modificación*/
 
 void VehiculoManager::modificarVehiculo(){
     cout << "---- MODIFICAR VEHICULO ----" << endl;
@@ -231,7 +230,7 @@ void VehiculoManager::modificarVehiculo(){
     }
 }
 
-/* -------------------- baja lógica -------------------- */
+/*baja lógica*/
 
 void VehiculoManager::bajaVehiculo(){
     cout << "---- BAJA LOGICA DE VEHICULO ----" << endl;

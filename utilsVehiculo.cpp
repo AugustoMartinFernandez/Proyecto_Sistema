@@ -13,7 +13,7 @@ Vehiculo validaVehiculoBasico(VehiculoManager& vehiculoManager,
     int posVehiculo = vehiculoArchivo.buscarPorPatente(patente);
     Vehiculo vehiculo;
 
-    // --- Si no existe el vehículo ---
+    //Si no existe el vehículo
     if (posVehiculo == -1) {
         cout << "Vehículo no encontrado. ¿Desea registrarlo? (S/N): ";
         char opc;
@@ -34,7 +34,7 @@ Vehiculo validaVehiculoBasico(VehiculoManager& vehiculoManager,
         }
     }
 
-    // --- Si ya existía ---
+    //Si ya existía
     vehiculo = vehiculoArchivo.leer(posVehiculo);
     cout << "Vehículo encontrado (Patente: " << vehiculo.getPatente() << ")" << endl;
     return vehiculo;

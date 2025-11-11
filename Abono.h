@@ -17,7 +17,6 @@ public:
     // Constructor (ID = -1 para indicador de error de lectura)
     Abono(int id = -1);
 
-    // MÉTODOS DE LECTURA
     int getIdAbono() const;
     FechaHora getDesde() const;
     FechaHora getHasta() const;
@@ -27,7 +26,6 @@ public:
     int getIdTarifa() const;
     char getEstado() const;
 
-    // MÉTODOS DE ESCRITURA
     void setIdAbono(int id);
     void setDesde(FechaHora h);
     void setHasta(FechaHora h);
@@ -37,7 +35,6 @@ public:
     void setIdTarifa(int id);
     void setEstado(char e);
 
-    // MÉTODOS DE GESTIÓN (Interfaz)
     void cargar();
     void mostrar() const;
 };

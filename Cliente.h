@@ -9,7 +9,6 @@ public:
             const std::string& apellido, const std::string& telefono,
             const std::string& email, bool estado);
 
-    // Setters
     void setDni(const std::string& dni);
     void setNombre(const std::string& nombre);
     void setApellido(const std::string& apellido);
@@ -17,7 +16,6 @@ public:
     void setEmail(const std::string& email);
     void setEstado(bool estado);
 
-    // Getters (const)
     std::string getDni() const;
     std::string getNombre() const;
     std::string getApellido() const;
@@ -25,7 +23,6 @@ public:
     std::string getEmail() const;
     bool getEstado() const;
 
-    // Utilidades
     std::string toString() const;
 
 private:

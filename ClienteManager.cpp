@@ -4,7 +4,6 @@
 
 using namespace std;
 
-/* --------- helpers --------- */
 void ClienteManager::mostrarCliente(const Cliente& c){
     cout << "DNI: "      << c.getDni()      << endl;
     cout << "Apellido: " << c.getApellido() << endl;
@@ -14,7 +13,6 @@ void ClienteManager::mostrarCliente(const Cliente& c){
     cout << "Estado: "   << (c.getEstado() ? "ACTIVO" : "INACTIVO") << endl;
 }
 
-/* --------- búsquedas / soporte --------- */
 Cliente ClienteManager::buscarPorDNI(const std::string& dni){
     int pos = _repo.buscarDNI(dni);
     if(pos == -1) return Cliente();  // ctor por defecto: strings vacíos
@@ -27,7 +25,7 @@ bool ClienteManager::actualizar(const Cliente& c){
     return _repo.guardar(pos, c);
 }
 
-/* --------- altas --------- */
+
 void ClienteManager::altaCliente(){
     cout << "---- ALTA DE CLIENTE ----" << endl;
 
@@ -96,7 +94,7 @@ Cliente ClienteManager::altaCliente(const std::string& dni){
     }
 }
 
-/* --------- listado --------- */
+
 void ClienteManager::listarClientes(){
     cout << "---- LISTADO DE CLIENTES ----" << endl;
     int cant = _repo.getCantidadRegistros();
@@ -108,7 +106,7 @@ void ClienteManager::listarClientes(){
     }
 }
 
-/* --------- modificación --------- */
+
 void ClienteManager::modificarCliente(){
     cout << "---- MODIFICAR CLIENTE ----" << endl;
     cout << "DNI: ";
@@ -180,7 +178,7 @@ void ClienteManager::modificarCliente(){
     }
 }
 
-/* --------- baja lógica --------- */
+
 void ClienteManager::bajaCliente(){
     cout << "---- BAJA LOGICA DE CLIENTE ----" << endl;
     cout << "DNI: ";
