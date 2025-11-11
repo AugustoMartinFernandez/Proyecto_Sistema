@@ -125,7 +125,7 @@
 	<string>
 	"Cliente.h"
 
-1762817046 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\cliente.h
+1762887108 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\cliente.h
 	<string>
 
 1762747295 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\archivovehiculo.cpp
@@ -140,13 +140,14 @@
 1762824904 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\vehiculo.h
 	<string>
 
-1762817055 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\cliente.cpp
+1762887091 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\cliente.cpp
 	<cstring>
 	<string>
 	"Cliente.h"
 
-1762551062 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\estacionamiento de vehiculos.cpp
+1762893558 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\estacionamiento de vehiculos.cpp
 	"MenuPrincipal.h"
+	<clocale>
 
 1762299321 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\tarifamenu.h
 	"TarifaManager.h"
@@ -265,7 +266,7 @@
 	<string>
 	"Pago.h"
 
-1762837974 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\pagomanager.cpp
+1762892839 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\pagomanager.cpp
 	<iostream>
 	<string>
 	"utils.h"
@@ -607,7 +608,7 @@
 	<iostream>
 	<cstring>
 
-1762874677 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\abono.h
+1762887060 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\abono.h
 	"FechaHora.h"
 
 1762875087 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\abonomanager.cpp
@@ -657,17 +658,17 @@
 	"Ticket.h"
 	<string>
 
-1762750333 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\clientemanager.cpp
+1762887148 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\clientemanager.cpp
 	<iostream>
 	"ClienteManager.h"
 	"utils.h"
 
-1762750268 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\clientemanager.h
+1762887156 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\clientemanager.h
 	<string>
 	"Cliente.h"
 	"ClienteArchivo.h"
 
-1762750538 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\clientemenu.cpp
+1762887163 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\clientemenu.cpp
 	<iostream>
 	"ClienteMenu.h"
 
@@ -725,12 +726,12 @@
 	<iostream>
 	<cstring>
 
-1761920010 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\plazamenu.cpp
+1762893363 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\plazamenu.cpp
 	"PlazaMenu.h"
 	<iostream>
 	<cstdlib>
 
-1762835841 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\ticketmanager.cpp
+1762891871 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\ticketmanager.cpp
 	"TicketManager.h"
 	"Ticket.h"
 	"Plaza.h"
@@ -741,12 +742,12 @@
 	"FechaHora.h"
 	<iostream>
 
-1762623331 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\ticketmenu.cpp
+1762893385 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\ticketmenu.cpp
 	"TicketMenu.h"
 	<iostream>
 	<cstdlib>
 
-1762817796 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\vehiculomanager.cpp
+1762887293 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\vehiculomanager.cpp
 	<iostream>
 	<algorithm>
 	"VehiculoManager.h"
@@ -793,7 +794,7 @@
 	<string>
 	"Cliente.h"
 
-1762748637 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\clientearchivo.cpp
+1762885586 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\clientearchivo.cpp
 	"ClienteArchivo.h"
 	<cstdio>
 	<utility>
@@ -813,7 +814,7 @@
 1762549050 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\pagomenu.h
 	"PagoManager.h"
 
-1762750606 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\vehiculomenu.cpp
+1762887301 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\vehiculomenu.cpp
 	<iostream>
 	"VehiculoMenu.h"
 
@@ -837,7 +838,7 @@
 1762835602 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\fechahora.h
 	<string>
 
-1762817697 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\utilsvehiculo.cpp
+1762887193 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\utilsvehiculo.cpp
 	<iostream>
 	"utilsVehiculo.h"
 	"utils.h"
@@ -970,7 +971,7 @@
 1762873817 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\menureportes.h
 	"ReporteRecaudacionManager.h"
 
-1762875953 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\menureportes.cpp
+1762893333 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\menureportes.cpp
 	"MenuReportes.h"
 	<iostream>
 	<cstdlib>

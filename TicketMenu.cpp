@@ -15,7 +15,7 @@ void TicketMenu::mostrar() {
         opcion = seleccionOpcion();
         system("cls || clear");
         ejecutarOpcion(opcion);
-        
+
         if (opcion != 0) {
             system("pause");
         }
@@ -29,7 +29,7 @@ void TicketMenu::mostrarOpciones() {
     cout << "3. Listar Tickets Abiertos" << endl;
     cout << "4. Listar Historial de Tickets (Cerrados)" << endl;
     cout << "---------------------------------" << endl;
-    cout << "0 - Volver al Menu Principal" << endl;
+    cout << "0 - Salir" << endl;
     cout << "---------------------------------" << endl;
 }
 
@@ -38,7 +38,7 @@ int TicketMenu::seleccionOpcion() {
     mostrarOpciones();
     cout << "Opcion: ";
     cin >> opcion;
-    
+
     while (opcion < 0 || opcion > _cantidadOpciones) {
         cout << "[!] Opcion incorrecta. Vuelva a ingresar." << endl;
         cout << "Opcion: ";

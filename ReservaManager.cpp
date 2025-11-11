@@ -6,7 +6,6 @@
 
 using namespace std;
 
-/* -------- helper -------- */
 void ReservaManager::mostrarReserva(const Reserva& r){
     cout << "ID Reserva: " << r.getIdReserva() << endl;
     cout << "ID Plaza: "   << r.getIdPlaza()   << endl;
@@ -16,7 +15,6 @@ void ReservaManager::mostrarReserva(const Reserva& r){
     cout << "Estado: "     << r.getEstado()    << endl;
 }
 
-/* -------- ABM -------- */
 
 void ReservaManager::altaReserva(){
     cout << "---- ALTA DE RESERVA ----" << endl;

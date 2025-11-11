@@ -28,9 +28,6 @@ void TicketManager::registrarIngreso() {
     char patente[10];
     int idPlaza;
 
-    cout << "Ingrese Patente: ";
-    cin >> patente;
-
     // 1. Validar Vehículo
     Vehiculo veh = validaVehiculoBasico(_vehiculoManager, _archivoVehiculos);
 

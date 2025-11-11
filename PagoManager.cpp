@@ -32,8 +32,7 @@ void PagoManager::altaPago(){
     cout << "Fecha y Hora: " << endl;
     FechaHora fechaHora = cargarFechaHora();
 
-    cin.ignore();
-    cout << "Medio de pago (efectivo/debito/credito/otro): ";
+    cout << "Medio de pago (EFECTIVO/DEBITO/CREDITO): ";
     string medio = cargarCadena();
 
     bool estado = true; // ACTIVO por defecto

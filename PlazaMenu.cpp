@@ -10,13 +10,13 @@ PlazaMenu::PlazaMenu() {
 
 void PlazaMenu::mostrar() {
     int opcion;
-    
+
     do {
         system("cls || clear"); // Limpia la pantalla (para Windows || Linux)
         opcion = seleccionOpcion();
         system("cls || clear");
         ejecutarOpcion(opcion);
-        
+
         if (opcion != 0) {
             system("pause"); // Espera que el usuario presione una tecla
         }
@@ -30,7 +30,7 @@ void PlazaMenu::mostrarOpciones() {
     cout << "3 - Modificar Plaza" << endl;
     cout << "4 - Baja (Fuera de Servicio) de Plaza" << endl;
     cout << "---------------------------------" << endl;
-    cout << "0 - Volver al Menu Principal" << endl;
+    cout << "0 - SALIR" << endl;
     cout << "---------------------------------" << endl;
 }
 
@@ -39,7 +39,7 @@ int PlazaMenu::seleccionOpcion() {
     mostrarOpciones();
     cout << "Opcion: ";
     cin >> opcion;
-    
+
     while (opcion < 0 || opcion > _cantidadOpciones) {
         cout << "[!] Opcion incorrecta. Vuelva a ingresar." << endl;
         cout << "Opcion: ";

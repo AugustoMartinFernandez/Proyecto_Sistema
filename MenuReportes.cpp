@@ -5,7 +5,7 @@
 using namespace std;
 
 MenuReportes::MenuReportes() {
-    _cantidadOpciones = 5;
+    _cantidadOpciones = 4;
 }
 
 void MenuReportes::mostrar() {
@@ -28,7 +28,6 @@ void MenuReportes::mostrarOpciones() {
     cout << "2. Recaudaciones mensual" << endl;
     cout << "3. Recaudaciones diaria" << endl;
     cout << "4. Recaudacion por tipo de vehiculo" << endl;
-    cout << "5. Reportes" << endl;
     cout << "---------------------------------" << endl;
     cout << "0 - Volver al menu principal" << endl;
     cout << "---------------------------------" << endl;
@@ -71,12 +70,6 @@ void MenuReportes::ejecutarOpcion(int opcion) {
         {
             ReporteRecaudacionManager rrm;
             rrm.recaudacionPorTipoVehiculo();
-            break;
-        }
-        case 5:
-        {
-            //TarifaMenu menuTarifas;
-            //menuTarifas.mostrar();
             break;
         }
         case 0:
