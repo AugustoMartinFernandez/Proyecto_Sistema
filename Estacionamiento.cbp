@@ -103,6 +103,12 @@
 			<Option virtualFolder="Cliente/" />
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="EntradaConReservaManager.cpp">
+			<Option virtualFolder="Flujos/" />
+		</Unit>
+		<Unit filename="EntradaConReservaManager.h">
+			<Option virtualFolder="Flujos/" />
+		</Unit>
 		<Unit filename="EntradaSinReservaManager.cpp">
 			<Option virtualFolder="Flujos/" />
 		</Unit>

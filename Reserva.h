@@ -31,5 +31,5 @@ private:
     char _patente[8];     // ej: "ABC123" (7 + '\0')
     FechaHora _desde;
     FechaHora _hasta;
-    char _estado[20];     // ACTIVA / CANCELADA / etc.
+    char _estado[20];     // ACTIVA/CONFIRMADA/VENCIDA/CANCELADA
 };

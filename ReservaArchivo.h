@@ -11,9 +11,9 @@ public:
     bool guardar(int pos, Reserva registro);
 
     Reserva leer(int pos);
-    int     leerTodos(Reserva* vec, int cantidad);
-    int     getCantidadRegistros();
-    int     getNuevoID();
+    int leerTodos(Reserva* vec, int cantidad);
+    int getCantidadRegistros();
+    int getNuevoID();
 
     int  buscarID(int idReserva);                   // devuelve pos o -1
 

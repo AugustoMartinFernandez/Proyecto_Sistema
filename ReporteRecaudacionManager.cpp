@@ -54,7 +54,7 @@ void ReporteRecaudacionManager::recaudacionDiaria() {
     cout << "=== RECAUDACIÓN DIARIA ===" << endl;
     cout << "Fecha: " << hoy.toString() << endl;
     cout << "Tickets cerrados: " << cantidadTickets << endl;
-    cout << "Total cobrado: $" << fixed << setprecision(2) << total << endl;
+    cout << "Total cobrado: $" << fixed << setprecision(2) << total << endl; //fixed y setprecision para dejar solo 2 numeros dsps de la coma
     cout << "--------------------------" << endl;
 }
 

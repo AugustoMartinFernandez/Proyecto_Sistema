@@ -1,5 +1,6 @@
 #pragma once
 #include "EntradaSinReservaManager.h"
+#include "EntradaConReservaManager.h"
 #include "SalidaCobroManager.h"
 #include "MenuGestion.h"
 #include "MenuReportes.h"

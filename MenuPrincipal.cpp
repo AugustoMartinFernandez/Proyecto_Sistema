@@ -57,8 +57,8 @@ void MenuPrincipal::ejecutarOpcion(int opcion) {
         }
         case 2:
         {
-            //EntradaConReservaManager flujo;
-            //flujo.procesarEntrada();
+            EntradaConReservaManager flujoReserva;
+            flujoReserva.procesarEntrada();
             break;
         }
         case 3:

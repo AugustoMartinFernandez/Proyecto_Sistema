@@ -191,7 +191,7 @@
 	<string>
 	"Reserva.h"
 
-1762802539 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\reserva.h
+1762881646 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\reserva.h
 	<string>
 	"FechaHora.h"
 
@@ -674,8 +674,9 @@
 1762750506 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\clientemenu.h
 	"ClienteManager.h"
 
-1762873569 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\menuprincipal.h
+1762882057 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\menuprincipal.h
 	"EntradaSinReservaManager.h"
+	"EntradaConReservaManager.h"
 	"SalidaCobroManager.h"
 	"MenuGestion.h"
 	"MenuReportes.h"
@@ -707,7 +708,7 @@
 	"VehiculoManager.h"
 	"TarifaArchivo.h"
 
-1762873556 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\menuprincipal.cpp
+1762882037 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\menuprincipal.cpp
 	"MenuPrincipal.h"
 	<iostream>
 	<cstdlib>
@@ -760,7 +761,7 @@
 	"VehiculoManager.h"
 	"ArchivoPlaza.h"
 
-1762807471 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\reservaarchivo.h
+1762881556 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\reservaarchivo.h
 	<string>
 	"Reserva.h"
 
@@ -774,7 +775,7 @@
 	<iostream>
 	"ReservaMenu.h"
 
-1762817222 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\reservamanager.cpp
+1762881943 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\reservamanager.cpp
 	<iostream>
 	<string>
 	"utils.h"
@@ -939,7 +940,7 @@
 	"ArchivoPlaza.h"
 	"FechaHora.h"
 
-1762874500 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\reporterecaudacionmanager.cpp
+1762878662 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\reporterecaudacionmanager.cpp
 	"ReporteRecaudacionManager.h"
 	"utils.h"
 	<iostream>
@@ -973,4 +974,21 @@
 	"MenuReportes.h"
 	<iostream>
 	<cstdlib>
+
+1762881786 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\entradaconreservamanager.cpp
+	<iostream>
+	<string>
+	"EntradaConReservaManager.h"
+	"utils.h"
+	"utilsVehiculo.h"
+
+1762881374 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\entradaconreservamanager.h
+	"VehiculoManager.h"
+	"VehiculoArchivo.h"
+	"ReservaArchivo.h"
+	"TarifaArchivo.h"
+	"ArchivoTicket.h"
+	"ClienteManager.h"
+	"ArchivoPlaza.h"
+	"FechaHora.h"
 

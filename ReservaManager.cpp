@@ -50,6 +50,8 @@ void ReservaManager::altaReserva(){
 
     if(_repo.guardar(r)){
         cout << "Reserva guardada correctamente." << endl;
+        plaza.setEstado('R');
+        _plazaArchivo.sobreescribir(plaza, plaza.getIdPlaza() - 1);
     }else{
         cout << "Error al guardar la reserva." << endl;
     }
@@ -124,7 +126,7 @@ void ReservaManager::modificarReserva(){
 
             case 5:{
                 cin.ignore();
-                cout << "Nuevo estado (ACTIVA/CANCELADA): ";
+                cout << "Nuevo estado (ACTIVA/CONFIRMADA/VENCIDA/CANCELADA): ";
                 string s = cargarCadena();
                 r.setEstado(s);
             }break;
