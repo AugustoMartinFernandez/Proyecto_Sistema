@@ -1,5 +1,8 @@
 #pragma once
 #include "ReservaArchivo.h"
+#include "VehiculoManager.h"
+#include "ArchivoPlaza.h"
+
 
 class ReservaManager {
 public:
@@ -11,7 +14,12 @@ public:
     void bajaReserva();           // baja lógica (cambia estado)
 
 private:
-    void mostrarReserva(const Reserva& r);
+    void mostrarReserva(const Reserva &r);
 
     ReservaArchivo _repo;
+    VehiculoArchivo _vehiculoArchivo;
+    VehiculoManager _vehiculoManager;
+    ArchivoPlaza _plazaArchivo;
+
 };
+

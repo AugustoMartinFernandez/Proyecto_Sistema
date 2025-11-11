@@ -1,8 +1,8 @@
 #include <iostream>
 #include <string>
 #include "utils.h"
+#include "utilsVehiculo.h"
 #include "ReservaManager.h"
-#include "Reserva.h"
 
 using namespace std;
 
@@ -24,13 +24,19 @@ void ReservaManager::altaReserva(){
     int id = _repo.getNuevoID();
     cout << "Reserva #" << id << endl;
 
-    int idPlaza;
-    cout << "ID de Plaza: ";
-    cin >> idPlaza;
+    Vehiculo vehiculo = validaVehiculoBasico(_vehiculoManager, _vehiculoArchivo);
 
-    cin.ignore(); // limpiar fin de linea
-    cout << "Patente (ej. ABC123): ";
-    string patente = cargarCadena();
+    if (vehiculo.getPatente().empty()){
+        cout << "Operación cancelada o error al validar vehículo." << endl;
+        return;
+    }
+
+    Plaza plaza = _plazaArchivo.buscarPlazaLibre(vehiculo.getTipoVehiculo());
+
+    if (plaza.getIdPlaza() == -1 ){
+        cout << "No hay plaza disponible." << endl;
+        return;
+    }
 
     cout << "Fecha y Hora DESDE" << endl;
     FechaHora desde = cargarFechaHora();
@@ -40,7 +46,7 @@ void ReservaManager::altaReserva(){
     // Estado por defecto
     const string estado = "ACTIVA";
 
-    Reserva r(id, idPlaza, patente, desde, hasta, estado);
+    Reserva r(id, plaza.getIdPlaza(), vehiculo.getPatente(), desde, hasta, estado);
 
     if(_repo.guardar(r)){
         cout << "Reserva guardada correctamente." << endl;

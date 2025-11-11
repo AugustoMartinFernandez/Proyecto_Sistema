@@ -1,4 +1,5 @@
 #include "ReservaArchivo.h"
+#include "utils.h"
 #include <cstdio>
 #include <utility>
 
@@ -78,22 +79,27 @@ int ReservaArchivo::buscarID(int idReserva){
     return pos;
 }
 
-int ReservaArchivo::buscarPorPatente(const std::string& patente, Reserva* out, int maxOut){
-    if(!out || maxOut <= 0) return 0;
+
+bool ReservaArchivo::existeReservaActivaParaPatente(const std::string &patente,
+                                                    const FechaHora &ahora,
+                                                    Reserva *out)
+{
     FILE* f = fopen(_nombreArchivo.c_str(), "rb");
-    if(!f) return 0;
+    if(!f) return false;
 
     Reserva r;
-    int count = 0;
     while(fread(&r, sizeof(Reserva), 1, f) == 1){
-        if(r.getPatente() == patente){
-            if(count < maxOut) out[count] = r;
-            ++count;
+        if(r.getPatente() == patente && r.getEstado() == "ACTIVA"){
+            // valida: _desde <= ahora <= _hasta
+            if(comparaFechas(r.getDesde(), ahora) <= 0 && comparaFechas(ahora, r.getHasta()) <= 0){
+                if(out) *out = r;
+                fclose(f);
+                return true;
+            }
         }
     }
     fclose(f);
-    // devolvemos cuántas efectivamente se copiaron (capadas por maxOut)
-    return (count > maxOut) ? maxOut : count;
+    return false;
 }
 
 bool ReservaArchivo::eliminar(int pos, const char* nuevoEstado){

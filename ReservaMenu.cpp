@@ -44,10 +44,10 @@ int ReservaMenu::seleccionOpcion(){
 
 void ReservaMenu::ejecutarOpcion(int opcion){
   switch(opcion){
-    case 1: _reservaManager.altaReserva();      break;
-    case 2: _reservaManager.listarReservas();   break;
+    case 1: _reservaManager.altaReserva(); break;
+    case 2: _reservaManager.listarReservas(); break;
     case 3: _reservaManager.modificarReserva(); break;
-    case 4: _reservaManager.bajaReserva();      break;
-    case 0: /* salir */                         break;
+    case 4: _reservaManager.bajaReserva(); break;
+    case 0: cout << "Volviendo al menu principal..." << endl; break;
   }
 }

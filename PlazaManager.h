@@ -2,10 +2,12 @@
 
 #include "Plaza.h"
 #include "ArchivoPlaza.h"
+#include "VehiculoManager.h"
 
 class PlazaManager {
 private:
     ArchivoPlaza _archivoPlazas; // El Manager usa la clase Archivo
+    VehiculoManager _vehiculoManager;
 
 public:
     // Constructor (podría inicializar el nombre de archivo si fuera necesario)

@@ -1,6 +1,8 @@
 #include "PlazaManager.h"
+#include "utils.h"
 #include <iostream>
 #include <cstring>
+
 
 using namespace std;
 
@@ -11,26 +13,27 @@ void PlazaManager::altaPlaza() {
 
     // 1. Pedir datos (Lógica del Manager)
     cout << "--- ALTA NUEVA PLAZA ---" << endl;
-    
+
     // Datos que el usuario ingresa
     int numero, piso;
-    char sector[2], tipo[21];
-    
+    char sector[2];
+
     cout << "Numero de Plaza: ";
     cin >> numero;
     cout << "Piso: ";
     cin >> piso;
     cout << "Sector (ej: A, B): ";
     cin >> sector;
-    cout << "Tipo de Vehiculo (ej: Auto, Moto): ";
-    cin >> tipo;
+    cout << "Tipo de vehiculo (auto/moto/camioneta o A/M/C): ";
+    string tipoStr = cargarCadena();
+    char tipo = _vehiculoManager.normalizarTipo(tipoStr);
 
     // 2. Setear datos en el objeto
     reg.setNumero(numero);
     reg.setPiso(piso);
     reg.setSector(sector);
     reg.setTipo(tipo);
-    
+
     // 3. Lógica de Manager (Asignación de ID y Estado inicial)
     int proximoID = _archivoPlazas.contarRegistros() + 1;
     reg.setIdPlaza(proximoID);
@@ -47,7 +50,7 @@ void PlazaManager::altaPlaza() {
 void PlazaManager::listarPlazas() {
     cout << "--- LISTADO DE PLAZAS ---" << endl;
     int cantidad = _archivoPlazas.contarRegistros();
-    
+
     if (cantidad == 0) {
         cout << "No hay plazas registradas." << endl;
         return;
@@ -55,9 +58,9 @@ void PlazaManager::listarPlazas() {
 
     for (int i = 0; i < cantidad; i++) {
         Plaza reg = _archivoPlazas.leer(i);
-        
+
         // Verificamos que no sea un registro de error y que no esté dado de baja
-        if (reg.getIdPlaza() != -1 && reg.getEstado() != 'F') { 
+        if (reg.getIdPlaza() != -1 && reg.getEstado() != 'F') {
             reg.mostrar();
             cout << "------------------------" << endl;
         }

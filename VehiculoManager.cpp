@@ -2,6 +2,7 @@
 #include <algorithm>
 #include "VehiculoManager.h"
 #include "utils.h"
+#include "utilsVehiculo.h"
 
 using namespace std;
 
@@ -10,7 +11,7 @@ using namespace std;
 void VehiculoManager::mostrarVehiculo(const Vehiculo& v){
     cout << "Patente: "      << v.getPatente() << endl;
     cout << "DNI Cliente: "  << v.getDniCliente() << endl;
-    cout << "Tipo: "         << tipoToString(v.getTipoVehiculo()) << endl;
+    cout << "Tipo: "         << tipoVehiculoToString(v.getTipoVehiculo()) << endl;
     cout << "Estado: "       << v.getEstado() << endl;
 }
 
@@ -29,15 +30,6 @@ char VehiculoManager::normalizarTipo(const std::string& tipo){
     if(t.find("camio") != string::npos)     return 'C'; // camioneta/camión -> C
     // por defecto
     return 'A';
-}
-
-std::string VehiculoManager::tipoToString(char c){
-    switch(c){
-        case 'A': return "AUTO";
-        case 'M': return "MOTO";
-        case 'C': return "CAMIONETA";
-        default:  return "DESCONOCIDO";
-    }
 }
 
 std::string VehiculoManager::validarDniCliente(){

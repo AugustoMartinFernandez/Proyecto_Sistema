@@ -108,3 +108,12 @@ FechaHora cargarFechaHora() {
     cin.ignore();
     return FechaHora(anio, mes, dia, hora, minuto);
 }
+
+int comparaFechas(const FechaHora& a, const FechaHora& b){
+    if(a.getAnio()   != b.getAnio())   return (a.getAnio()   < b.getAnio())   ? -1 : 1;
+    if(a.getMes()    != b.getMes())    return (a.getMes()    < b.getMes())    ? -1 : 1;
+    if(a.getDia()    != b.getDia())    return (a.getDia()    < b.getDia())    ? -1 : 1;
+    if(a.getHora()   != b.getHora())   return (a.getHora()   < b.getHora())   ? -1 : 1;
+    if(a.getMinuto() != b.getMinuto()) return (a.getMinuto() < b.getMinuto()) ? -1 : 1;
+    return 0;
+}

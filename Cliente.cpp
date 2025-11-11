@@ -29,8 +29,8 @@ Cliente::Cliente(const string& dni, const string& nombre,
 
 /*=========== SETTERS ===========*/
 void Cliente::setDni(const string& dni){
-    strncpy(_dni, dni.c_str(), 7);
-    _dni[7] = '\0';
+    strncpy(_dni, dni.c_str(), 8);
+    _dni[8] = '\0';
 }
 
 void Cliente::setNombre(const string& nombre){

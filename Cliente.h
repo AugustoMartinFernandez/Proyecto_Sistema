@@ -29,7 +29,7 @@ public:
     std::string toString() const;
 
 private:
-    char _dni[8];
+    char _dni[9];
     char _nombre[30];
     char _apellido[30];
     char _telefono[12];

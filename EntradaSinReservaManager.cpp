@@ -2,60 +2,54 @@
 #include <string>
 #include "EntradaSinReservaManager.h"
 #include "utils.h"
+#include "utilsVehiculo.h"
 
 using namespace std;
 
-void EntradaSinReservaManager::procesarEntrada() {
+void EntradaSinReservaManager::procesarEntrada()
+{
     cout << "=== ENTRADA SIN RESERVA ===" << endl;
-    /*
 
     ///Buscar vehículo por patente
-    cout << "Ingrese patente del vehículo: ";
-    string patente = cargarCadena();
-    int posVehiculo = _vehiculoArchivo.buscarPorPatente(patente);
-    Vehiculo vehiculo;
+    Vehiculo vehiculo = validaVehiculoBasico(_vehiculoManager, _vehiculoArchivo);
 
-    if (posVehiculo == -1) {
-        cout << "Vehículo no encontrado. ¿Desea registrarlo? (S/N): ";
-        char opc;
-        cin >> opc;
-        if (opc == 's' || opc == 'S') {
-            //Dentro del manager chequea por DNI
-            vehiculo = _vehiculoManager.altaVehiculo(patente);
-            if (_vehiculoArchivo.buscarPorPatente(patente) == -1) {
-                cout << "Error al registrar el vehículo." << endl;
-                return;
-            }
-        } else {
-            cout << "Operación cancelada." << endl;
-            return;
-        }
-    } else {
-        vehiculo = _vehiculoArchivo.leer(posVehiculo);
-        cout << "Vehículo encontrado (Patente: " << vehiculo.getPatente() << ")" << endl;
-    ///TODO PREGUNTAR A LOS CHICOS SI QUIEREN PREGUNTARLE EL DNI AL USUARIO PARA MODIFICARLO
-    ///Fijarse que no tenga reservas
+    if (vehiculo.getPatente().empty()){
+        cout << "Operación cancelada o error al validar vehículo." << endl;
+        return; // cortar el flujo
     }
 
+    ///Fijarse que no tenga reservas
+    FechaHora ahora = FechaHora::ahora();
+    Reserva rActiva;
+    bool tieneReserva = _reservaArchivo.existeReservaActivaParaPatente(vehiculo.getPatente(), ahora, &rActiva);
+
+    if(tieneReserva){
+        cout << "Hay una RESERVA ACTIVA para esta patente." << endl;
+        cout << "Ventana: " << rActiva.getDesde().toString() << " -> "<< rActiva.getHasta().toString() << endl;
+        cout << "Operación cancelada. Ingrese a la opción correspondiente" << endl;
+        return;
+    }
+
+
     ///Buscar plaza libre compatible
-    Plaza plaza = _plazaManager.buscarPlazaLibre(vehiculo.getTipoVehiculo());
-    if (plaza.getIdPlaza() == -1) {
+    Plaza plaza = _plazaArchivo.buscarPlazaLibre(vehiculo.getTipoVehiculo());
+    if (plaza.getIdPlaza() == -1)
+    {
         cout << "No hay plazas disponibles para este tipo de vehículo." << endl;
         return;
     }
 
-    cout << "Plaza sugerida: #" << plaza.getIdPlaza()
-         << " - Piso " << plaza.getPiso()
-         << " - Estado: " << plaza.getEstado() << endl;
-
+    cout << "Plaza sugerida: ";
+    plaza.mostrar();
     cout << "¿Confirmar asignación de plaza? (S/N): ";
     char confirmar;
     cin >> confirmar;
-    if (!(confirmar == 's' || confirmar == 'S')) {
+    if (!(confirmar == 's' || confirmar == 'S'))
+    {
         cout << "Operación cancelada." << endl;
         return;
     }
-
+/*
     // --- 4. Crear ticket de entrada ---
     Hora horaIngreso = cargarHora();
     Ticket ticket(
@@ -67,7 +61,8 @@ void EntradaSinReservaManager::procesarEntrada() {
         "ABIERTO"
     );
 
-    if (!_ticketManager.guardar(ticket)) {
+    if (!_ticketManager.guardar(ticket))
+    {
         cout << "Error al registrar el ticket de entrada." << endl;
         return;
     }
@@ -83,7 +78,8 @@ void EntradaSinReservaManager::procesarEntrada() {
 void EntradaSinReservaManager::mostrarResumenTicket(
     const Ticket& ticket, const Vehiculo& vehiculo,
     const Cliente& cliente, const Plaza& plaza
-) {
+)
+{
     cout << endl;
     cout << "=== TICKET DE ENTRADA GENERADO ===" << endl;
     cout << "Ticket ID: " << ticket.getIdTicket() << endl;

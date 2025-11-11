@@ -11,3 +11,5 @@ Hora cargarHora();
 Fecha cargarFecha();
 
 FechaHora cargarFechaHora();
+
+int comparaFechas(const FechaHora &a, const FechaHora &b);

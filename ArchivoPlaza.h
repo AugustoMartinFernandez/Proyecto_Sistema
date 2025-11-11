@@ -14,4 +14,7 @@ public:
     bool modificarRegistro(const Plaza &reg, int pos);
     Plaza leer(int pos);
     int contarRegistros() const;
+
+    Plaza buscarPlazaLibre(char tipoVehiculo);
+
 };

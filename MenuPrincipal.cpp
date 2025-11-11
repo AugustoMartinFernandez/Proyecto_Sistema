@@ -5,7 +5,7 @@
 using namespace std;
 
 MenuPrincipal::MenuPrincipal() {
-    _cantidadOpciones = 8;
+    _cantidadOpciones = 9;
 }
 
 void MenuPrincipal::mostrar() {
@@ -32,6 +32,7 @@ void MenuPrincipal::mostrarOpciones() {
     cout << "6. Gestion de Reservas" << endl;
     cout << "7. Gestion de Tickets" << endl;
     cout << "8. Gestion de Pagos" << endl;
+    cout << "9. Entrada sin reserva" << endl;
     // ... Aquí irían Informes y Configuración
     cout << "---------------------------------" << endl;
     cout << "0 - Salir del Sistema" << endl;
@@ -87,7 +88,6 @@ void MenuPrincipal::ejecutarOpcion(int opcion) {
         {
             ReservaMenu menuReservas;
             menuReservas.mostrar();
-            cout << "Modulo RESERVAS no implementado." << endl;
             break;
         }
         case 7:
@@ -100,6 +100,12 @@ void MenuPrincipal::ejecutarOpcion(int opcion) {
         {
             PagoMenu menuPagos;
             menuPagos.mostrar();
+            break;
+        }
+        case 9:
+        {
+            EntradaSinReservaManager flujo;
+            flujo.procesarEntrada();
             break;
         }
         case 0:
