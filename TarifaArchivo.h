@@ -11,7 +11,7 @@ public:
     bool guardar(int pos, const Tarifa &registro);//(modificación por pos)
     //bool modificarPorId(int idTarifa, const Tarifa& r);  // modif por ID
 
-    bool bajaLogicaPorPos(int pos, const char *nuevoEstado = "INACTIVO");
+    bool bajaLogicaPorPos(int pos);
     //bool bajaLogicaPorId(int idTarifa, const char* nuevoEstado = "INACTIVO");
 
     // LECTURA
@@ -23,6 +23,7 @@ public:
     // BÚSQUEDAS
     int buscarPorId(int idTarifa);
 
+    Tarifa buscarTarifaVigente(char tipoVehiculo, const FechaHora &ahora);
     // Devuelve la cantidad encontrada y pone en 'out' hasta 'maxOut' coincidencias exactas
     //int buscarPorTipoVehiculo(const std::string& tipo, Tarifa* out, int maxOut);
 

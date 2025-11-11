@@ -3,10 +3,10 @@
 #include "Plaza.h"
 #include "Vehiculo.h"
 #include "Tarifa.h"
-#include "utils.h" 
+#include "utils.h"
+#include "utilsVehiculo.h"
 #include "FechaHora.h"
 #include <iostream>
-#include <cstring>
 
 using namespace std;
 
@@ -16,15 +16,15 @@ TicketManager::TicketManager(
     const std::string& rutaVehiculos,
     const std::string& rutaTarifas
 )
-    : _archivoTickets(rutaTickets), 
-      _archivoPlazas(std::string(rutaPlazas)), 
-      _archivoVehiculos(rutaVehiculos), 
+    : _archivoTickets(rutaTickets),
+      _archivoPlazas(std::string(rutaPlazas)),
+      _archivoVehiculos(rutaVehiculos),
       _archivoTarifas(rutaTarifas) {}
 
 
 void TicketManager::registrarIngreso() {
     cout << "--- REGISTRAR INGRESO ---" << endl;
-    
+
     char patente[10];
     int idPlaza;
 
@@ -32,14 +32,15 @@ void TicketManager::registrarIngreso() {
     cin >> patente;
 
     // 1. Validar Vehículo
-    int posVehiculo = _archivoVehiculos.buscarPorPatente(patente);
-    if (posVehiculo == -1) {
-        cout << "[!] Error: Patente no encontrada. Debe dar de alta el vehiculo primero." << endl;
+    Vehiculo veh = validaVehiculoBasico(_vehiculoManager, _archivoVehiculos);
+
+    if (veh.getPatente().empty()){
+        cout << "Operación cancelada o error al validar vehículo." << endl;
         return;
     }
-    Vehiculo veh = _archivoVehiculos.leer(posVehiculo);
-    
-    if (strcmp(veh.getEstado().c_str(), "Retirado") == 0) {
+
+
+    if (veh.getEstado() == "INACTIVO") {
         cout << "[!] Error: El vehiculo '" << patente << "' esta marcado como Retirado." << endl;
         return;
     }
@@ -48,8 +49,8 @@ void TicketManager::registrarIngreso() {
     cin >> idPlaza;
 
     // 2. Validar Plaza
-    int posPlaza = idPlaza - 1; 
-    Plaza plaza = _archivoPlazas.leer(posPlaza); 
+    int posPlaza = idPlaza - 1;
+    Plaza plaza = _archivoPlazas.leer(posPlaza);
 
     if (plaza.getIdPlaza() == -1) {
         cout << "[!] Error: Plaza ID " << idPlaza << " no existe." << endl;
@@ -77,9 +78,9 @@ void TicketManager::registrarIngreso() {
     ticket.setPatente(patente);
     ticket.setIdPlaza(idPlaza);
     ticket.setIdTarifa(idTarifa);
-    ticket.setEstado("Abierto");
+    ticket.setEstado("ABIERTO");
     ticket.setIngreso(FechaHora::ahora());
-    
+
     cout << "Ingreso registrado a las: " << ticket.getIngreso().toString() << endl;
 
     // 5. Guardar Ticket
@@ -89,7 +90,7 @@ void TicketManager::registrarIngreso() {
     }
 
     // 6. Actualizar Estado de la Plaza
-    plaza.setEstado('O'); 
+    plaza.setEstado('O');
     if (!_archivoPlazas.sobreescribir(plaza, posPlaza)) {
         cout << "[!] Error CRITICO: No se pudo actualizar el estado de la plaza." << endl;
     }
@@ -100,7 +101,7 @@ void TicketManager::registrarIngreso() {
 
 void TicketManager::registrarSalida() {
     cout << "--- REGISTRAR SALIDA (CERRAR TICKET) ---" << endl;
-    
+
     int idTicket;
     cout << "Ingrese ID del Ticket a cerrar: ";
     cin >> idTicket;
@@ -113,7 +114,7 @@ void TicketManager::registrarSalida() {
     }
 
     Ticket ticket = _archivoTickets.leer(posTicket);
-    if (strcmp(ticket.getEstado(), "Cerrado") == 0) {
+    if (ticket.getEstado(), "CERRADO" == 0) {
         cout << "[!] Error: Ese ticket ya fue cerrado anteriormente." << endl;
         return;
     }
@@ -132,16 +133,16 @@ void TicketManager::registrarSalida() {
     Tarifa tarifa = _archivoTarifas.leer(posTarifa);
 
     // 4. Calcular Importe
-    float importe = tarifa.calcularImporte(ticket.getIngreso(), fSalida); 
-    
+    float importe = tarifa.calcularImporte(ticket.getIngreso(), fSalida);
+
     cout << "-------------------------" << endl;
     cout << "IMPORTE A COBRAR: $" << importe << endl;
     cout << "-------------------------" << endl;
 
     // 5. Actualizar Ticket
-    ticket.setSalida(fSalida); 
+    ticket.setSalida(fSalida);
     ticket.setImporte(importe);
-    ticket.setEstado("Cerrado");
+    ticket.setEstado("CERRADO");
 
     if (!_archivoTickets.sobreescribir(ticket, posTicket)) {
         cout << "[!] Error: No se pudo actualizar el ticket." << endl;
@@ -149,9 +150,9 @@ void TicketManager::registrarSalida() {
     }
 
     // 6. Actualizar Estado de la Plaza
-    int posPlaza = ticket.getIdPlaza() - 1; 
-    Plaza plaza = _archivoPlazas.leer(posPlaza); 
-    
+    int posPlaza = ticket.getIdPlaza() - 1;
+    Plaza plaza = _archivoPlazas.leer(posPlaza);
+
     if (plaza.getIdPlaza() != -1) {
         plaza.setEstado('L'); // 'L' de Libre
         _archivoPlazas.sobreescribir(plaza, posPlaza);
@@ -165,10 +166,10 @@ void TicketManager::listarTicketsAbiertos() {
     cout << "--- TICKETS ABIERTOS (ESTACIONADOS) ---" << endl;
     int cant = _archivoTickets.getCantidadRegistros();
     bool encontrados = false;
-    
+
     for (int i = 0; i < cant; i++) {
         Ticket t = _archivoTickets.leer(i);
-        if (strcmp(t.getEstado(), "Abierto") == 0) {
+        if (t.getEstado() == "ABIERTO") {
             t.mostrar();
             cout << "-------------------------" << endl;
             encontrados = true;
@@ -183,10 +184,10 @@ void TicketManager::listarHistorialTickets() {
     cout << "--- HISTORIAL DE TICKETS (CERRADOS) ---" << endl;
     int cant = _archivoTickets.getCantidadRegistros();
     bool encontrados = false;
-    
+
     for (int i = 0; i < cant; i++) {
         Ticket t = _archivoTickets.leer(i);
-        if (strcmp(t.getEstado(), "Cerrado") == 0) {
+        if (t.getEstado() == "CERRADO") {
             t.mostrar();
             cout << "-------------------------" << endl;
             encontrados = true;

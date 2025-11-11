@@ -7,16 +7,16 @@ class Tarifa
 public:
     Tarifa();
     Tarifa(
-        int idTarifa, std::string tipoVehiculo, int fraccionMin,
+        int idTarifa, char tipoVehiculo, int fraccionMin,
         float precioFraccion, float topeDiario, float precioNocturno,
-        int toleranciaMin, 
+        int toleranciaMin,
         FechaHora vigenciaDesdeHora, FechaHora vigenciaHastaHora,
-        char tipoAbono[20], char estado[20]
+        char tipoAbono[20], bool estado
     );
 
     // Getters
     int getIdTarifa() const;
-    std::string getTipoVehiculo() const;
+    char getTipoVehiculo() const;
     int getFraccionMin() const;
     float getPrecioFraccion() const;
     float getTopeDiario() const;
@@ -25,11 +25,11 @@ public:
     FechaHora getVigenciaDesdeHora() const;
     FechaHora getVigenciaHastaHora() const;
     const char* getTipoAbono() const;
-    const char* getEstado() const;
+    bool getEstado() const;
 
     // Setters
     void setIdTarifa(int valor);
-    void setTipoVehiculo(std::string valor);
+    void setTipoVehiculo(char valor);
     void setFraccionMin(int valor);
     void setPrecioFraccion(float valor);
     void setTopeDiario(float valor);
@@ -39,7 +39,7 @@ public:
     void setVigenciaDesdeHora(FechaHora valor);
     void setVigenciaHastaHora(FechaHora valor);
     void setTipoAbono(const char* valor);
-    void setEstado(const char* valor);
+    void setEstado(bool valor);
 
     // Métodos
     float calcularImporte(FechaHora ingreso, FechaHora salida) const;
@@ -51,7 +51,7 @@ protected:
 
 private:
     int _idTarifa;
-    char _tipoVehiculo[20];
+    char _tipoVehiculo;
     int _fraccionMin;
     float _precioFraccion;
     float _topeDiario;
@@ -60,5 +60,5 @@ private:
     FechaHora _vigenciaDesdeHora;
     FechaHora _vigenciaHastaHora;
     char _tipoAbono[20];
-    char _estado[20];
+    bool _estado;
 };

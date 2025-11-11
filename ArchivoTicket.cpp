@@ -51,3 +51,22 @@ int ArchivoTicket::buscarPorID(int id) {
     }
     return -1; // No encontrado
 }
+
+
+bool ArchivoTicket::existeTicketAbiertoPorPatente(const std::string &patente, Ticket *out){
+    FILE* f = fopen(_nombreArchivo, "rb");
+    if (!f) return false;
+
+    Ticket t;
+    while (fread(&t, sizeof(Ticket), 1, f) == 1) {
+
+        if (t.getPatente() == patente && t.getEstado() == "ABIERTO") {
+            if (out) *out = t;
+            fclose(f);
+            return true;
+        }
+    }
+
+    fclose(f);
+    return false;
+}

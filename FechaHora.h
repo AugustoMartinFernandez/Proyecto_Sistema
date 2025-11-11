@@ -26,6 +26,7 @@ public:
     // Calcula la diferencia en minutos entre esta FechaHora y 'otra'
     // (Ej: this->diferenciaMinutos(ingreso) nos da los minutos transcurridos)
     double diferenciaMinutos(const FechaHora& otra) const;
+    bool estaEntre(const FechaHora &desde, const FechaHora &hasta) const;
 
 private:
     int _anio;

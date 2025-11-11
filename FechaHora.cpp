@@ -74,8 +74,39 @@ double FechaHora::diferenciaMinutos(const FechaHora& otra) const {
         // Error en la conversión (ej. fecha inválida)
         return 0;
     }
-    
+
     // difftime calcula (tiempo_actual - time_otra) en segundos
     // Lo queremos en minutos
     return difftime(time_actual, time_otra) / 60.0;
 }
+
+
+bool FechaHora::estaEntre(const FechaHora &desde, const FechaHora &hasta) const {
+    // Compara primero año, luego mes, día, hora, minuto (en ese orden)
+    if (_anio < desde.getAnio() || _anio > hasta.getAnio()) return false;
+
+    if (_anio == desde.getAnio()) {
+        if (_mes < desde.getMes()) return false;
+        if (_mes == desde.getMes()) {
+            if (_dia < desde.getDia()) return false;
+            if (_dia == desde.getDia()) {
+                if (_hora < desde.getHora()) return false;
+                if (_hora == desde.getHora() && _minuto < desde.getMinuto()) return false;
+            }
+        }
+    }
+
+    if (_anio == hasta.getAnio()) {
+        if (_mes > hasta.getMes()) return false;
+        if (_mes == hasta.getMes()) {
+            if (_dia > hasta.getDia()) return false;
+            if (_dia == hasta.getDia()) {
+                if (_hora > hasta.getHora()) return false;
+                if (_hora == hasta.getHora() && _minuto > hasta.getMinuto()) return false;
+            }
+        }
+    }
+
+    return true;
+}
+

@@ -18,4 +18,5 @@ public:
 
     // Métodos específicos
     int buscarPorID(int id); // Devuelve la posición (pos)
+    bool existeTicketAbiertoPorPatente(const std::string& patente, Ticket* out = nullptr);
 };

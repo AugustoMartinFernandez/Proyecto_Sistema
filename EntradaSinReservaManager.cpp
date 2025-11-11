@@ -18,6 +18,16 @@ void EntradaSinReservaManager::procesarEntrada()
         return; // cortar el flujo
     }
 
+    ///Fijarse que no tenga ticketsAbiertos
+    Ticket ticketExistente;
+    bool tieneTicketAbierto = _ticketArchivo.existeTicketAbiertoPorPatente(vehiculo.getPatente(), &ticketExistente);
+
+    if (tieneTicketAbierto) {
+        cout << "El vehículo ya tiene un TICKET ABIERTO (ID: " << ticketExistente.getIdTicket() << ")." << endl;
+        cout << "Operación cancelada." << endl;
+        return;
+    }
+
     ///Fijarse que no tenga reservas
     FechaHora ahora = FechaHora::ahora();
     Reserva rActiva;
@@ -30,6 +40,14 @@ void EntradaSinReservaManager::procesarEntrada()
         return;
     }
 
+    ///Fijarse que haya tarifas
+    Tarifa tarifa = _tarifaArchivo.buscarTarifaVigente(vehiculo.getTipoVehiculo(), FechaHora::ahora());
+    //cout << tarifa.getIdTarifa() << endl;
+    if (tarifa.getIdTarifa() == -1) {
+        cout << "No hay una tarifa vigente para este tipo de vehículo." << endl;
+        return;
+    }
+
 
     ///Buscar plaza libre compatible
     Plaza plaza = _plazaArchivo.buscarPlazaLibre(vehiculo.getTipoVehiculo());
@@ -38,7 +56,6 @@ void EntradaSinReservaManager::procesarEntrada()
         cout << "No hay plazas disponibles para este tipo de vehículo." << endl;
         return;
     }
-
     cout << "Plaza sugerida: ";
     plaza.mostrar();
     cout << "¿Confirmar asignación de plaza? (S/N): ";
@@ -49,29 +66,36 @@ void EntradaSinReservaManager::procesarEntrada()
         cout << "Operación cancelada." << endl;
         return;
     }
-/*
+
+
     // --- 4. Crear ticket de entrada ---
-    Hora horaIngreso = cargarHora();
+    FechaHora ingreso = FechaHora::ahora();
+
     Ticket ticket(
-        _ticketManager.getNuevoID(),
-        vehiculo.getIdVehiculo(),
+        _ticketArchivo.getCantidadRegistros() + 1,
+        0, //RESERVA
         plaza.getIdPlaza(),
-        horaIngreso,
-        Hora(), // hora salida vacía
-        "ABIERTO"
+        vehiculo.getPatente(),
+        tarifa.getIdTarifa(),
+        ingreso,// fecha/hora ingreso
+        FechaHora(),                    // fecha/hora salida vacía
+        0.0f,
+        "ABIERTO"                       // estado inicial
     );
 
-    if (!_ticketManager.guardar(ticket))
-    {
+    if (!_ticketArchivo.guardar(ticket)) {
         cout << "Error al registrar el ticket de entrada." << endl;
         return;
     }
+    cout << "Ticket generado exitosamente (ID: " << ticket.getIdTicket() << ")." << endl;
+
 
     // --- 5. Marcar plaza como ocupada ---
-    plaza.setEstado("OCUPADA");
-    _plazaManager.actualizar(plaza);
+    plaza.setEstado('O');
+    _plazaArchivo.sobreescribir(plaza, plaza.getIdPlaza() -1);
 
     // --- 6. Mostrar resumen ---
+    Cliente cliente = _clienteManager.buscarPorDNI(vehiculo.getDniCliente());
     mostrarResumenTicket(ticket, vehiculo, cliente, plaza);
 }
 
@@ -88,8 +112,8 @@ void EntradaSinReservaManager::mostrarResumenTicket(
     cout << "Cliente: " << cliente.getApellido() << ", " << cliente.getNombre() << endl;
     cout << "Plaza asignada: #" << plaza.getIdPlaza()
          << " - Piso " << plaza.getPiso() << endl;
-    cout << "Hora de ingreso: " << ticket.getHoraIngreso().toString() << endl;
+    cout << "Hora de ingreso: " << ticket.getIngreso().toString() << endl;
     cout << "Estado: " << ticket.getEstado() << endl;
     cout << "---------------------------------" << endl;
-    */
+
 }

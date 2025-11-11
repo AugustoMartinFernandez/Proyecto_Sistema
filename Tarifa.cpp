@@ -2,30 +2,30 @@
 #include <string>
 #include <iostream>
 #include "Tarifa.h"
-#include "FechaHora.h" 
+#include "FechaHora.h"
 
 using namespace std;
 
 Tarifa::Tarifa()
     : _idTarifa(0),
+      _tipoVehiculo('A'),
       _fraccionMin(0),
       _precioFraccion(0.0),
       _topeDiario(0.0),
       _precioNocturno(0.0),
       _toleranciaMin(0),
       _vigenciaDesdeHora(), // Llama al constructor por defecto de FechaHora
-      _vigenciaHastaHora()
+      _vigenciaHastaHora(),
+      _estado(true)
 {
-    _tipoVehiculo[0] = '\0';
     _tipoAbono[0]    = '\0';
-    _estado[0]       = '\0';
 }
 
 Tarifa::Tarifa(
-    int idTarifa, std::string tipoVehiculo, int fraccionMin,
+    int idTarifa, char tipoVehiculo, int fraccionMin,
     float precioFraccion, float topeDiario, float precioNocturno,
     int toleranciaMin, FechaHora vigenciaDesdeHora, FechaHora vigenciaHastaHora,
-    char tipoAbono[20], char estado[20]
+    char tipoAbono[20], bool estado
 )
 {
     setIdTarifa(idTarifa);
@@ -43,10 +43,7 @@ Tarifa::Tarifa(
 
 // --- Setters ---
 void Tarifa::setIdTarifa(int idTarifa){ _idTarifa = idTarifa; }
-void Tarifa::setTipoVehiculo(std::string tipoVehiculo){
-    strncpy(_tipoVehiculo, tipoVehiculo.c_str(), 19);
-    _tipoVehiculo[19] = '\0';
-}
+void Tarifa::setTipoVehiculo(char tipoVehiculo) { _tipoVehiculo = tipoVehiculo; }
 void Tarifa::setFraccionMin(int fraccionMin){ _fraccionMin = fraccionMin; }
 void Tarifa::setPrecioFraccion(float precioFraccion){ _precioFraccion = precioFraccion; }
 void Tarifa::setTopeDiario(float topeDiario){ _topeDiario = topeDiario; }
@@ -58,14 +55,11 @@ void Tarifa::setTipoAbono(const char* tipoAbono){
     strncpy(_tipoAbono, tipoAbono, 19);
     _tipoAbono[19] = '\0';
 }
-void Tarifa::setEstado(const char* estado){
-    strncpy(_estado, estado, 19);
-    _estado[19] = '\0';
-}
+void Tarifa::setEstado(bool valor) { _estado = valor; }
 
 // --- Getters ---
 int Tarifa::getIdTarifa() const { return _idTarifa; }
-std::string Tarifa::getTipoVehiculo() const { return _tipoVehiculo; }
+char Tarifa::getTipoVehiculo() const { return _tipoVehiculo; }
 int Tarifa::getFraccionMin() const { return _fraccionMin; }
 float Tarifa::getPrecioFraccion() const { return _precioFraccion; }
 float Tarifa::getTopeDiario() const { return _topeDiario; }
@@ -74,13 +68,13 @@ int Tarifa::getToleranciaMin() const { return _toleranciaMin; }
 FechaHora Tarifa::getVigenciaDesdeHora() const { return _vigenciaDesdeHora; }
 FechaHora Tarifa::getVigenciaHastaHora() const { return _vigenciaHastaHora; }
 const char* Tarifa::getTipoAbono() const { return _tipoAbono; }
-const char* Tarifa::getEstado() const { return _estado; }
+bool Tarifa::getEstado() const { return _estado; }
 
 
 std::string Tarifa::toString()
 {
     return  std::to_string(_idTarifa) + ", " +
-            std::string(_tipoVehiculo) + ", " +
+            std::to_string(_tipoVehiculo) + ", " +
             std::to_string(_fraccionMin) + " min, " +
             std::to_string(_precioFraccion) + ", " +
             std::to_string(_topeDiario) + ", " +
@@ -88,14 +82,14 @@ std::string Tarifa::toString()
             std::to_string(_toleranciaMin) + ", " +
             _vigenciaDesdeHora.toString() + " -> " + _vigenciaHastaHora.toString() + ", " +
             std::string(_tipoAbono) + ", " +
-            std::string(_estado);
+            (_estado ? "ACTIVO" : "INACTIVO");
 }
 
 // --- MÉTODO ACTUALIZADO ---
 // Ahora acepta FechaHora y usa el método diferenciaMinutos()
 float Tarifa::calcularImporte(FechaHora ingreso, FechaHora salida) const
 {
-    
+
     // 1. Usamos el método que creamos en FechaHora
     double minutosTotales = salida.diferenciaMinutos(ingreso);
 
@@ -106,16 +100,16 @@ float Tarifa::calcularImporte(FechaHora ingreso, FechaHora salida) const
     if (_fraccionMin <= 0) {
         return 9999.9f; // Error: Evitar división por cero
     }
-    
+
     // 2. Cálculo simple por fracción
     // (Acá iría la lógica de precio nocturno y tope diario)
-    
+
     // Calculamos cuántas fracciones de tiempo pasaron
     int cantidadFracciones = (int)(minutosTotales / _fraccionMin);
     if ( (int)minutosTotales % _fraccionMin > 0 ) {
         cantidadFracciones++; // Se cobra fracción extra si sobran minutos
     }
-    
+
     float importeCalculado = cantidadFracciones * _precioFraccion;
 
     // 3. Aplicar tope diario (simplificado: si el importe es mayor al tope, se cobra el tope)
@@ -123,7 +117,7 @@ float Tarifa::calcularImporte(FechaHora ingreso, FechaHora salida) const
     if (_topeDiario > 0 && importeCalculado > _topeDiario) {
         return _topeDiario;
     }
-    
+
     return importeCalculado;
 }
 

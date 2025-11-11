@@ -7,6 +7,8 @@
 #include "Reserva.h"
 #include "ReservaArchivo.h"
 #include "TicketManager.h"
+#include "TarifaArchivo.h"
+
 
 class EntradaSinReservaManager {
 public:
@@ -19,7 +21,9 @@ private:
     ClienteManager  _clienteManager;
     ArchivoPlaza    _plazaArchivo;
     TicketManager   _ticketManager;
+    ArchivoTicket _ticketArchivo;
     ReservaArchivo   _reservaArchivo;
+    TarifaArchivo   _tarifaArchivo;
 
     void mostrarResumenTicket(const Ticket& ticket, const Vehiculo& vehiculo, const Cliente& cliente, const Plaza& plaza);
 };

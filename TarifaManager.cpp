@@ -18,7 +18,7 @@ static void mostrarTarifaEnConsola(const Tarifa& t){
     cout << "Vigencia: " << t.getVigenciaDesdeHora().toString()
          << " -> " << t.getVigenciaHastaHora().toString() << endl;
     cout << "Tipo Abono: " << t.getTipoAbono() << endl;
-    cout << "Estado: " << t.getEstado() << endl;
+    cout << "Estado: " << (t.getEstado() ? "ACTIVO" : "INACTIVO") << endl;
 }
 
 void TarifaManager::altaTarifa()
@@ -26,8 +26,10 @@ void TarifaManager::altaTarifa()
     cout << "---- ALTA DE TARIFA ----" << endl;
     int id = _archivo.getNuevoID();
 
-    cout << "Tipo de vehiculo (auto/moto/etc): ";
-    string tipoVehiculo = cargarCadena();
+    cout << "Tipo de vehiculo (auto/moto/camioneta o A/M/C): ";
+    string tipoStr = cargarCadena();
+    char tipoVehiculo = _vehiculoManager.normalizarTipo(tipoStr);
+
     int fraccionMin;
     cout << "Fraccion minima (minutos): ";
     cin >> fraccionMin;
@@ -46,17 +48,16 @@ void TarifaManager::altaTarifa()
     cout << "Vigencia HASTA" << endl;
     FechaHora hasta = cargarFechaHora();
 
-    cin.ignore();
     cout << "Tipo de abono (texto corto): ";
     string tipoAbono = cargarCadena();
 
-    const char* estado = "ACTIVO";
+    bool estado = true;
 
     Tarifa t(
         id, tipoVehiculo, fraccionMin,
         precioFraccion, topeDiario, precioNocturno,
         tolerancia, desde, hasta,
-        (char*)tipoAbono.c_str(), (char*)estado
+        (char*)tipoAbono.c_str(), estado
     );
 
     if(_archivo.guardar(t)){
@@ -88,7 +89,7 @@ void TarifaManager::bajaTarifa()
     cin >> conf;
 
     if(conf=='s' || conf=='S'){
-        if(_archivo.bajaLogicaPorPos(pos, "INACTIVO")){ 
+        if(_archivo.bajaLogicaPorPos(pos)){
             cout << "Tarifa dada de baja correctamente." << endl;
         }else{
             cout << "No se pudo realizar la baja." << endl;
@@ -127,7 +128,6 @@ void TarifaManager::modificarTarifa()
         cout << "7) Vigencia DESDE" << endl;
         cout << "8) Vigencia HASTA" << endl;
         cout << "9) Tipo de abono" << endl;
-        cout << "10) Estado" << endl;
         cout << "0) Guardar y salir" << endl;
         cout << "Opcion: ";
         cin >> opcion;
@@ -137,9 +137,9 @@ void TarifaManager::modificarTarifa()
         switch(opcion){
             case 1:{
                 cin.ignore();
-                cout << "Nuevo tipo de vehiculo: ";
-                string s = cargarCadena();
-                t.setTipoVehiculo(s.c_str());
+                cout << "Nuevo tipo de vehiculo (auto/moto/camioneta o A/M/C): ";
+                string tipoStr = cargarCadena();
+                char tipoVehiculo = _vehiculoManager.normalizarTipo(tipoStr);
             }break;
             case 2:{
                 int v; cout << "Nueva fraccion (min): "; cin >> v;
@@ -176,12 +176,6 @@ void TarifaManager::modificarTarifa()
                 cout << "Nuevo tipo de abono: ";
                 string s = cargarCadena();
                 t.setTipoAbono(s.c_str());
-            }break;
-            case 10:{
-                cin.ignore();
-                cout << "Nuevo estado (ACTIVO/INACTIVO): ";
-                string s = cargarCadena();
-                t.setEstado(s.c_str());
             }break;
             default: cout << "Opcion no valida." << endl; break;
         }

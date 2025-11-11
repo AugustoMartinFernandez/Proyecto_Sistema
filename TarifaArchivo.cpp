@@ -1,5 +1,6 @@
 #include <cstdio>
 #include <cstring>
+
 #include "TarifaArchivo.h"
 
 TarifaArchivo::TarifaArchivo(std::string nombreArchivo)
@@ -30,10 +31,10 @@ bool TarifaArchivo::guardar(int pos, const Tarifa &registro){
 }*/
 
 
-bool TarifaArchivo::bajaLogicaPorPos(int pos, const char *nuevoEstado){
+bool TarifaArchivo::bajaLogicaPorPos(int pos){
     Tarifa reg = leer(pos);
     if(reg.getIdTarifa() == -1) return false;
-    reg.setEstado(nuevoEstado ? nuevoEstado : "INACTIVO");
+    reg.setEstado(false);
     return guardar(pos, reg);
 }
 
@@ -104,26 +105,28 @@ int TarifaArchivo::buscarPorId(int idTarifa){
     return pos;
 }
 
-/*int TarifaArchivo::buscarPorTipoVehiculo(const std::string& tipo, Tarifa* out, int maxOut){
-    if(out == nullptr || maxOut <= 0) return 0;
+Tarifa TarifaArchivo::buscarTarifaVigente(char tipoVehiculo, const FechaHora &ahora) {
+    FILE* f = fopen(_nombreArchivo.c_str(), "rb");
+    Tarifa t;
 
-    FILE* pFile = fopen(_nombreArchivo.c_str(), "rb");
-    if(pFile == nullptr) return 0;
-
-    Tarifa reg;
-    int count = 0;
-
-    while(fread(&reg, sizeof(Tarifa), 1, pFile) == 1){
-        // comparación exacta por tipo (insensible a overflow porque Tarifa guarda char[20])
-        if(reg.getTipoVehiculo() == tipo){
-            if(count < maxOut){
-                out[count] = reg;
+    if (!f) {
+        t.setIdTarifa(-1);
+        return t;
+    }
+    while (fread(&t, sizeof(Tarifa), 1, f) == 1) {
+        if (t.getTipoVehiculo() == tipoVehiculo && t.getEstado()) {
+            // Verificar vigencia
+            FechaHora desde = t.getVigenciaDesdeHora();
+            FechaHora hasta = t.getVigenciaHastaHora();
+            if (ahora.estaEntre(desde, hasta)){
+                fclose(f);
+                return t;
             }
-            count++;
+
         }
     }
 
-    fclose(pFile);
-    // Si hubo más coincidencias que maxOut, el resto solo se contabiliza.
-    return (count > maxOut) ? maxOut : count;
-}*/
+    fclose(f);
+    t.setIdTarifa(-1);
+    return t;
+}
