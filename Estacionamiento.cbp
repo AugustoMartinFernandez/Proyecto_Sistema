@@ -136,6 +136,12 @@
 		<Unit filename="PagoManager.h">
 			<Option virtualFolder="Pago/" />
 		</Unit>
+		<Unit filename="PagoMenu.cpp">
+			<Option virtualFolder="Pago/" />
+		</Unit>
+		<Unit filename="PagoMenu.h">
+			<Option virtualFolder="Pago/" />
+		</Unit>
 		<Unit filename="Plaza.cpp">
 			<Option virtualFolder="Plaza/" />
 		</Unit>
@@ -248,14 +254,14 @@
 			<Option virtualFolder="Vehiculo/" />
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
-		<Unit filename="include/PagoMenu.h">
-			<Option virtualFolder="Pago/" />
-		</Unit>
-		<Unit filename="src/PagoMenu.cpp">
-			<Option virtualFolder="Pago/" />
-		</Unit>
 		<Unit filename="utils.cpp" />
 		<Unit filename="utils.h" />
+		<Unit filename="utilsVehiculo.cpp">
+			<Option virtualFolder="Vehiculo/" />
+		</Unit>
+		<Unit filename="utilsVehiculo.h">
+			<Option virtualFolder="Vehiculo/" />
+		</Unit>
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
