@@ -10,8 +10,7 @@ void PagoManager::mostrarPago(const Pago &p){
     cout << "ID Pago: "     << p.getIdPago()     << endl;
     cout << "ID Ticket: "   << p.getIdTicket()   << endl;
     cout << "Importe: $"    << p.getImporte()    << endl;
-    cout << "Fecha: "       << p.getFecha().toString() << endl;
-    cout << "Hora: "        << p.getHora().toString()  << endl;
+    cout << "Fecha y Hora: "<< p.getFechaHora().toString() << endl;
     cout << "Medio: "       << p.getMedioPago() << endl;
     cout << "Estado: "      << (p.getEstadoPago() ? "ACTIVO" : "ANULADO") << endl;
 }
@@ -30,11 +29,8 @@ void PagoManager::altaPago(){
     cout << "Importe: $";
     cin >> importe;
 
-    cout << "Fecha: " << endl;
-    Fecha fecha = cargarFecha();
-
-    cout << "Hora: " << endl;
-    Hora hora = cargarHora();
+    cout << "Fecha y Hora: " << endl;
+    FechaHora fechaHora = cargarFechaHora();
 
     cin.ignore();
     cout << "Medio de pago (efectivo/debito/credito/otro): ";
@@ -42,7 +38,7 @@ void PagoManager::altaPago(){
 
     bool estado = true; // ACTIVO por defecto
 
-    Pago pago(id, idTicket, importe, fecha, hora, medio, estado);
+    Pago pago(id, idTicket, importe, fechaHora, medio, estado);
 
     if(_repo.guardar(pago)){
         cout << "Pago guardado correctamente." << endl;
@@ -85,9 +81,8 @@ void PagoManager::modificarPago(){
         cout << "1) ID Ticket" << endl;
         cout << "2) Importe" << endl;
         cout << "3) Fecha" << endl;
-        cout << "4) Hora" << endl;
-        cout << "5) Medio de pago" << endl;
-        cout << "6) Estado (Activo/Anulado)" << endl;
+        cout << "4) Medio de pago" << endl;
+        cout << "5) Estado (Activo/Anulado)" << endl;
         cout << "0) Guardar y salir" << endl;
         cout << "Opcion: ";
         cin >> op;
@@ -109,20 +104,16 @@ void PagoManager::modificarPago(){
             }break;
             case 3:
             {
-                cout << "Nueva fecha" << endl;
-                p.setFecha(cargarFecha());
+                cout << "Nueva fecha y hora" << endl;
+                p.setFechaHora(cargarFechaHora());
             }break;
             case 4:{
-                cout << "Nueva hora (hh mm): " << endl;
-                p.setHora(cargarHora());
-            }break;
-            case 5:{
                 cin.ignore();
                 cout << "Nuevo medio de pago: ";
                 string s = cargarCadena();
                 p.setMedioPago(s);
             }break;
-            case 6:{
+            case 5:{
                 char c;
                 cout << "Activo? (S/N): ";
                 cin >> c;

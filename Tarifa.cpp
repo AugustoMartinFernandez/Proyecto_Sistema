@@ -85,40 +85,37 @@ std::string Tarifa::toString()
             (_estado ? "ACTIVO" : "INACTIVO");
 }
 
-// --- MÉTODO ACTUALIZADO ---
-// Ahora acepta FechaHora y usa el método diferenciaMinutos()
+bool esHoraNocturna(int h) {
+    return (h >= 22) || (h < 6);
+}
+
 float Tarifa::calcularImporte(FechaHora ingreso, FechaHora salida) const
 {
-
-    // 1. Usamos el método que creamos en FechaHora
     double minutosTotales = salida.diferenciaMinutos(ingreso);
+    if (minutosTotales <= 0) return 0.0f;
+    if (_fraccionMin <= 0)  return 9999.9f; // evitar /0
 
-    if (minutosTotales <= _toleranciaMin) {
-        return 0.0f; // Dentro de la tolerancia
+    //Aplicar tolerancia como minutos gratis
+    int minutosCobrables = minutosTotales - _toleranciaMin;
+    if (minutosCobrables <= 0) return 0.0f;
+
+    //Redondeo hacia arriba por fracción
+    int fracciones = (minutosCobrables + _fraccionMin - 1) / _fraccionMin;
+    float importe = fracciones * _precioFraccion;
+
+    //Tope diario (simplificado: por ticket)
+    if (_topeDiario > 0 && importe > _topeDiario) {
+        importe = _topeDiario;
     }
 
-    if (_fraccionMin <= 0) {
-        return 9999.9f; // Error: Evitar división por cero
+    //Precio nocturno
+    if (_precioNocturno > 0.0f && esHoraNocturna(ingreso.getHora())) {
+        if (_precioNocturno < importe) {
+            return _precioNocturno;
+        }
     }
 
-    // 2. Cálculo simple por fracción
-    // (Acá iría la lógica de precio nocturno y tope diario)
-
-    // Calculamos cuántas fracciones de tiempo pasaron
-    int cantidadFracciones = (int)(minutosTotales / _fraccionMin);
-    if ( (int)minutosTotales % _fraccionMin > 0 ) {
-        cantidadFracciones++; // Se cobra fracción extra si sobran minutos
-    }
-
-    float importeCalculado = cantidadFracciones * _precioFraccion;
-
-    // 3. Aplicar tope diario (simplificado: si el importe es mayor al tope, se cobra el tope)
-    // (Una lógica real debería calcular esto por cada día calendario transcurrido)
-    if (_topeDiario > 0 && importeCalculado > _topeDiario) {
-        return _topeDiario;
-    }
-
-    return importeCalculado;
+    return importe;
 }
 
 // (Metodos que faltabam que faltaban)

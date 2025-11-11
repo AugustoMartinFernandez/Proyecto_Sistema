@@ -35,7 +35,6 @@ public:
     void setTopeDiario(float valor);
     void setPrecioNocturno(float valor);
     void setToleranciaMin(int valor);
-    // --- ACTUALIZADO ---
     void setVigenciaDesdeHora(FechaHora valor);
     void setVigenciaHastaHora(FechaHora valor);
     void setTipoAbono(const char* valor);

@@ -1,21 +1,19 @@
 #pragma once
 #include <string>
-#include "Fecha.h"
-#include "Hora.h"
+#include "FechaHora.h"
 
 class Pago
 {
 public:
     Pago();
-    Pago(int idPago, int idTicket, float importe, Fecha fecha, Hora hora,
+    Pago(int idPago, int idTicket, float importe, FechaHora fechaHora,
          const std::string& medioPago, bool estadoPago);
 
     // Setters
     void setIdPago(int idPago);
     void setIdTicket(int idTicket);
     void setImporte(float importe);
-    void setFecha(Fecha fecha);
-    void setHora(Hora hora);
+    void setFechaHora(FechaHora fechaHora);
     void setMedioPago(const std::string &medioPago);
     void setEstadoPago(bool estadoPago);
 
@@ -23,8 +21,7 @@ public:
     int getIdPago() const;
     int getIdTicket() const;
     float getImporte() const;
-    Fecha getFecha() const;
-    Hora getHora() const;
+    FechaHora getFechaHora() const;
     std::string getMedioPago() const;
     bool getEstadoPago() const;
 
@@ -34,8 +31,7 @@ private:
     int   _idPago;
     int   _idTicket;
     float _importe;
-    Fecha _fecha;
-    Hora _hora;
+    FechaHora _fechaHora;
     char  _medioPago[20];   // efectivo, debito, credito, etc.
     bool  _estadoPago;      // true=activo/valido, false=anulado
 };

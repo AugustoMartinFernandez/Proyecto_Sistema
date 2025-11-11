@@ -184,6 +184,12 @@
 		<Unit filename="ReservaMenu.h">
 			<Option virtualFolder="Reserva/" />
 		</Unit>
+		<Unit filename="SalidaCobroManager.cpp">
+			<Option virtualFolder="Flujos/" />
+		</Unit>
+		<Unit filename="SalidaCobroManager.h">
+			<Option virtualFolder="Flujos/" />
+		</Unit>
 		<Unit filename="Tarifa.cpp">
 			<Option virtualFolder="Tarifa/" />
 		</Unit>

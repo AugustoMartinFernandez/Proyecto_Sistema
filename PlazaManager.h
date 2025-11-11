@@ -10,7 +10,6 @@ private:
     VehiculoManager _vehiculoManager;
 
 public:
-    // Constructor (podría inicializar el nombre de archivo si fuera necesario)
     PlazaManager(const char *rutaPlazas = "plazas.dat");
 
     void altaPlaza();

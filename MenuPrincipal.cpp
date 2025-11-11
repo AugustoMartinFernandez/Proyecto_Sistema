@@ -5,7 +5,7 @@
 using namespace std;
 
 MenuPrincipal::MenuPrincipal() {
-    _cantidadOpciones = 9;
+    _cantidadOpciones = 10;
 }
 
 void MenuPrincipal::mostrar() {
@@ -33,6 +33,7 @@ void MenuPrincipal::mostrarOpciones() {
     cout << "7. Gestion de Tickets" << endl;
     cout << "8. Gestion de Pagos" << endl;
     cout << "9. Entrada sin reserva" << endl;
+    cout << "10. Salida y Cobro" << endl;
     // ... Aquí irían Informes y Configuración
     cout << "---------------------------------" << endl;
     cout << "0 - Salir del Sistema" << endl;
@@ -106,6 +107,12 @@ void MenuPrincipal::ejecutarOpcion(int opcion) {
         {
             EntradaSinReservaManager flujo;
             flujo.procesarEntrada();
+            break;
+        }
+        case 10:
+        {
+            SalidaCobroManager flujoSalida;
+            flujoSalida.procesarSalida();
             break;
         }
         case 0:

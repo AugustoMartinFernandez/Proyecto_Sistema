@@ -68,7 +68,7 @@ void EntradaSinReservaManager::procesarEntrada()
     }
 
 
-    // --- 4. Crear ticket de entrada ---
+    //Crear ticket de entrada
     FechaHora ingreso = FechaHora::ahora();
 
     Ticket ticket(
@@ -78,9 +78,9 @@ void EntradaSinReservaManager::procesarEntrada()
         vehiculo.getPatente(),
         tarifa.getIdTarifa(),
         ingreso,// fecha/hora ingreso
-        FechaHora(),                    // fecha/hora salida vacía
+        FechaHora(),// fecha/hora salida vacía
         0.0f,
-        "ABIERTO"                       // estado inicial
+        "ABIERTO"// estado inicial
     );
 
     if (!_ticketArchivo.guardar(ticket)) {
@@ -90,11 +90,11 @@ void EntradaSinReservaManager::procesarEntrada()
     cout << "Ticket generado exitosamente (ID: " << ticket.getIdTicket() << ")." << endl;
 
 
-    // --- 5. Marcar plaza como ocupada ---
+    //Marcar plaza como ocupada
     plaza.setEstado('O');
     _plazaArchivo.sobreescribir(plaza, plaza.getIdPlaza() -1);
 
-    // --- 6. Mostrar resumen ---
+    //Mostrar resumen
     Cliente cliente = _clienteManager.buscarPorDNI(vehiculo.getDniCliente());
     mostrarResumenTicket(ticket, vehiculo, cliente, plaza);
 }

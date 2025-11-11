@@ -9,6 +9,8 @@
 #include "PagoMenu.h"
 #include "ReservaMenu.h"
 #include "EntradaSinReservaManager.h"
+#include "SalidaCobroManager.h"
+
 
 // #include "ReservaMenu.h" // (Pendiente para cuando se cree)
 
