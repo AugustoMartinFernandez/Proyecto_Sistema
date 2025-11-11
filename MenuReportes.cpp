@@ -1,14 +1,14 @@
-#include "MenuPrincipal.h"
+#include "MenuReportes.h"
 #include <iostream>
 #include <cstdlib>
 
 using namespace std;
 
-MenuPrincipal::MenuPrincipal() {
+MenuReportes::MenuReportes() {
     _cantidadOpciones = 5;
 }
 
-void MenuPrincipal::mostrar() {
+void MenuReportes::mostrar() {
     int opcion;
     do {
         system("cls || clear");
@@ -22,19 +22,19 @@ void MenuPrincipal::mostrar() {
     } while (opcion != 0);
 }
 
-void MenuPrincipal::mostrarOpciones() {
-    cout << "=== SISTEMA DE GESTION DE ESTACIONAMIENTO ===" << endl;
-    cout << "1. Entrada sin reserva" << endl;
-    cout << "2. Entrada con reserva" << endl;
-    cout << "3. Salida y cobro" << endl;
-    cout << "4. Gestion manual" << endl;
+void MenuReportes::mostrarOpciones() {
+    cout << "=== REPORTES ===" << endl;
+    cout << "1. Recaudaciones anual" << endl;
+    cout << "2. Recaudaciones mensual" << endl;
+    cout << "3. Recaudaciones diaria" << endl;
+    cout << "4. Recaudacion por tipo de vehiculo" << endl;
     cout << "5. Reportes" << endl;
     cout << "---------------------------------" << endl;
-    cout << "0 - Salir del sistema" << endl;
+    cout << "0 - Volver al menu principal" << endl;
     cout << "---------------------------------" << endl;
 }
 
-int MenuPrincipal::seleccionOpcion() {
+int MenuReportes::seleccionOpcion() {
     int opcion;
     mostrarOpciones();
     cout << "Seleccione un modulo: ";
@@ -47,40 +47,40 @@ int MenuPrincipal::seleccionOpcion() {
     return opcion;
 }
 
-void MenuPrincipal::ejecutarOpcion(int opcion) {
+void MenuReportes::ejecutarOpcion(int opcion) {
     switch (opcion) {
         case 1:
         {
-            EntradaSinReservaManager flujo;
-            flujo.procesarEntrada();
+            ReporteRecaudacionManager rrm;
+            rrm.recaudacionAnual();
             break;
         }
         case 2:
         {
-            //EntradaConReservaManager flujo;
-            //flujo.procesarEntrada();
+            ReporteRecaudacionManager rrm;
+            rrm.recaudacionMensual();
             break;
         }
         case 3:
         {
-            SalidaCobroManager flujoSalida;
-            flujoSalida.procesarSalida();
+            ReporteRecaudacionManager rrm;
+            rrm.recaudacionDiaria();
             break;
         }
         case 4:
         {
-            MenuGestion menuGestion;
-            menuGestion.mostrar();
+            ReporteRecaudacionManager rrm;
+            rrm.recaudacionPorTipoVehiculo();
             break;
         }
         case 5:
         {
-            MenuReportes menuReportes;
-            menuReportes.mostrar();
+            //TarifaMenu menuTarifas;
+            //menuTarifas.mostrar();
             break;
         }
         case 0:
-            cout << "Gracias por utilizar el sistema. Adios." << endl;
+            cout << "Volviendo al menu principal..."  << endl;
             break;
         default:
             cout << "Opcion invalida." << endl;

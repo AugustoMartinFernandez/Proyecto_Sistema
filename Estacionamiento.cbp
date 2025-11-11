@@ -5,7 +5,7 @@
 		<Option title="Estacionamiento" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="Tarifa/;Vehiculo/;Cliente/;Ticket/;Pago/;Abono/;Plaza/;Reserva/;Flujos/" />
+		<Option virtualFolders="Tarifa/;Vehiculo/;Cliente/;Ticket/;Pago/;Abono/;Plaza/;Reserva/;Flujos/;Reportes/" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/Estacionamiento" prefix_auto="1" extension_auto="1" />
@@ -110,14 +110,14 @@
 			<Option virtualFolder="Flujos/" />
 		</Unit>
 		<Unit filename="Estacionamiento de Vehiculos.cpp" />
-		<Unit filename="Fecha.cpp" />
-		<Unit filename="Fecha.h" />
 		<Unit filename="FechaHora.cpp" />
 		<Unit filename="FechaHora.h" />
-		<Unit filename="Hora.cpp" />
-		<Unit filename="Hora.h" />
+		<Unit filename="MenuGestion.cpp" />
+		<Unit filename="MenuGestion.h" />
 		<Unit filename="MenuPrincipal.cpp" />
 		<Unit filename="MenuPrincipal.h" />
+		<Unit filename="MenuReportes.cpp" />
+		<Unit filename="MenuReportes.h" />
 		<Unit filename="Pago.cpp">
 			<Option virtualFolder="Pago/" />
 		</Unit>
@@ -159,6 +159,12 @@
 		</Unit>
 		<Unit filename="PlazaMenu.h">
 			<Option virtualFolder="Plaza/" />
+		</Unit>
+		<Unit filename="ReporteRecaudacionManager.cpp">
+			<Option virtualFolder="Reportes/" />
+		</Unit>
+		<Unit filename="ReporteRecaudacionManager.h">
+			<Option virtualFolder="Reportes/" />
 		</Unit>
 		<Unit filename="Reserva.cpp">
 			<Option virtualFolder="Reserva/" />

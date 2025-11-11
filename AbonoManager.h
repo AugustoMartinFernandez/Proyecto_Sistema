@@ -1,22 +1,18 @@
-#ifndef ABONOMANAGER_H
-#define ABONOMANAGER_H
+#pragma once
 
 #include "Abono.h"
 #include "ArchivoAbono.h"
-#include "Hora.h" // Necesario para crear objetos Hora
+#include "FechaHora.h"
 
 class AbonoManager {
 private:
-    ArchivoAbono _archivoAbonos; // El Manager usa la clase Archivo
+    ArchivoAbono _archivoAbonos;
 
 public:
     AbonoManager(const char* rutaAbonos = "abonos.dat");
 
-    // LÓGICA DE NEGOCIO (ABM)
-    void altaAbono();      
-    void listarAbonos();   
-    void modificarAbono(); 
-    void bajaAbono();      
+    void altaAbono();
+    void listarAbonos();
+    void modificarAbono();
+    void bajaAbono();
 };
-
-#endif // ABONOMANAGER_H

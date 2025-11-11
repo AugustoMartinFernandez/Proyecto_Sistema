@@ -6,10 +6,8 @@
 
 std::string cargarCadena();
 
-Hora cargarHora();
-
-Fecha cargarFecha();
 
 FechaHora cargarFechaHora();
+FechaHora cargarFechaHora(bool soloFecha);
 
 int comparaFechas(const FechaHora &a, const FechaHora &b);

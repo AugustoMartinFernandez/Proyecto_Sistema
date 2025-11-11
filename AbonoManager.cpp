@@ -1,16 +1,16 @@
 #include "AbonoManager.h"
 #include <iostream>
 #include <cstring>
-#include "Hora.h"   
-#include "utils.h"  
+#include "Hora.h"
+#include "utils.h"
 
 using namespace std;
 
 AbonoManager::AbonoManager(const char* rutaAbonos) : _archivoAbonos(std::string(rutaAbonos)) {}
 
 void AbonoManager::altaAbono() {
-    Abono reg; 
-    
+    Abono reg;
+
     cout << "--- ALTA NUEVO ABONO ---" << endl;
 
     char idCliente[9], plan[21];
@@ -20,7 +20,7 @@ void AbonoManager::altaAbono() {
     cout << "ID de Cliente (DNI/ID): ";
     cin >> idCliente;
     // (VALIDACIÓN PENDIENTE)
-    
+
     cout << "Plan (ej: Parcial, Completo): ";
     cin >> plan;
     cout << "Precio Mensual: $";
@@ -30,21 +30,21 @@ void AbonoManager::altaAbono() {
     // (VALIDACIÓN PENDIENTE)
 
     cout << "Hora de inicio --" << endl;
-    Hora hDesde = cargarHora();
-    
+    FechaHora hDesde = cargarFechaHora();
+
     cout << "Hora de fin --" << endl;
-    Hora hHasta = cargarHora();
+    FechaHora hHasta = cargarFechaHora();
 
     reg.setIdCliente(idCliente);
     reg.setPlan(plan);
     reg.setPrecioMensual(precio);
     reg.setIdTarifa(idTarifa);
-    reg.setDesdeHora(hDesde); 
-    reg.setHastaHora(hHasta); 
-    
+    reg.setDesde(hDesde);
+    reg.setHasta(hHasta);
+
     int proximoID = _archivoAbonos.getCantidadRegistros() + 1;
     reg.setIdAbono(proximoID);
-    reg.setEstado('A'); 
+    reg.setEstado('A');
 
     if (_archivoAbonos.guardar(reg)) {
         cout << "[+] Abono ID " << proximoID << " guardado correctamente." << endl;
@@ -55,9 +55,9 @@ void AbonoManager::altaAbono() {
 
 void AbonoManager::listarAbonos() {
     cout << "--- LISTADO DE ABONOS ---" << endl;
-    
+
     int cantidad = _archivoAbonos.getCantidadRegistros();
-    
+
     if (cantidad == 0) {
         cout << "No hay abonos registrados." << endl;
         return;
@@ -65,8 +65,8 @@ void AbonoManager::listarAbonos() {
 
     for (int i = 0; i < cantidad; i++) {
         Abono reg = _archivoAbonos.leer(i);
-        
-        if (reg.getIdAbono() != -1 && reg.getEstado() != 'B') { 
+
+        if (reg.getIdAbono() != -1 && reg.getEstado() != 'B') {
             reg.mostrar();
             cout << "------------------------" << endl;
         }

@@ -1,12 +1,12 @@
 #pragma once
 
-#include "Hora.h" // Incluimos la estructura de Hora
+#include "FechaHora.h" // Incluimos la estructura de Hora
 
 class Abono {
 private:
     int idAbono;
-    Hora desdeHora;
-    Hora hastaHora;
+    FechaHora desde;
+    FechaHora hasta;
     char idCliente[9];  // 8 chars para el DNI/ID + 1 para '\0'
     char plan[21];      // 20 chars para el nombre del plan + 1 para '\0'
     float precioMensual;
@@ -19,8 +19,8 @@ public:
 
     // MÉTODOS DE LECTURA
     int getIdAbono() const;
-    Hora getDesdeHora() const;
-    Hora getHastaHora() const;
+    FechaHora getDesde() const;
+    FechaHora getHasta() const;
     const char* getIdCliente() const;
     const char* getPlan() const;
     float getPrecioMensual() const;
@@ -29,8 +29,8 @@ public:
 
     // MÉTODOS DE ESCRITURA
     void setIdAbono(int id);
-    void setDesdeHora(Hora h);
-    void setHastaHora(Hora h);
+    void setDesde(FechaHora h);
+    void setHasta(FechaHora h);
     void setIdCliente(const char* id);
     void setPlan(const char* p);
     void setPrecioMensual(float p);

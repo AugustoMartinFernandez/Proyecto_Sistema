@@ -1,12 +1,9 @@
 #pragma once
-#include "EntradaSinReservaManager.h"
-#include "SalidaCobroManager.h"
-#include "MenuGestion.h"
-#include "MenuReportes.h"
+#include "ReporteRecaudacionManager.h"
 
-class MenuPrincipal {
+class MenuReportes {
 public:
-    MenuPrincipal();
+    MenuReportes();
     void mostrar();
 
 protected:
