@@ -1,24 +1,17 @@
-#ifndef ARCHIVOABONO_H
-#define ARCHIVOABONO_H
+#pragma once
 
-#include "Abono.h" // Necesita saber qué estructura maneja
+#include "Abono.h"
+#include <string>
 
 class ArchivoAbono {
 private:
-    const char* nombreArchivo;
+    std::string _nombreArchivo;
 
 public:
-    // Constructor
-    ArchivoAbono(const char* nombre = "abonos.dat");
+    ArchivoAbono(std::string nombre = "abonos.dat");
 
-    // MÉTODOS DE GESTIÓN DE ARCHIVOS (cstdio/FILE*)
-    bool grabarRegistro(const Abono& reg);        
-    bool modificarRegistro(const Abono& reg, int pos); 
-    
-    // Devuelve el objeto Abono leído o un objeto de error (ID = -1).
-    Abono leerRegistro(int pos);       
-    
-    int contarRegistros() const;                  
+    bool guardar(const Abono& reg);        
+    bool sobreescribir(const Abono& reg, int pos); 
+    Abono leer(int pos);       
+    int getCantidadRegistros() const;                  
 };
-
-#endif // ARCHIVOABONO_H

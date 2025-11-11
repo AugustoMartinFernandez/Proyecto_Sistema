@@ -1,19 +1,19 @@
 #pragma once
 
-#include "Plaza.h" // Necesita saber qué estructura maneja
+#include "Plaza.h"
+#include <string>
 
 class ArchivoPlaza {
 private:
-    const char* nombreArchivo;
+    std::string _nombreArchivo;
 
 public:
-    // Constructor. Permite cambiar el nombre del archivo si se necesita (ej. para backups).
-    ArchivoPlaza(const char *nombre = "plazas.dat");
+    ArchivoPlaza(std::string nombre = "plazas.dat");
 
-    bool grabarRegistro(const Plaza &reg);
-    bool modificarRegistro(const Plaza &reg, int pos);
+    bool guardar(const Plaza& reg);
+    bool sobreescribir(const Plaza& reg, int pos);
     Plaza leer(int pos);
-    int contarRegistros() const;
+    int getCantidadRegistros() const;
 
     Plaza buscarPlazaLibre(char tipoVehiculo);
 

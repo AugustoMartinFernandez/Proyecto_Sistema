@@ -1,5 +1,6 @@
 #pragma once
-#include "Hora.h"
+#include <string>
+#include "FechaHora.h"
 
 class Tarifa
 {
@@ -8,7 +9,8 @@ public:
     Tarifa(
         int idTarifa, std::string tipoVehiculo, int fraccionMin,
         float precioFraccion, float topeDiario, float precioNocturno,
-        int toleranciaMin, Hora vigenciaDesdeHora, Hora vigenciaHastaHora,
+        int toleranciaMin, 
+        FechaHora vigenciaDesdeHora, FechaHora vigenciaHastaHora,
         char tipoAbono[20], char estado[20]
     );
 
@@ -20,8 +22,8 @@ public:
     float getTopeDiario() const;
     float getPrecioNocturno() const;
     int getToleranciaMin() const;
-    Hora getVigenciaDesdeHora() const;
-    Hora getVigenciaHastaHora() const;
+    FechaHora getVigenciaDesdeHora() const;
+    FechaHora getVigenciaHastaHora() const;
     const char* getTipoAbono() const;
     const char* getEstado() const;
 
@@ -33,13 +35,14 @@ public:
     void setTopeDiario(float valor);
     void setPrecioNocturno(float valor);
     void setToleranciaMin(int valor);
-    void setVigenciaDesdeHora(Hora valor);
-    void setVigenciaHastaHora(Hora valor);
+    // --- ACTUALIZADO ---
+    void setVigenciaDesdeHora(FechaHora valor);
+    void setVigenciaHastaHora(FechaHora valor);
     void setTipoAbono(const char* valor);
     void setEstado(const char* valor);
 
     // Métodos
-    float calcularImporte(Hora ingreso, Hora salida);
+    float calcularImporte(FechaHora ingreso, FechaHora salida) const;
     void cargar();
     void mostrar();
     std::string toString();
@@ -54,9 +57,8 @@ private:
     float _topeDiario;
     float _precioNocturno;
     int _toleranciaMin;
-    Hora _vigenciaDesdeHora;
-    Hora _vigenciaHastaHora;
+    FechaHora _vigenciaDesdeHora;
+    FechaHora _vigenciaHastaHora;
     char _tipoAbono[20];
     char _estado[20];
 };
-

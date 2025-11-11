@@ -160,8 +160,9 @@
 	<string>
 	"Tarifa.h"
 
-1762529874 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\tarifa.h
-	"Hora.h"
+1762819320 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\tarifa.h
+	<string>
+	"FechaHora.h"
 
 1762623331 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\hora.h
 	<string>
@@ -193,18 +194,19 @@
 	<string>
 	"FechaHora.h"
 
-1762623331 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\tarifa.cpp
-	<iostream>
+1762819320 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\tarifa.cpp
 	<cstring>
 	<string>
+	<iostream>
 	"Tarifa.h"
+	"FechaHora.h"
 
 1762297160 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\tarifaarchivo.cpp
 	<cstdio>
 	<cstring>
 	"TarifaArchivo.h"
 
-1762549767 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\tarifamanager.cpp
+1762819320 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\tarifamanager.cpp
 	<iostream>
 	<string>
 	"utils.h"
@@ -222,15 +224,14 @@
 	<iostream>
 	"TarifaMenu.h"
 
-1762623331 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\ticket.cpp
+1762819320 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\ticket.cpp
 	"Ticket.h"
 	<iostream>
 	<cstring>
 	"utils.h"
 
-1762623331 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\ticket.h
-	"Hora.h"
-	"Fecha.h"
+1762819320 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\ticket.h
+	"FechaHora.h"
 
 1762807140 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\utils.cpp
 	<iostream>
@@ -264,7 +265,7 @@
 	<string>
 	"Pago.h"
 
-1762643206 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\pagomanager.cpp
+1762819320 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\pagomanager.cpp
 	<iostream>
 	<string>
 	"utils.h"
@@ -281,12 +282,13 @@
 1762549050 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\include\pagomenu.h
 	"PagoManager.h"
 
-1762552409 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\archivoabono.cpp
+1762810749 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\archivoabono.cpp
 	"ArchivoAbono.h"
 	<cstdio>
 
-1762552409 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\archivoabono.h
+1762810749 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\archivoabono.h
 	"Abono.h"
+	<string>
 
 1762552409 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\abono.h
 	"Hora.h"
@@ -304,15 +306,17 @@
 	<string>
 	"Cliente.h"
 
-1762552314 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\cliente.h
+1762805356 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\cliente.h
+	<string>
 
 1762621260 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\archivoplaza.cpp
 	"ArchivoPlaza.h"
 	<cstdio>
 	<iostream>
 
-1762621260 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\archivoplaza.h
+1762811129 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\archivoplaza.h
 	"Plaza.h"
+	<string>
 
 1762552409 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\plaza.h
 
@@ -327,30 +331,31 @@
 	<string>
 	"Vehiculo.h"
 
-1762552314 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\vehiculo.h
+1762805356 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\vehiculo.h
+	<string>
 
-1762552314 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\cliente.cpp
-	<iostream>
+1762805356 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\cliente.cpp
 	<cstring>
-	<cctype>
+	<string>
 	"Cliente.h"
 
 1762552409 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\estacionamiento de vehiculos.cpp
 	"MenuPrincipal.h"
 
-1762620858 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\menuprincipal.h
+1762805356 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\menuprincipal.h
 	"PlazaMenu.h"
 	"AbonoMenu.h"
 	"ClienteMenu.h"
-	"MenuVehiculo.h"
+	"VehiculoMenu.h"
 	"TarifaMenu.h"
 	"TicketMenu.h"
 	"PagoMenu.h"
+	"ReservaMenu.h"
 
 1762552409 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\plazamenu.h
 	"PlazaManager.h"
 
-1762552409 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\plazamanager.h
+1762805356 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\plazamanager.h
 	"Plaza.h"
 	"ArchivoPlaza.h"
 
@@ -373,7 +378,7 @@
 	"ArchivoCliente.h"
 	"ArchivoVehiculo.h"
 
-1762620838 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\menuprincipal.cpp
+1762805356 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\menuprincipal.cpp
 	"MenuPrincipal.h"
 	<iostream>
 	<cstdlib>
@@ -388,7 +393,7 @@
 	<string>
 	"Pago.h"
 
-1762552409 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\pago.h
+1762805356 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\pago.h
 	<string>
 	"Fecha.h"
 	"Hora.h"
@@ -401,16 +406,18 @@
 	<string>
 	"Pago.h"
 
-1762552409 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\pagomanager.cpp
+1762810749 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\pagomanager.cpp
 	<iostream>
 	<string>
 	"utils.h"
 	"PagoManager.h"
 	"Pago.h"
 
-1762552409 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\utils.h
+1762805356 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\utils.h
 	<string>
 	"Hora.h"
+	"Fecha.h"
+	"FechaHora.h"
 
 1762552409 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\pagomanager.h
 	"PagoArchivo.h"
@@ -430,13 +437,14 @@
 	<iostream>
 	<cstdlib>
 
-1762552314 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\reserva.cpp
-	<iostream>
+1762805356 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\reserva.cpp
 	<cstring>
-	<cctype>
+	<string>
 	"Reserva.h"
 
-1762552314 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\reserva.h
+1762805356 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\reserva.h
+	<string>
+	"FechaHora.h"
 
 1762552409 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\src\pagomenu.cpp
 	<iostream>
@@ -445,14 +453,16 @@
 1762552409 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\include\pagomenu.h
 	"PagoManager.h"
 
-1762621105 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\tarifa.cpp
-	<iostream>
+1762809224 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\tarifa.cpp
 	<cstring>
 	<string>
+	<iostream>
 	"Tarifa.h"
+	"FechaHora.h"
 
-1762552409 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\tarifa.h
-	"Hora.h"
+1762809224 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\tarifa.h
+	<string>
+	"FechaHora.h"
 
 1762552409 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\tarifaarchivo.cpp
 	<cstdio>
@@ -463,7 +473,7 @@
 	<string>
 	"Tarifa.h"
 
-1762552409 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\tarifamanager.cpp
+1762810749 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\tarifamanager.cpp
 	<iostream>
 	<string>
 	"utils.h"
@@ -483,25 +493,22 @@
 1762552409 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\tarifamenu.h
 	"TarifaManager.h"
 
-1762620838 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\ticket.cpp
+1762809224 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\ticket.cpp
 	"Ticket.h"
 	<iostream>
 	<cstring>
 	"utils.h"
 
-1762620838 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\ticket.h
-	"Hora.h"
-	"Fecha.h"
+1762809224 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\ticket.h
+	"FechaHora.h"
 
-1762552409 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\utils.cpp
+1762805356 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\utils.cpp
 	<iostream>
 	"utils.h"
 
-1762552314 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\vehiculo.cpp
-	<iostream>
+1762805356 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\vehiculo.cpp
 	<cstring>
-	<cctype>
-	<cstdio>
+	<string>
 	"Vehiculo.h"
 
 1762616344 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\abono.cpp
@@ -532,37 +539,35 @@
 1762620081 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\clientemenu.h
 	"ClienteManager.h"
 
-1762620081 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\clientemanager.h
-	"ArchivoCliente.h"
-	"ArchivoVehiculo.h"
+1762805356 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\clientemanager.h
 	<string>
-
-1762620081 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\clientemanager.cpp
-	"ClienteManager.h"
 	"Cliente.h"
-	"Vehiculo.h"
-	<iostream>
-	<cstring>
+	"ClienteArchivo.h"
 
-1762620081 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\clientemenu.cpp
-	"ClienteMenu.h"
+1762805356 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\clientemanager.cpp
 	<iostream>
-	<cstdlib>
+	"ClienteManager.h"
+	"utils.h"
+
+1762805356 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\clientemenu.cpp
+	<iostream>
+	"ClienteMenu.h"
 
 1762620081 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\menuvehiculo.h
 	"VehiculoManager.h"
 
-1762620081 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\vehiculomanager.h
-	"ArchivoVehiculo.h"
-	"ArchivoCliente.h"
+1762805356 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\vehiculomanager.h
 	<string>
-
-1762620081 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\vehiculomanager.cpp
-	"VehiculoManager.h"
 	"Vehiculo.h"
-	"Cliente.h"
+	"VehiculoArchivo.h"
+	"ClienteArchivo.h"
+	"ClienteManager.h"
+
+1762805356 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\vehiculomanager.cpp
 	<iostream>
-	<cstring>
+	<algorithm>
+	"VehiculoManager.h"
+	"utils.h"
 
 1762620838 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\archivoticket.cpp
 	"ArchivoTicket.h"
@@ -575,10 +580,10 @@
 1762620838 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\ticketmenu.h
 	"TicketManager.h"
 
-1762620875 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\ticketmanager.h
+1762805356 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\ticketmanager.h
 	"ArchivoTicket.h"
 	"ArchivoPlaza.h"
-	"ArchivoVehiculo.h"
+	"VehiculoArchivo.h"
 	"TarifaArchivo.h"
 
 1762620838 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\ticketmenu.cpp
@@ -604,7 +609,7 @@
 1762551360 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\abono.h
 	"Hora.h"
 
-1762623331 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\abonomanager.cpp
+1762819320 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\abonomanager.cpp
 	"AbonoManager.h"
 	<iostream>
 	<cstring>
@@ -616,8 +621,9 @@
 	"ArchivoAbono.h"
 	"Hora.h"
 
-1761919045 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\archivoabono.h
+1762819320 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\archivoabono.h
 	"Abono.h"
+	<string>
 
 1762623331 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\abonomenu.cpp
 	"AbonoMenu.h"
@@ -627,7 +633,7 @@
 1762623331 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\abonomenu.h
 	"AbonoManager.h"
 
-1762298485 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\archivoabono.cpp
+1762819320 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\archivoabono.cpp
 	"ArchivoAbono.h"
 	<cstdio>
 
@@ -637,8 +643,9 @@
 	<iostream>
 	<cstring>
 
-1762815605 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\archivoplaza.h
+1762819879 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\archivoplaza.h
 	"Plaza.h"
+	<string>
 
 1762815228 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\plaza.h
 	<string>
@@ -717,7 +724,7 @@
 	<iostream>
 	<cstring>
 
-1762814845 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\plazamanager.cpp
+1762819584 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\plazamanager.cpp
 	"PlazaManager.h"
 	"utils.h"
 	<iostream>
@@ -728,13 +735,14 @@
 	<iostream>
 	<cstdlib>
 
-1762747786 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\ticketmanager.cpp
+1762819320 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\ticketmanager.cpp
 	"TicketManager.h"
 	"Ticket.h"
 	"Plaza.h"
 	"Vehiculo.h"
 	"Tarifa.h"
 	"utils.h"
+	"FechaHora.h"
 	<iostream>
 	<cstring>
 
@@ -779,7 +787,7 @@
 	"utilsVehiculo.h"
 	"ReservaManager.h"
 
-1762816871 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\entradasinreservamanager.cpp
+1762819207 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\entradasinreservamanager.cpp
 	<iostream>
 	<string>
 	"EntradaSinReservaManager.h"
@@ -824,12 +832,13 @@
 	"ReservaArchivo.h"
 	"TicketManager.h"
 
-1762801540 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\fechahora.cpp
+1762819320 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\fechahora.cpp
 	"FechaHora.h"
 	<ctime>
 	<string>
+	<iostream>
 
-1762801384 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\fechahora.h
+1762819320 c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\fechahora.h
 	<string>
 
 1762817697 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\utilsvehiculo.cpp
@@ -845,4 +854,80 @@
 1762549086 source:c:\nahuel\utn\2docuatri\prog2\tpi\proyecto_sistema\pagomenu.cpp
 	<iostream>
 	"PagoMenu.h"
+
+1762809224 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\fechahora.h
+	<string>
+
+1762805356 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\clientearchivo.h
+	<string>
+	"Cliente.h"
+
+1762805356 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\vehiculomenu.h
+	"VehiculoManager.h"
+
+1762805356 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\vehiculoarchivo.h
+	<string>
+	"Vehiculo.h"
+
+1762805356 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\pagomenu.h
+	"PagoManager.h"
+
+1762805356 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\reservamenu.h
+	"ReservaManager.h"
+
+1762805356 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\reservamanager.h
+	"ReservaArchivo.h"
+
+1762805356 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\reservaarchivo.h
+	<string>
+	"Reserva.h"
+
+1762805356 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\clientearchivo.cpp
+	"ClienteArchivo.h"
+	<cstdio>
+	<utility>
+
+1762805356 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\entradasinreservamanager.cpp
+	<iostream>
+	<string>
+	"EntradaSinReservaManager.h"
+	"utils.h"
+
+1762805356 c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\entradasinreservamanager.h
+	"VehiculoArchivo.h"
+	"VehiculoManager.h"
+	"ClienteManager.h"
+	"PlazaManager.h"
+	"TicketManager.h"
+
+1762809224 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\fechahora.cpp
+	"FechaHora.h"
+	<ctime>
+	<string>
+	<iostream>
+
+1762805356 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\reservaarchivo.cpp
+	"ReservaArchivo.h"
+	<cstdio>
+	<utility>
+
+1762805356 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\reservamanager.cpp
+	<iostream>
+	<string>
+	"utils.h"
+	"ReservaManager.h"
+	"Reserva.h"
+
+1762805356 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\reservamenu.cpp
+	<iostream>
+	"ReservaMenu.h"
+
+1762805356 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\vehiculoarchivo.cpp
+	"VehiculoArchivo.h"
+	<cstdio>
+	<utility>
+
+1762805356 source:c:\users\win11\desktop\tup\programacion 2\tpi\codigo\proyecto_sistema\vehiculomenu.cpp
+	<iostream>
+	"VehiculoMenu.h"
 
